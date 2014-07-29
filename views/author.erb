@@ -1,0 +1,17 @@
+<div class="col-md-12">
+	<div class="col-md-12 coll-title">
+		<h4 class="title"><%= @author.name %></h4>
+	</div>
+	<div class="col-md-12 coll-details">
+		<p><%= @author.description %></p>
+	</div>
+	
+	<div class="row section featured-books">
+		<div class="leader col-md-12">
+			<span class="leader-title"><span class="glyphicon glyphicon-th"></span>From this Author</span>
+		</div>
+		<% @author_books.each do |book| %>
+		<%= erb :'partials/_book', :layout => false, :locals => { :book => book } %>
+		<% end %>
+	</div>
+</div>

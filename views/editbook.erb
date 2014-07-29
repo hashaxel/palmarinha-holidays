@@ -1,0 +1,87 @@
+<div class="col-md-12 edit-intro">
+	<h3 class="title">Edit Book</h3>
+</div>
+
+
+<form role="form" action="/update" method="post" id="book" enctype="multipart/form-data">
+	<input type="hidden" name="book[id]" value="<%= @book.id %>" />
+	<div class="col-md-8">
+		<div class="form-group">
+				<label>Book Title:</label><br />
+				<input type="text" name="book[title]" id="title" class="form-control"  value="<%= @book.title %>"/>	
+		</div>
+		<div class="form-group">
+		  <label>
+		  	<input type="radio" name="book[category_id]" id="category_id" value="1" checked>
+				Category
+		  </label>
+		</div>
+		<div class="form-group">
+		  <label>
+		  	<input type="radio" name="book[author_id]" id="author_id" value="1" checked>
+				Author
+		  </label>
+		</div>
+		<div class="form-group">
+		  <label>
+		  	<input type="radio" name="book[publisher_id]" id="publisher_id" value="1" checked>
+				Other India Press
+		  </label>
+		</div>
+		<div class="form-group">
+			<label>Book Description:</label><br />
+			<textarea type="text" name="book[description]" id="description" class="form-control" rows="5" ><%= @book.description %></textarea>
+		</div>
+		<div class="form-group">
+			<label>Teaser Text</label><br />
+			<input type="text" name="book[shortdesc]" id="shortdesc" class="form-control" value="<%= @book.shortdesc %>"/>
+			<span class="teaser-description">10-15 words to describe the awesome book</span>
+		</div>
+		<div class="form-group">
+			<label>Book Type</label><br />
+			<input type="text" name="book[type]" id="type" class="form-control" value="<%= @book.type %>"/>	
+		</div>
+		<div class="form-group">
+			<label>Printed Pages</label><br />
+			<input type="text" name="book[printed_pages]" id="printed_pages" class="form-control"  value="<%= @book.printed_pages %>"/>	
+		</div>
+		<div class="form-group">
+			<label>Price (INR)</label><br />
+			<input type="text" name="book[price_inr]" id="price_inr" class="form-control" value="<%= @book.price_inr %>"/>	
+		</div>
+		<div class="form-group">
+			<label>Price (USD)</label><br />
+			<input type="text" name="book[price_usd]" id="price_usd" class="form-control" value="<%= @book.price_usd %>"/>	
+		</div>
+		<div class="form-group">
+			<label>Release Date mm / yyyy</label><br />
+			<div class="row">
+				<div class="col-md-4">
+					<input type="text" name="book[release_month]" id="release_month" class="form-control"  value="<%= @book.release_month %>"/>
+				</div>
+				<div class="col-md-2">/</div>
+				<div class="col-md-6">
+					<input type="text" name="book[release_year]" id="release_year" class="form-control"  value="<%= @book.release_year %>" />
+				</div>
+			</div>
+		</div>
+		<div class="form-group">		
+			<% if @book.is_featured? %>
+				<input type="checkbox" name="book[is_featured]" checked /> Featured
+			<% else %>	
+				<input type="checkbox" name="book[is_featured]" /> Featured
+			<% end %>						
+		</div>
+
+		<div class="form-group">
+				<input type="Submit" class="btn btn-primary btn-large submit-btn" value="Edit Book">
+			</div>
+	</div>
+
+	<div class="col-md-4">
+		<img src="/books/images/<%= @book.cover_url %>" alt="" width="300">
+		<div class="file-input-wrap">
+			<input type="file" name="book[cover_url]" class="file-picker file-inputs" data-filename-placement="inside" title="Change Cover Image" value="" />
+		</div>
+	</div>		
+</form>

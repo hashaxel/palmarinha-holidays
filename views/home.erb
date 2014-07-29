@@ -1,0 +1,29 @@
+<div class="row home-books-block category-block">
+	<%= erb :_featured %>
+	<%#= erb :_category %>
+	<div class="col-md-12 text-center">
+		<a class="linkout" href="/books">Browse all Books</a>
+	</div>
+	<div class="section featured-books">
+		<div class="leader col-md-12">
+			<div class="col-md-8 leader-title"><span class="glyphicon glyphicon-th"></span> By Release Year (2010)</div>
+			<div class="col-md-4"><a class="browse-more" href="/books">Browse all by release dates</a></div>
+		</div>
+		
+		<% @date_books.each do |book| %>
+			<%= erb :'partials/_book', :layout => false, :locals => { :book => book } %>
+		<% end %>
+	</div>
+
+	<div class="section featured-books">
+		<div class="leader col-md-12">
+			<div class="col-md-8 leader-title"><span class="glyphicon glyphicon-th"></span>From Other India Press</div>
+			<div class="col-md-4"><a class="browse-more" href="/books">Browse Other India Press books</a></div>
+		</div>
+		
+		<% @publisher_books.each do |book| %>
+			<%= erb :'partials/_book', :layout => false, :locals => { :book => book } %>
+		<% end %>
+		
+	</div>
+</div>
