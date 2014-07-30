@@ -1,29 +1,21 @@
-<div class="row home-books-block category-block">
-	<%= erb :_featured %>
-	<%#= erb :_category %>
-	<div class="col-md-12 text-center">
-		<a class="linkout" href="/books">Browse all Books</a>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 banner">
+		<div id="bsub" class="col-md-12">Your</div>
+		<div class="col-md-12">Dream Holiday</div>
+		<div id="bsup" class="col-md-12">Awaits You</div>
 	</div>
-	<div class="section featured-books">
-		<div class="leader col-md-12">
-			<div class="col-md-8 leader-title"><span class="glyphicon glyphicon-th"></span> By Release Year (2010)</div>
-			<div class="col-md-4"><a class="browse-more" href="/books">Browse all by release dates</a></div>
-		</div>
-		
-		<% @date_books.each do |book| %>
-			<%= erb :'partials/_book', :layout => false, :locals => { :book => book } %>
-		<% end %>
+	<div class="col-md-4 col-md-offset-4 homebuttons">
+		<div class="col-md-6"><button type="button" class="btn btn-primary">Learn More</button></div>
+		<div class="col-md-6"><button type="button" class="btn btn-primary">Member Login</button></div>
 	</div>
-
-	<div class="section featured-books">
-		<div class="leader col-md-12">
-			<div class="col-md-8 leader-title"><span class="glyphicon glyphicon-th"></span>From Other India Press</div>
-			<div class="col-md-4"><a class="browse-more" href="/books">Browse Other India Press books</a></div>
+	<div class="row">
+		<div class="col-md-12 intro-block">
+			<div class="col-md-5 col-md-offset-1"><p><span>Travel is important</span> because it fundamentally transforms us. This experience of waking up to the power of your own transformation fires you up to. The Faria group, after 25 years in perfecting and delivering the happiest holidays, introduces its most prestigious family vacation scheme…</p></div>
+			<div id="intro-img" class="col-md-12"></div>
+			<div id="intro-text-block" class="col-md-8 col-md-offset-2">
+				<div id="intro-text" class="col-md-6">By taking a break from your daily life, unplugging from the pulls &amp; pushes of technology &amp; engaging in new activities in new places, you have an easier opportunity to release unwanted habits. Also it is empowering to surround yourself with people who dont know the encyclopedia of your past. It reinforces your willingness to broaden your horizons, to get unstuck &amp; to move in new directions.</div>
+				<div id="intro-features" class="col-md-6">By taking a break from your daily life, unplugging from the pulls & pushes of technology & engaging in new activities in new places, you have an easier opportunity to release unwanted habits. Also it is empowering to surround yourself with people who dont know the encyclopedia of your past. It reinforces your willingness to broaden your horizons, to get unstuck & to move in new directions.</div>
+			</div>
 		</div>
-		
-		<% @publisher_books.each do |book| %>
-			<%= erb :'partials/_book', :layout => false, :locals => { :book => book } %>
-		<% end %>
-		
 	</div>
 </div>
