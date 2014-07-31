@@ -4,8 +4,8 @@ $body: "futura-pt", Helvetica, Arial, sans-serif;
 $bc: #dfdddd;
 $dark: #333;
 $alt: #eee;
-$primary: #2fb999;
-$sec: #483c37;
+$primary: #00c8db;
+$sec: #ecb680;
 
 @mixin transition($transition-time) {
     -webkit-transition: $transition-time;
@@ -50,7 +50,7 @@ $sec: #483c37;
 body {
 	font-family: $body;
 	@media (min-width: $screen-md-min) {
-		background-color: #f9f8f8;
+		background-color: #fff;//#f9f8f8;
 	}
 }
 
@@ -172,6 +172,16 @@ li {
 	font-size: 42px;
 	color: white;
 	text-align: center;
+	.btn {
+		text-transform: uppercase;
+		background-color: white;
+		padding: 10px 25px;
+		color: $primary;
+		font-weight: bold;
+		font-size: 12px;
+		border-radius: 0;
+		border-color: white;
+	}
 }
 
 
@@ -196,15 +206,17 @@ li {
 		background: url('../images/intro-block.png') no-repeat #fff center center;
 		
 	}
+
 	#intro-text-block {
-		margin-top: -100px;
+		margin-top: -150px;
+		padding: 50px 15px;
 		background-color: transparentize(white, 0.1);
 		#intro-text {
-			padding: 40px 25px;
-			font-size: 12px;
+			padding: 0px 25px;
+			font-size: 13px;
 			line-height: 150%;
 			text-align: left;
-			font-weight: 100;
+			font-weight: bold;
 			span {
 				text-transform: uppercase;
 				font-size: 14px;
@@ -219,14 +231,29 @@ li {
 			}
 		}
 		#intro-features {
-			border-left: 2px solid $primary;
-			padding: 40px 25px;
+			border-left: 1px solid $sec;
+			padding: 0px 35px;
 			font-size: 12px;
 			line-height: 150%;
 			text-align: left;
-			font-weight: 100;
+			font-weight: bold;
+			p {
+				padding: 0;
+				text-transform: uppercase;
+				color: $primary;
+				font-size: 15px;
+				font-weight: bold;
+			}
+			ul {
+				margin-bottom: 0;
+				li {
+				padding-top: 10px;
+			}
+			}
+			
 		}	
 	}
+
 	h4 {
 		text-align: center;
 		font-family: $title;
@@ -234,6 +261,37 @@ li {
 		font-size: 36px;	
 	}
 	
+}
+
+.working-block {
+	margin-top: 15px;
+	#working {
+		height: 488px;
+		background-color: $primary;
+		margin-left: -20px;
+		padding: 15px 35px;
+		color: white;
+		p.title {
+			font-weight: bold;
+			padding-bottom: 30px;
+			font-size: 30px;
+		}
+		p {
+			font-size: 16px;
+			padding-top: 10px;
+		}
+		.workbtns {
+			margin-top: 100px;
+			
+			padding-left: 0;
+			.btn {
+				text-transform: uppercase;
+				color: white;
+				font-weight: bold;
+				font-size: 15px;
+			}
+		}
+	}
 }
 
 .breadcrumb {

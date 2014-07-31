@@ -19,8 +19,10 @@
 	<body class="<%= @body_class %>">
 		<div class="container-fluid">		
 			<%= erb :navigation %>
-			<%= yield %>
 		</div>
+		<div class="container">		
+			<%= yield %>
+		</div>		
 
 		<%= erb :_footer %>
 
