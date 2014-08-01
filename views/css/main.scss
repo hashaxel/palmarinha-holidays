@@ -6,6 +6,7 @@ $dark: #333;
 $alt: #eee;
 $primary: #00c8db;
 $sec: #ecb680;
+$ter: #eb7474;
 
 @mixin transition($transition-time) {
     -webkit-transition: $transition-time;
@@ -146,36 +147,38 @@ li {
 }
 
 .banner {
-	margin-top: -300px;
+	margin-top: 150px;
 	text-transform: uppercase;
-	height: 85px;
+	height: 130px;
 	border: 2px solid white; 
-	font-size: 42px;
 	color: white;
 	text-align: center;
+	#btext {
+		font-size: 50px;
+		padding-top: 18px;
+	}
 	#bsub {
 		margin-top: -14px;
 		text-align: left;
-		font-size: 18px;
+		font-size: 20px;
 	}
 	#bsup {
-		font-size: 18px;
+		margin-top: 15px;
+		font-size: 20px;
 		text-align: right;
 	}
 }
 
 .homebuttons {
-	margin-top: -100px;
-	text-transform: uppercase;
-	//height: 85px;
-	//border: 2px solid white; 
+	margin-top: 100px;
+	text-transform: uppercase; 
 	font-size: 42px;
 	color: white;
 	text-align: center;
 	.btn {
 		text-transform: uppercase;
 		background-color: white;
-		padding: 10px 25px;
+		padding: 10px 45px;
 		color: $primary;
 		font-weight: bold;
 		font-size: 12px;
@@ -292,6 +295,43 @@ li {
 			}
 		}
 	}
+}
+
+.locations-block {
+	margin-top: 100px;
+	h3 {
+		margin-top: 0;
+		color: $primary;
+		font-size: 30px;
+		text-transform: uppercase;
+		padding-bottom: 0;
+	}
+	h3.lead {
+		color: $ter;
+		text-align: center;
+	}
+	p.subtitle {
+		color: $primary;
+		padding-top: -20;
+		font-size: 18px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	p.desc {
+		font-size: 14px;
+		font-weight: 800;
+		text-align: center;
+	}
+	#loc-img {
+		padding-top: 20px;
+		margin-left: -60px !important;
+	}
+	#loc-intro {
+		background-color: transparentize(white, 0.1);
+		margin-top: -180px;
+		padding: 45px 40px;
+	}
+	
 }
 
 .breadcrumb {
