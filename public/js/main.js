@@ -7,6 +7,9 @@ $(document).ready(function() {
 	$('.home .cover').height(winH).width(winW);
 	$('.members .cover').height(winH).width(winW);
 	$('#page-bg').anystretch();
+
+
+	
 	
 	// var $homeP = $('.home-books-block');
 	
