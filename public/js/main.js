@@ -8,8 +8,9 @@ $(document).ready(function() {
 	$('.members .cover').height(winH).width(winW);
 	$('#page-bg').anystretch();
 
-	var form = $('#memberenroll');
 
+	//email validation code starts
+	var form = $('#memberenroll');
 	var email = $('#eadd');
 	var emailInfo = $('#emailInfo');
 	var eaddgrp = $('#eaddgrp');
@@ -40,7 +41,7 @@ $(document).ready(function() {
         //validation for proper email formats
         //testing regular expression
         var a = email.val();
- 		alert (a);
+
         var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
         //if it's valid email
         if (filter.test(a)) {
