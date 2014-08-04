@@ -1,4 +1,4 @@
-<div id="page-bg" class="cover anystretch row section" data-stretch="images/home-banner.png">
+<div id="page-bg" class="cover anystretch row section" data-stretch="images/<%= @bg_img %>.png">
 	<div class="navbar navbar-default" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,13 +20,5 @@
 			</ul>
 		</div>
 	</div>
-	<div class="col-md-8 col-md-offset-2 banner">
-		<div id="bsub" class="col-md-12">Your</div>
-		<div id="btext" class="col-md-12">Dream Holiday</div>
-		<div id="bsup" class="col-md-12">Awaits You</div>
-	</div>
-	<div class="col-md-4 col-md-offset-4 homebuttons">
-		<div class="col-md-6"><button type="button" class="btn btn-primary">Learn More</button></div>
-		<div class="col-md-6"><button type="button" class="btn btn-primary">Member Login</button></div>
-	</div>
+	<%= erb @controls %>
 </div>
