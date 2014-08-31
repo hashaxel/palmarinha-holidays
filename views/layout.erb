@@ -18,7 +18,10 @@
 	</head>
 	<body class="<%= @body_class %>">
 		<div class="container-fluid">		
-			<%= erb :navigation %>
+			<div id="page-bg" class="cover anystretch row section" data-stretch="images/<%= @bg_img %>.png">
+				<%= erb :navigation %>
+				<%= erb @controls %>
+			</div>
 		</div>
 		<div class="container">		
 			<%= yield %>

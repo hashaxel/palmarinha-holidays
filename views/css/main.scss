@@ -1,1 +1,75 @@
 @import "../../public/vendor/stylesheets/bootstrap";
+$sans: "Helvetica Neue", "Futura", sans-serif;
+
+$vib: #00c8db;
+
+body {
+	font-family: $sans;
+}
+
+#navigation {
+	position: absolute;
+	background: transparentize(white, 0.9);
+	border: none;
+	border-bottom: 1px solid transparentize(white, 0.8);
+	border-radius: 0;
+	left: 0;
+	right: 0;
+	.nav {
+		margin-right: 30px;
+		li {
+			text-transform: uppercase;
+			font-weight: 100;
+			font-size: 18px;
+			font-family: $sans;
+			a {
+				color: white;
+				padding: 80px 45px 75px;
+				-webkit-transition-duration: 400ms;
+				&:hover {
+					background: transparentize(white,0.9);	
+				}
+			}
+		}
+	}
+}
+
+#logo-main {
+	background: white url(../images/palmarinha-logo.png) no-repeat center center;
+	width: 230px;
+	height: 175px;
+	text-indent: -9999px;
+	margin-left: 70px;
+}
+
+#dream-holiday {
+	background: url(../images/dream-holiday.png) no-repeat;
+	width: 730px;
+	height: 168px;
+	text-indent: -9999px;
+	margin: 0 auto 40px;
+}
+
+.home-controls {
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	text-align: center;
+	.btn {
+		margin: 0 10px;
+	}
+}
+
+.btn-primary {
+	border-radius: 0;
+}
+
+.btn-white {
+	background: white;
+	background: transparentize(white, 0.2);
+	color: $vib;
+	font-weight: bold;
+	border: 1px solid white;
+	padding: 10px 25px;
+	text-transform: uppercase;
+}
