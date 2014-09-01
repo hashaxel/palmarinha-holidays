@@ -1,10 +1,18 @@
 @import "../../public/vendor/stylesheets/bootstrap";
-$sans: "Helvetica Neue", "Futura", sans-serif;
+$sans:  "Helvetica Neue", sans-serif;
 
 $vib: #00c8db;
-
+$vibAlt: #ecb680;
 body {
 	font-family: $sans;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.bold {
+	font-weight: bold;
 }
 
 #navigation {
@@ -27,7 +35,7 @@ body {
 				padding: 80px 45px 75px;
 				-webkit-transition-duration: 400ms;
 				&:hover {
-					background: transparentize(white,0.9);	
+					background: transparentize(white,0.9);
 				}
 			}
 		}
@@ -72,4 +80,62 @@ body {
 	border: 1px solid white;
 	padding: 10px 25px;
 	text-transform: uppercase;
+}
+
+#introducing-palmarinha {
+	position: relative;
+	h2 {
+		position: absolute;
+		top: 150px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 80px;
+		font-weight: 100;
+		color: white;
+	}
+	img {
+		width: 100%;
+	}
+}
+
+#introducing-palmarinha-text {
+	background: transparentize(white,0.2);
+	z-index: 10;
+	position: relative;
+	overflow: auto;
+	margin: -100px 30px 50px;
+	padding: 50px 25px;
+	p {
+		font-size: 18px;
+		font-weight: 100;
+		margin-top: 0;
+	}
+	h4 {
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $vib;
+		margin-bottom: 25px;
+		margin-top: 0;
+	}
+	#introducing-bullets {
+		border-left: 1px solid $vibAlt;
+		padding-left: 25px;
+		ul {
+			padding-left: 0;
+			li {
+				list-style: none;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+#introducing-intro {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 22px;
+	font-weight: 300;
+	color: $vib;
 }
