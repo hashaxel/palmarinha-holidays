@@ -28,12 +28,14 @@ $(document).ready(function() {
 		return false;
 	});
 	
+	var locBlockCount = $('#loc-blocks li').length;
+	
+	$('#loc-blocks').width(295 * locBlockCount);
+	
 });
 
 $(window).load(function() {
 
 	$('body').addClass('loaded');
-	
-	
 	
 });

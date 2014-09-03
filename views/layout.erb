@@ -17,15 +17,13 @@
 		
 	</head>
 	<body class="<%= @body_class %>">
-		<div class="container-fluid">		
-			<div id="page-bg" class="cover anystretch row section" data-stretch="images/<%= @bg_img %>.png">
-				<%= erb :navigation %>
-				<%= erb @controls %>
-			</div>
+	
+		<div id="page-bg" class="cover anystretch" data-stretch="images/<%= @bg_img %>.png">
+			<%= erb :navigation %>
+			<%= erb @controls %>
 		</div>
-		<div class="container">		
-			<%= yield %>
-		</div>		
+
+		<%= yield %>
 
 		<%= erb :_footer %>
 

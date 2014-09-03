@@ -11,6 +11,10 @@ p {
 	line-height: 140%;
 }
 
+p {
+
+}
+
 .uppercase {
 	text-transform: uppercase;
 }
@@ -162,10 +166,100 @@ p {
 		font-size: 36px;
 		margin-bottom: 25px;
 	}
-	p {
-		font-size: 18px;
-	}
 	.btn-link {
 		color: white;
 	}
+}
+
+.row img {
+	max-width: 100%;
+}
+
+#locations-block {
+	margin-top: 50px;
+	h3 {
+		font-weight: 100;
+		color: $vib;
+		text-transform: uppercase;
+		font-size: 48px;
+		line-height: 140%;
+		margin-bottom: 25px;
+		small {
+			display: block;
+			color: $vib;
+			font-weight: bold;
+		}
+	}
+}
+
+#partnerships-block {
+	margin-top: 35px;
+}
+
+#loc-img {
+	width: 100%;
+	background: url(../images/locations.png) no-repeat;
+	background-size: cover;
+	height: 400px;
+}
+
+#loc-intro {
+	margin-top: -80px;
+	background: white;
+	background: transparentize(white, 0.1);
+	font-size: 18px;
+	font-weight: 100;
+	padding: 25px 30px;
+}
+
+#loc-sec-2 {
+	margin-bottom: 25px;
+	margin-top: 0px;
+	h3 {
+		color: #eb7474;
+		text-transform: uppercase;
+		font-weight: 100;
+		font-size: 32px;
+	}
+	p {
+		font-size: 18px;
+		font-weight: 100;
+	}
+}
+
+#loc-blocks {
+	padding-left: 0;
+	li {
+		float: left;
+		list-style: none;
+		width: 280px;
+		margin-right: 10px;
+		position: relative;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+		.loc-label {
+			position: absolute;
+			bottom: 20px;
+			text-align: center;
+			left: 0;
+			right: 0;
+		}
+		span {
+			display: inline-block;
+			background: white;
+			background: transparentize(white, 0.1);
+			padding: 10px 15px;
+			font-size: 18px;
+			text-transform: uppercase;
+			color: $vib;
+		}
+	}
+}
+
+.viewport {
+	width: 100%;
+	overflow: hidden;
+	overflow-y: scroll;
 }
