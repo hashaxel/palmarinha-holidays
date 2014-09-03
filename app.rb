@@ -48,22 +48,23 @@ get '/membership' do
 end
 
 
-# post '/send-inquiry' do
-# 	require 'pony'
-# 	Pony.mail(
-# 		:from => params[:inquiry][:name],
-# 		:to => 'milind@hashcooki.es',
-# 		:subject => "New Inquiry for" + params[:inquiry][:books],
-# 		:body => params[:inquiry][:books],
-# 		:via => :smtp,
-# 		:via_options => {
-# 			:address              => 'smtp.sendgrid.net', 
-# 	        :port                 => '587', 
-# 	        :user_name            => 'hashcookies', 
-# 	        :password             => 'Nor1nderchqMudi', 
-# 	        :authentication       => :plain
-# 		}
-# 	)
-# 	redirect '/'
-# end
+post '/request-membership' do
+	require 'pony'
+	#Pony.options = { :from => params[:member][:name] }
+	Pony.mail(
+		:from => params[:member][:name],
+		:to => 'alistair.rodrigues@gmail.com',
+		:subject => "Membership Request",
+		:html_body => params[:member][:name] << " wishes to be a member <br /> Contact by phone: " << params[:member][:phone] << " by email: " << params[:member][:eadd],
+		:via => :smtp,
+		:via_options => {
+			:address              => 'smtp.sendgrid.net', 
+	        :port                 => '587', 
+	        :user_name            => 'hashcookies', 
+	        :password             => 'Nor1nderchqMudi', 
+	        :authentication       => :plain
+		}
+	)
+	redirect '/membership'
+end
 
