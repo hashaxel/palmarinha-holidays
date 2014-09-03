@@ -1,12 +1,11 @@
-<div class="row">
-	<div class="row">
-		<div class="col-md-4">
-			<h3>More Benefits for</h3>
-			<h2>More comfort.</h2>
+<div class="container" id="members-content">
+	<div class="row" id="member-benefits">
+		<div class="col-md-3">
+			<h3>More Benefits for <span>More Comfort</span></h3>
 			<p>Palmarinha Holidays brings you a selection of exclusive hotels and resorts, vacation packages and destinations, and themes that suit your holiday needs.</p>
 			<p>Palmarinha offers different membership plans, allowing you to choose the the best options that suit your holiday vacation needs. Great value for money and more privileges like discounts on F&amp;B, Spa, and more!</p>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-9">
 			<div class="row">
 				<div class="col-md-4">
 					<img src="/images/team.png" alt="" />
@@ -23,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" id="member-packages">
 		<div class="col-md-8">
 			<h3>Membership Packages</h3>
 			<h2>Customised to your needs</h2>
@@ -41,30 +40,29 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
-			<img src="/images/inquiry-bg.png" alt="">
-			<h3>Become a member today!</h3>
-			<form id="memberenroll" method="post" action="/request-membership">
+		<div class="col-md-4" id="inquiry-form">
+			<h4>Become a member today!</h4>
+			
+			<form id="member-enroll" method="post" action="/request-membership">
+				
 				<div class="form-group">
 					<label for="name" class="hidden"></label>
-					<input type="text" name="member[name]" placeholder="your name" class="form-control">
+					<input type="text" name="member[name]" placeholder="your name" class="form-control" value="Your Name">
 				</div>
 				<div class="form-group">
 					<label for="phone" class="hidden"></label>
-					<input type="text" name="member[phone]" placeholder="your contact number" class="form-control">
+					<input type="text" name="member[phone]" placeholder="your contact number" class="form-control" value="contact number">
 				</div>
 				<div id="eaddgrp" class="form-group">
 					<label for="eadd" class="hidden"></label>
 					<div class="input-group">
-						<input type="text" name="member[eadd]" id="eadd" placeholder="your email" class="form-control">
-						<div class="input-group-addon">*</div>
+						<input type="text" name="member[eadd]" id="eadd" placeholder="your email" class="form-control" value="email address">
 					</div>
 					<span id="emailInfo" class="text-justified"></span>
 				</div>
-				<div class="form-group text-center">
-					<input type="submit" name="submit" value="Submit" class="btn btn-primary btn-large"></input>
-				</div>
-				
+				<p class="text-right">
+					<button type="submit" name="submit" value="Submit" id="send-btn">Send Inquiry <span class="glyphicon glyphicon-chevron-right"></span></button>
+				</p>
 			</form>
 		</div>
 	</div>

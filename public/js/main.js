@@ -5,7 +5,7 @@ var winW = $(window).width();
 
 $(document).ready(function() {
 	$('.home .cover').height(winH).width(winW);
-	$('.members .cover').height(winH).width(winW);
+	$('.members-page .cover').height(winH).width(winW);
 	$('#page-bg').anystretch();
 
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
 	var eaddgrp = $('#eaddgrp');
 	
 
-	$('.home-controls').css({
+	$('#home-controls').css({
 		top: ((winH - 260) / 2) + 160
 	});
 	form.submit(function() {

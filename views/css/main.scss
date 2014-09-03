@@ -1,5 +1,6 @@
 @import "../../public/vendor/stylesheets/bootstrap";
 $sans:  "Brandon Grotesque", sans-serif;
+$serif: "FreightText", serif;
 
 $vib: #00c8db;
 $vibAlt: #ecb680;
@@ -39,13 +40,19 @@ p {
 			font-size: 18px;
 			font-family: $sans;
 			a {
-				color: white;
+				color: inherit;
 				padding: 80px 45px 75px;
 				-webkit-transition-duration: 400ms;
 				&:hover {
 					background: transparentize(white,0.9);
 				}
 			}
+		}
+	}
+	.members-page & {
+		background: transparentize(white, 0.5);
+		li {
+			color: $vib;
 		}
 	}
 }
@@ -66,7 +73,7 @@ p {
 	margin: 0 auto 40px;
 }
 
-.home-controls {
+.cover-controls {
 	position: absolute;
 	top: 40%;
 	width: 100%;
@@ -104,6 +111,11 @@ p {
 		border: 1px solid white;
 		color: $vib;
 	}
+}
+
+.btn-blue {
+	background: transparentize($vib, 0.2);
+	border: 1px solid $vib;
 }
 
 .btn-link {
@@ -334,6 +346,103 @@ p {
 		color: white;
 		h4 {
 			text-transform: uppercase;
+		}
+	}
+}
+
+#member-controls {
+	bottom: 50px;
+	.login-form {
+		margin: 0 auto;
+		width: 600px;
+		text-align: left;
+	}
+	input {
+		width: 400px;
+		font-size: 24px;
+		font-weight: 100;
+		background: transparentize(white, 0.1);
+		border: 1px solid white;
+		padding: 15px 25px;
+		outline: none;
+		float: left;
+	}
+	.btn-blue {
+		font-weight: bold;
+		font-size: 24px;
+		text-transform: uppercase;
+		padding: 15px 45px;
+		float: left;
+	}
+	.btn-white {
+		position: absolute;
+	}
+	#trouble-logging {
+		color: white;
+		font-size: 18px;
+		text-shadow: 0px 1px #000;
+	}
+}
+
+#learn-more-btn {
+	bottom: 20px;
+	left: 45%;
+	position: absolute;
+}
+
+#members-content {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+#member-benefits {
+	h3 {
+		color: $vib;
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: bold;
+		span {
+			display: block;
+			font-size: 28px;
+			margin-top: 5px;
+		}
+	}
+}
+
+#inquiry-form {
+	position: relative;
+	background: url(../images/inquiry-bg.png);
+	padding: 25px;
+	height: 400px;
+	h4 {
+		color: white;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	form {
+		position: absolute;
+		bottom: 20px;
+	}
+	input {
+		background: transparent;
+		border: 1px solid transparentize(white, 0.5);
+		border-radius: 0;
+		color: white;		
+		width: 280px;
+		font-family: $serif;
+		font-style: italic;
+		font-size: 16px;
+		padding: 20px 15px 15px;
+	}
+	#send-btn {
+		background: none;
+		font-weight: bold;
+		color: white;
+		border: none;
+		font-size: 18px;
+		text-transform: uppercase;
+		.glyphicon {
+			font-size: 14px;
 		}
 	}
 }
