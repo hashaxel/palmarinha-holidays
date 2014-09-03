@@ -86,8 +86,24 @@ p {
 	color: $vib;
 	font-weight: bold;
 	border: 1px solid white;
-	padding: 10px 25px;
+	padding: 0;
 	text-transform: uppercase;
+	.glyphicon {
+		background: white;
+		display: block;
+		float: right;
+		padding: 10px 10px;
+	}
+	.btn-text {
+		padding: 8px 15px;
+		display: block;
+		float: left;
+	}
+	&:hover {
+		background: white;
+		border: 1px solid white;
+		color: $vib;
+	}
 }
 
 .btn-link {
@@ -251,7 +267,8 @@ p {
 			background: white;
 			background: transparentize(white, 0.1);
 			padding: 10px 15px;
-			font-size: 18px;
+			font-size: 14px;
+			font-weight: bold;
 			text-transform: uppercase;
 			color: $vib;
 		}
@@ -262,4 +279,61 @@ p {
 	width: 100%;
 	overflow: hidden;
 	overflow-y: scroll;
+}
+
+#hotel-blocks {
+	margin-top: 50px;
+	h3 {
+		color: $vib;
+		font-size: 32px;
+		text-transform: uppercase;
+		font-weight: 100;
+		small {
+			font-weight: bold;
+		}
+	}
+}
+
+.hotel-block {
+	position: relative;
+	.inner {
+		position: absolute;
+		width: 320px;
+		left: 35px;
+		top: 20px;
+	}
+	.linkout {
+		font-size: 14px;
+		font-weight: bold;
+		color: inherit;
+		text-transform: uppercase;
+	}
+}
+
+
+.hotel-block.large {
+	.inner {
+		left: 50px;
+		top: 35px;
+		width: 450px;
+		background: white;
+		padding: 25px;
+		img {
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 18px;
+		}
+		
+	}
+}
+
+.hotel-block.small {
+	margin-bottom: 18px;
+	.inner {
+		color: white;
+		h4 {
+			text-transform: uppercase;
+		}
+	}
 }
