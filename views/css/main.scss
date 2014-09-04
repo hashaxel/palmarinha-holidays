@@ -39,6 +39,7 @@ p {
 			font-weight: 100;
 			font-size: 18px;
 			font-family: $sans;
+			color: white;
 			a {
 				color: inherit;
 				padding: 80px 45px 75px;
@@ -407,6 +408,45 @@ p {
 			margin-top: 5px;
 		}
 	}
+	p {
+		font-size: 18px;
+		font-weight: 100;
+	}
+	img {
+		margin-bottom: 15px;
+	}
+}
+
+#member-packages {
+	margin-top: 50px;
+	h3 {
+		color: white;
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: bold;
+		span {
+			display: block;
+			font-size: 28px;
+			margin-top: 5px;
+		}
+	}
+	p {
+		font-size: 18px;
+	}
+}
+
+#member-packages-content {
+	background: $vib;
+	height: 400px;
+	padding: 30px 50px;
+	color: white;
+	border-right: 20px solid #fff;
+}
+
+#package-blocks {
+	p {
+		font-size: 16px;
+	}	
 }
 
 #inquiry-form {
@@ -417,6 +457,8 @@ p {
 	h4 {
 		color: white;
 		font-weight: bold;
+		font-size: 36px;
+		line-height: 42px;
 		text-transform: uppercase;
 	}
 	form {
