@@ -34,6 +34,7 @@ h5 {
 	font-weight: bold;
 	color: $vib;
 	font-size: 22px;
+	font-family: $sansAlt;
 }
 
 #navigation {
@@ -79,6 +80,7 @@ h5 {
 }
 
 #footer {
+	margin-top: 50px;
 	background: lighten($vib, 55%);
 	border-top: 1px solid lighten($vib, 47%);
 	#logo-main {
@@ -98,7 +100,10 @@ h5 {
 			list-style: none;
 			text-transform: uppercase;
 			font-family: $sansAlt;
-			font-weight: 5700;
+			float: left;
+			margin-right: 15px;
+			font-weight: 500;
+			font-size: 18px;
 		}
 	}
 }
@@ -121,8 +126,28 @@ h5 {
 	}
 }
 
+.btn {
+	color: $vib;
+}
+
 .btn-primary {
 	border-radius: 0;
+	background: $vib;
+	font-weight: bold;
+	font-family: $sansAlt;
+	text-transform: uppercase;
+	color: white;
+	border: none;
+	font-size: 16px;
+}
+
+.btn-large {
+	font-size: 22px;
+	padding: 15px 25px;
+	font-family: $sansAlt;
+	text-transform: uppercase;
+	font-weight: bold;
+	
 }
 
 .btn-white {
@@ -362,6 +387,10 @@ h5 {
 	}
 }
 
+#loc-cta {
+	margin-top: 55px;
+}
+
 #loc-blocks {
 	li {
 		float: left;
@@ -420,7 +449,7 @@ h5 {
 		font-size: 90px;
 		font-weight: Bold;
 		text-align: center;
-		font-family: $sansAlt;
+		font-family: $script;
 		small {
 			display: block;
 			font-family: $sans;
@@ -429,7 +458,8 @@ h5 {
 
 	}
 	.label {
-		font-family: $script;
+		text-transform: uppercase;
+		font-family: $sansAlt;
 		font-size: 24px;
 		border-bottom: 1px solid white;
 	}
@@ -480,6 +510,10 @@ h5 {
 		color: inherit;
 		text-transform: uppercase;
 	}
+}
+
+#final-cta {
+	margin-top: 40px;
 }
 
 #special-offers-block {
