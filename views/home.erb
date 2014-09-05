@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 text-center col-md-offset-2" id="introducing-intro">
-			<p><span class="uppercase bold">Travel is important</span> because it fundamentally transforms us. This experience of waking up to the power of your own transformation fires you up to. The Faria group, after 25 years in perfecting and delivering the happiest holidays, introduces its most prestigious family vacation scheme…</p>
+			<p class="lead"><span class="uppercase bold">Travel is important</span> because it fundamentally transforms us. This experience of waking up to the power of your own transformation fires you up to. The Faria group, after 25 years in perfecting and delivering the happiest holidays, introduces its most prestigious family vacation scheme…</p>
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-md-12" id="introducing-palmarinha">
@@ -24,7 +24,21 @@
 			</div>
 		</div>
 	</div>
-	<%= erb :_working %>
+	<div class="row" id="how-it-works">
+		<div class="col-md-8">
+			<img src="/images/how-it-works.png" alt="" />
+			<h3><small>Plans Include</small>Your Holiday Needs</h3>
+		</div>
+		<div class="col-md-4 right">
+			<h4>How it works</h4>
+			<p>Palmarinha Holidays brings you a selection of exclusive hotels and resorts, vacation packages and destinations, and themes <em>that suit your holiday needs.</em></p>
+			<p>Palmarinha offers different membership plans, allowing you to choose the the best options that suit your holiday vacation needs. Great value for money and more privileges like discounts on F&amp;B, Spa, and more!</p>
+			<p>
+				<a href="#" class="btn btn-link">Become a Member &raquo;</a>
+				<a href="#" class="btn btn-link">Member Login &raquo;</a>
+			</p>
+		</div>
+	</div>
 </div>
 <div class="container">
 	<div class="row" id="locations-block">
@@ -37,100 +51,133 @@
 	</div>
 </div>
 
-<div id="loc-img" class="col-md-12 text-center"></div>
+<div id="loc-img"></div>
 
 <div class="container">
 	<div class="row">
-		<div id="loc-intro" class="col-md-6 pull-right">
+		<div id="loc-intro" class="col-md-7">
 			<p>Palmarinha Holidays brings you a selection of over 5000 affiliated hotels and resorts in nearly 100 countries worldwide.</p>
 			<p>As part of the two most sought after Holiday Exchange companies in the world ­ DAE and RCI. The advantage of being a Palmarinha Holidays member is the option to exchange your holiday entitlements to other exotic resorts in a wide choice of destinations.</p>
 		</div>
-		<div class="col-md-12" id="loc-sec-2">
-			<div class="col-md-6">
-				<h3>Places to <b>visit</b>. Things to <b>see</b>.</h3>
-				<p class="desc">Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas.</p>
-			</div>
+	</div>
+	<div class="row text-center" id="loc-perks">
+		<div class="col-md-4">
+			<img src="/images/perk-3.jpg" alt="" />
+			<h5>Unlimited Holidays</h5>
+			<p>for 25 years by using your own week and bonus weeks.</p>
+		</div>
+		<div class="col-md-4">
+			<img src="/images/perk-2.jpg" alt="" />
+			<h5>Expert Team</h5>
+			<p>to help you organize every aspect of your holiday type and pattern.</p>
+		</div>
+		<div class="col-md-4">
+			<img src="/images/perk-1.jpg" alt="" />
+			<h5>Exchange Holiday Time</h5>
+			<p>to use your week to exchange holiday time across any of the 5000 resorts worldwide</p>
 		</div>
 	</div>
+	<hr />
 </div>
-<div class="viewport">
-	<ul id="loc-blocks">
-			<li>
-				<img src="/images/himalayas.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			</li>
-			<li>
-				<img src="/images/party-goa.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			<li>
-				<img src="/images/rajasthan.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			<li>
-				<img src="/images/paris.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			</li>
-			<li>
-				<img src="/images/himalayas.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			</li>
-			<li>
-				<img src="/images/party-goa.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			<li>
-				<img src="/images/rajasthan.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			<li>
-				<img src="/images/paris.png" alt="" />
-				<div class="loc-label">
-					<span>The Great Himalayas</span>
-				</div>
-			</li>
-	</ul>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 text-center" id="loc-sec-2">
+			<h3>Places to <b>visit</b>. Things to <b>see</b>.</h3>
+			<p class="desc">Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas.</p>
+		</div>
+	</div>
+	<div class="row">
+		<ul id="loc-blocks" class="col-md-12">
+				<li>
+					<img src="/images/himalayas.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+				<li>
+					<img src="/images/party-goa.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+				<li>
+					<img src="/images/rajasthan.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+				<li>
+					<img src="/images/paris.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+				<li>
+					<img src="/images/himalayas.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+				<li>
+					<img src="/images/party-goa.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+				<li>
+					<img src="/images/rajasthan.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+				<li>
+					<img src="/images/paris.png" alt="" />
+					<div class="loc-label">
+						<span>The Great Himalayas</span>
+					</div>
+				</li>
+		</ul>
+	</div>
+</div>
+
+
+
+<div id="resort-img">
+	<h3>Our family of resorts <small>+5000 more from our partners</small></h3>
 </div>
 
 <div class="container" id="hotel-blocks">
 	<div class="row">
-		<div class="col-md-12">
-			<h3>Our family of resorts <small>+5000 more from our partners</small></h3>
-		</div>
-		<div class="col-md-8 hotel-block large">
+		<div class="col-md-4 hotel-block">
 			<img src="/images/resorts.png" alt="" />
-			<div class="inner">
+			<!--<div class="inner">
 				<div class="col-md-12 col-md-offset-1">
 					<img src="/images/resorts-logo.png" alt="" />
 				</div>
 				<p>"Palmarinha Resort" meaning a little picturesque world of "Swaying Palms", an oasis seamlessly extending the magic of lush green fields and the hillocks beyond...</p>
 				<p><a class="linkout" href="#"><span class="glyphicon glyphicon-new-window"></span> Website</a></p>
-			</div>
+			</div>-->
 		</div>
-		<div class="col-md-4 hotel-block small">
+		<div class="col-md-4 hotel-block">
 			<img src="/images/resorts.png" alt="" />
 			<div class="inner">
 				<h4>Bougainvillea Guest House</h4>
 				<p><a class="linkout" href="#"><span class="glyphicon glyphicon-new-window"></span> Website</a></p>
 			</div>
 		</div>
-		<div class="col-md-4 hotel-block small">
+		<div class="col-md-4 hotel-block">
 			<img src="/images/resorts.png" alt="" />
 			<div class="inner">
 				<h4>Granpa's Inn</h4>
 				<p><a class="linkout" href="#"><span class="glyphicon glyphicon-new-window"></span> Website</a></p>
 			</div>
 		</div>
+	</div>
+	<div class="row">		
+		<div class="col-md-4">
+			<h3>Our family of resorts <small>+5000 more from our partners</small></h3>
+		</div>
+		
 		<div class="col-md-12">
 			<h3>Special Offers</h3>
 		</div>

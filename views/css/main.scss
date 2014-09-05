@@ -10,10 +10,11 @@ body {
 
 p {
 	line-height: 140%;
+	font-size: 18px;
 }
 
-p {
-
+p.lead {
+	font-size: 22px;
 }
 
 .uppercase {
@@ -22,6 +23,13 @@ p {
 
 .bold {
 	font-weight: bold;
+}
+
+h5 {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: $vib;
+	font-size: 22px;
 }
 
 #navigation {
@@ -182,21 +190,47 @@ p {
 	margin-bottom: 50px;
 	font-size: 22px;
 	font-weight: 300;
-	color: darken($vib, 5%);
+	color: darken($vib, 0%);
 }
 
 #how-it-works {
-	background: $vib;
-	color: white;
-	height: 488px;
-	padding: 15px 25px;
+	.right {
+		background: $vib;
+		color: white;
+		height: 488px;
+		padding: 35px;
+	}
 	h3 {
 		font-weight: bold;
-		font-size: 36px;
 		margin-bottom: 25px;
+		position: absolute;
+		top: 40px;
+		text-transform: uppercase;
+		font-size: 52px;
+		color: transparentize(white, 0);
+		text-align: center;
+		width: 100%;
+		text-shadow: 0px 1px 3px darken($vib, 0%);
+		small {
+			color: white;
+			display: block;
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+	}
+	h4 {
+		font-weight: bold;
+		font-size: 24px;
+		margin-bottom: 15px;
+		text-transform: uppercase;
 	}
 	.btn-link {
 		color: white;
+	}
+	p {
+		font-size: 20px;
+		font-weight: 100;
 	}
 }
 
@@ -233,12 +267,34 @@ p {
 }
 
 #loc-intro {
-	margin-top: -80px;
+	margin-top: -150px;
 	background: white;
 	background: transparentize(white, 0.1);
-	font-size: 18px;
 	font-weight: 100;
 	padding: 25px 30px;
+	p {
+		font-size: 22px;
+	}
+}
+
+#loc-perks {
+	margin-bottom: 25px;
+	margin-top: 25px;
+	div {
+		padding: 0 30px;
+	}
+	h5 {
+		margin-bottom: 0;
+		font-size: 18px;
+	}
+	p {
+		font-size: 16px;
+		font-weight: 100;
+	}
+	img {
+		border-radius: 5px;
+		margin-bottom: 10px;
+	}
 }
 
 #loc-sec-2 {
@@ -257,12 +313,13 @@ p {
 }
 
 #loc-blocks {
-	padding-left: 0;
 	li {
 		float: left;
 		list-style: none;
-		width: 280px;
-		margin-right: 10px;
+		width: 274px;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-bottom: 10px;
 		position: relative;
 		img {
 			width: 100%;
@@ -292,6 +349,14 @@ p {
 	width: 100%;
 	overflow: hidden;
 	overflow-y: scroll;
+}
+
+#resort-img {
+	width: 100%;
+	background: url(../images/resorts.png) no-repeat;
+	background-size: cover;
+	height: 800px;
+	margin-top: 80px;
 }
 
 #hotel-blocks {

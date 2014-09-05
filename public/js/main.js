@@ -83,7 +83,7 @@ $(document).ready(function() {
 	
 	var locBlockCount = $('#loc-blocks li').length;
 	
-	$('#loc-blocks').width(295 * locBlockCount);
+//	$('#loc-blocks').width(295 * locBlockCount);
 	
 });
 
