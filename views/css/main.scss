@@ -1,15 +1,19 @@
 @import "../../public/vendor/stylesheets/bootstrap";
-$sans:  "Brandon Grotesque", sans-serif;
+$sans:  "Open Sans", sans-serif;
+$sansAlt: "Open Sans Condensed", sans-serif;
 $serif: "FreightText", serif;
+$script: "grafolita-script", serif;
+$red: #eb7474;
 
 $vib: #00c8db;
 $vibAlt: #ecb680;
+
 body {
 	font-family: $sans;
 }
 
 p {
-	line-height: 140%;
+	line-height: 150%;
 	font-size: 18px;
 }
 
@@ -158,10 +162,11 @@ h5 {
 	z-index: 10;
 	position: relative;
 	overflow: auto;
-	margin: -100px 30px 50px;
+	margin: -100px 30px 0px;
 	padding: 50px 25px;
 	p {
 		font-size: 18px;
+		line-height: 160%;
 		font-weight: 100;
 		margin-top: 0;
 	}
@@ -186,7 +191,7 @@ h5 {
 }
 
 #introducing-intro {
-	margin-top: 50px;
+	margin-top: 70px;
 	margin-bottom: 50px;
 	font-size: 22px;
 	font-weight: 300;
@@ -197,8 +202,26 @@ h5 {
 	.right {
 		background: $vib;
 		color: white;
-		height: 488px;
+		height: 448px;
 		padding: 35px;
+	}
+	.btn-link-block {
+		padding: 0;
+		background: $vib;
+		margin-right: 1px;
+		.btn {
+			width: 50%;
+			background: desaturate(lighten($vib, 12%), 20%);
+			display: block;
+			float: left;
+			margin: 0;
+			padding: 10px 15px;
+			border: none;
+			color: white;
+			&:first-child {
+				border-right: 1px solid lighten($vib, 10%);
+			}
+		}
 	}
 	h3 {
 		font-weight: bold;
@@ -214,22 +237,24 @@ h5 {
 		small {
 			color: white;
 			display: block;
-			font-size: 24px;
+			font-size: 31px;
 			font-weight: bold;
-			margin-bottom: 10px;
+			font-family: $script;
+			text-transform: none;
+			border-bottom: 1px solid white;
+			width: 200px;
+			margin: 0 auto 10px;
+			padding-bottom: 7px;
 		}
 	}
 	h4 {
 		font-weight: bold;
-		font-size: 24px;
+		font-size: 30px;
 		margin-bottom: 15px;
 		text-transform: uppercase;
 	}
-	.btn-link {
-		color: white;
-	}
 	p {
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 100;
 	}
 }
@@ -273,22 +298,22 @@ h5 {
 	font-weight: 100;
 	padding: 25px 30px;
 	p {
-		font-size: 22px;
+		margin-bottom: 10px;
 	}
 }
 
-#loc-perks {
+.info-blocks {
 	margin-bottom: 25px;
 	margin-top: 25px;
 	div {
 		padding: 0 30px;
 	}
 	h5 {
-		margin-bottom: 0;
+		margin-bottom: 5px;
 		font-size: 18px;
 	}
 	p {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 100;
 	}
 	img {
@@ -301,7 +326,7 @@ h5 {
 	margin-bottom: 25px;
 	margin-top: 0px;
 	h3 {
-		color: #eb7474;
+		color: $red;
 		text-transform: uppercase;
 		font-weight: 100;
 		font-size: 32px;
@@ -340,7 +365,7 @@ h5 {
 			font-size: 14px;
 			font-weight: bold;
 			text-transform: uppercase;
-			color: $vib;
+			color: $red;
 		}
 	}
 }
@@ -353,10 +378,54 @@ h5 {
 
 #resort-img {
 	width: 100%;
-	background: url(../images/resorts.png) no-repeat;
+	background: url(../images/resorts.jpg) no-repeat center center;
 	background-size: cover;
 	height: 800px;
 	margin-top: 80px;
+}
+
+.resort-intro {
+	width: 600px;
+	margin: 0px auto;
+	text-align: center;
+	padding-top: 200px;
+	color: white;
+	text-shadow: 0px 1px 5px transparentize(black, 0.6);
+	h3 {
+		font-size: 90px;
+		font-weight: Bold;
+		text-align: center;
+		font-family: $sansAlt;
+		small {
+			display: block;
+			font-family: $sans;
+			color: white;
+		}
+
+	}
+	.label {
+		font-family: $script;
+		font-size: 24px;
+		border-bottom: 1px solid white;
+	}
+	.subtitle {
+		font-size: 24px;
+		font-weight: bold;
+
+		margin-bottom: 10px;
+		display: block;
+	}
+}
+
+.resorts-desc {
+	margin-top: -100px;
+	background: white;
+	background: transparentize(white, 0.1);
+	padding: 40px 50px 50px;
+	font-weight: 100;
+	p {
+		font-size: 18px;
+	}
 }
 
 #hotel-blocks {
@@ -388,32 +457,9 @@ h5 {
 	}
 }
 
-
-.hotel-block.large {
-	.inner {
-		left: 50px;
-		top: 35px;
-		width: 450px;
-		background: white;
-		padding: 25px;
-		img {
-			margin-bottom: 20px;
-		}
-		p {
-			font-size: 18px;
-		}
-		
-	}
-}
-
-.hotel-block.small {
-	margin-bottom: 18px;
-	.inner {
-		color: white;
-		h4 {
-			text-transform: uppercase;
-		}
-	}
+#special-offers-block {
+	background: $vib;
+	margin-bottom: 25p;
 }
 
 #member-controls {

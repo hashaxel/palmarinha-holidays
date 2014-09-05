@@ -83,7 +83,15 @@ $(document).ready(function() {
 	
 	var locBlockCount = $('#loc-blocks li').length;
 	
-//	$('#loc-blocks').width(295 * locBlockCount);
+	var fullWidthHeight;
+	
+	if (winH > winW) {
+		fullWidthHeight = winW * 0.8;
+	} else {
+		fullWidthHeight = winH * 0.9;
+	}
+	
+	$('#resort-img').height(fullWidthHeight);
 	
 });
 
