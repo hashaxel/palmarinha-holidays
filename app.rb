@@ -42,9 +42,12 @@ end
 get '/membership' do
 	@page_title += " | Members"
 	@body_class += " members-page"
-	@bg_img = "member-banner"
-	@controls = :_member_controls
 	erb :membership
+end
+
+get '/member-area' do
+	@page_title += " | Members Area (Private)"
+	erb :member_area
 end
 
 
