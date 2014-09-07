@@ -699,3 +699,11 @@ h5 {
 		}
 	}
 }
+
+h2 {
+	font-weight: bold;
+	small {
+		font-family: $sansAlt;
+		color: inherit;
+	}
+}

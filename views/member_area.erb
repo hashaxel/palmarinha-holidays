@@ -2,20 +2,14 @@
 	<%= erb :navigation %>
 </div>
 
-<div id="member-controls">
-	<div class="login-form">
-		<input type="text" placeholder="Enter your password" />
-		<button type="button" class="btn btn-primary btn-blue">Log in</button>
-		<div class="clearfix"></div>
-		<a id="trouble-logging" href="#">Having trouble logging in?</a>
-	</div>
-</div>
-
 <div class="container" id="members-content">
 	<div class="row" id="member-benefits">
-		<div class="col-md-8 text-center col-md-offset-2">
-			<p class="lead"><strong>Palmarinha Holidays</strong> brings you a selection of exclusive hotels and resorts, vacation packages and destinations, and themes that suit your holiday needs.</p>
-			<p>Palmarinha offers different membership plans, allowing you to choose the the best options that suit your holiday vacation needs. Great value for money and more privileges like discounts on F&amp;B, Spa, and more!</p>
+		<div class="col-md-4">
+			<h2><small>Welcome to the</small> Members Area</h2>
+			<p>Palmarinha Holidays brings you a selection of exclusive hotels and resorts, vacation packages and destinations, and themes that suit your holiday needs.</p>
+		</div>
+		<div class="col-md-8">
+			<img src="/images/special-ad.jpg" alt="" />
 		</div>
 		<div class="col-md-12 info-blocks text-center">
 			<div class="row">
@@ -35,51 +29,6 @@
 					<p>Take advantage of the high variety of services, including body bliss luxury spas and ayurvedic treatments, the wine club and relaxations for your children.</p>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="row" id="member-packages">
-		<div class="col-md-8" id="member-packages-content">
-			<h3>Membership Packages <span>Customised to your needs</span></h2>
-			<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus. Quisque eget odio ac lectus vestibulum faucibus eget in metus.</p>
-			<p>In pellentesque.</p>
-			<hr />
-			<div class="row" id="package-blocks">
-				<div class="col-md-4">
-					<p><strong>Unlimited holidays</strong> for 25 years by using your own week and bonus weeks.</p>
-				</div>
-				<div class="col-md-4">
-					<p><strong>Easy and flexible</strong> payment plans. Flexibility to pay in monthly mode.</p>
-				</div>
-				<div class="col-md-4">
-					<p><strong>Instant Activation</strong> of your membership on completion of 50% of your membership cost.</p>
-				</div>
-			</div>
-			<hr />
-		</div>
-		<div class="col-md-4" id="inquiry-form">
-			<h4>Become a member today!</h4>
-			
-			<form id="member-enroll" method="post" action="/request-membership">
-				
-				<div class="form-group">
-					<label for="name" class="hidden"></label>
-					<input type="text" name="member[name]" placeholder="your name" class="form-control" value="Your Name">
-				</div>
-				<div class="form-group">
-					<label for="phone" class="hidden"></label>
-					<input type="text" name="member[phone]" placeholder="your contact number" class="form-control" value="contact number">
-				</div>
-				<div id="eaddgrp" class="form-group">
-					<label for="eadd" class="hidden"></label>
-					<div class="input-group">
-						<input type="text" name="member[eadd]" id="eadd" placeholder="your email" class="form-control" value="email address">
-					</div>
-					<span id="emailInfo" class="text-justified"></span>
-				</div>
-				<p class="text-right">
-					<button type="submit" name="submit" value="Submit" id="send-btn">Send Inquiry <span class="glyphicon glyphicon-chevron-right"></span></button>
-				</p>
-			</form>
 		</div>
 	</div>
 </div>

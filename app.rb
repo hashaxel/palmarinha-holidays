@@ -47,6 +47,7 @@ end
 
 get '/member-area' do
 	@page_title += " | Members Area (Private)"
+	@body_class += " members-area"
 	erb :member_area
 end
 
