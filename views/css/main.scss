@@ -722,7 +722,7 @@ h2 {
 
 #member-area-intro {
 	margin-bottom: 25px;
-	margin-top: 25px;
+	margin-top: 20px;
 	img {
 		width: 100%;
 	}
@@ -733,13 +733,19 @@ h2 {
 		color: #000;
 		padding-bottom: 8px;
 		font-size: 16px;
+		text-align: center;
 		border-bottom: 1px solid #eee;
 		a {
 			color: inherit;
 		}
-		&:last-child {
-			border-bottom: none;
-		}
+	}
+	
+	#logo-main {
+		margin: 0 auto;
+		padding-bottom: 0;
+		float: none;
+		height: 150px;
+		display: block;
 	}
 	.title {
 		font-weight: bold;
@@ -748,19 +754,7 @@ h2 {
 		text-transform: uppercase;
 		font-size: 20px;
 		text-align: center;
-		margin-bottom: 35px;
-	}
-	.btn {
-		display: block;
-		margin: 0 auto;
-		color: white;
-	}
-	#logo-main {
-		margin: 0 auto;
-		float: none;
-		display: block;
-		padding-bottom: 0;
-		height: 150px;
+		margin-bottom: 25px;
 	}
 }
 
@@ -771,7 +765,15 @@ h2 {
 }
 
 #member-area-title {
-	margin-top: 70px;
+	margin-top: 20px;
 	margin-bottom: 0px;
 	
+	.btn {
+		margin-top: -10px;
+		margin-left: 25px;
+	}
+}
+
+#dashboard-secondary {
+	margin-top: 25px;
 }
