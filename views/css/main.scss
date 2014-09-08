@@ -724,9 +724,10 @@ h2 {
 	margin-bottom: 25px;
 	img {
 		border-radius: 10px;
+		width: 100%;
 	}
-	h2 {
-		margin-bottom: 25px;
+	.lead {
+		margin-top: 120px;
 	}
 	ul li {
 		margin-bottom: 8px;
@@ -743,7 +744,8 @@ h2 {
 }
 
 #member-area-title {
-	margin-top: 50px;
+	margin-top: 70px;
+	margin-bottom: 0px;
 	.title {
 		font-weight: bold;
 		color: $vib;
