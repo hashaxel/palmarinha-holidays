@@ -14,7 +14,8 @@ body {
 
 p {
 	line-height: 150%;
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: 100;
 }
 
 p.lead {
@@ -35,6 +36,13 @@ h5 {
 	color: $vib;
 	font-size: 22px;
 	font-family: $sansAlt;
+}
+
+ul {
+	padding-left: 0;
+	li {
+		list-style: none;
+	}
 }
 
 #navigation {
@@ -702,8 +710,48 @@ h5 {
 
 h2 {
 	font-weight: bold;
+	color: $vib;
+	text-transform: uppercase;
+	font-size: 42px;
 	small {
 		font-family: $sansAlt;
 		color: inherit;
+		display: block;
+	}
+}
+
+#member-area-intro {
+	margin-bottom: 25px;
+	img {
+		border-radius: 10px;
+	}
+	h2 {
+		margin-bottom: 25px;
+	}
+	ul li {
+		margin-bottom: 8px;
+		font-weight: 100;
+		text-transform: uppercase;
+		color: #000;
+		padding-bottom: 8px;
+		font-size: 16px;
+		border-bottom: 1px solid #eee;
+		a {
+			color: inherit;
+		}
+	}
+}
+
+#member-area-title {
+	margin-top: 50px;
+	.title {
+		font-weight: bold;
+		color: $vib;
+		text-transform: uppercase;
+		font-size: 24px;
+	}
+	.btn {
+		margin-top: -10px;
+		margin-left: 25px;
 	}
 }
