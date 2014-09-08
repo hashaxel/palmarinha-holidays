@@ -722,12 +722,9 @@ h2 {
 
 #member-area-intro {
 	margin-bottom: 25px;
+	margin-top: 25px;
 	img {
-		border-radius: 10px;
 		width: 100%;
-	}
-	.lead {
-		margin-top: 120px;
 	}
 	ul li {
 		margin-bottom: 8px;
@@ -740,6 +737,30 @@ h2 {
 		a {
 			color: inherit;
 		}
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	.title {
+		font-weight: bold;
+		display: block;
+		color: $vib;
+		text-transform: uppercase;
+		font-size: 20px;
+		text-align: center;
+		margin-bottom: 35px;
+	}
+	.btn {
+		display: block;
+		margin: 0 auto;
+		color: white;
+	}
+	#logo-main {
+		margin: 0 auto;
+		float: none;
+		display: block;
+		padding-bottom: 0;
+		height: 150px;
 	}
 }
 
@@ -752,14 +773,5 @@ h2 {
 #member-area-title {
 	margin-top: 70px;
 	margin-bottom: 0px;
-	.title {
-		font-weight: bold;
-		color: $vib;
-		text-transform: uppercase;
-		font-size: 20px;
-	}
-	.btn {
-		margin-top: -10px;
-		margin-left: 25px;
-	}
+	
 }
