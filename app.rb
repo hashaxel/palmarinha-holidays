@@ -16,10 +16,6 @@ end
 
 helpers do
 	include Sinatra::Authorization
-	
-	# def partial template
-	# 	erb template, :layout => false
-	# end
 end
 
 before do
@@ -27,9 +23,6 @@ before do
 	@body_class = ""
 end
 
-after do
-	#session[:status] = "fresh"
-end
 
 get '/' do
 	@page_title = "#{@page_title} | Home"
