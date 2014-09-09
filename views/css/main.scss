@@ -783,3 +783,21 @@ h2 {
 #dashboard-secondary {
 	margin-top: 25px;
 }
+
+.hotel-item {
+	.hotel-title {
+		font-weight: bold;
+		display: block;
+		font-size: 18px;
+	}
+	.hotel-location {
+		font-size: 14px;
+		display: block;
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 4px;
+		margin-bottom: 5px;
+	}
+	.hotel-desc {
+		font-size: 14px;
+	}
+}
