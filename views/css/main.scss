@@ -45,6 +45,13 @@ ul {
 	}
 }
 
+.label {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	color: #aaa;
+}
+
 #navigation {
 
 	background: white;
@@ -798,13 +805,13 @@ h2 {
 		font-weight: bold;
 		display: block;
 		font-size: 18px;
+		margin-bottom: 5px;
 	}
 	.hotel-location {
 		font-size: 14px;
-		display: block;
-		border-bottom: 1px solid #ddd;
 		padding-bottom: 4px;
 		margin-bottom: 5px;
+		display: inline-block;
 	}
 	.hotel-desc {
 		font-size: 14px;
@@ -812,5 +819,28 @@ h2 {
 	.btn {
 		padding: 0;
 		font-weight: bold;
+	}
+}
+
+#resort-linkouts {
+	margin-top: 90px;
+	h4 {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	p {
+		margin-bottom: 15px;
+	}
+	.resort-linkout {
+		display: block;
+		font-weight: bold;
+		
+		padding: 20px 0 10px;
+		border-radius: 3px;
+		margin-bottom: 15px;
+		color: white;
+		img {
+			width: auto;
+		}
 	}
 }
