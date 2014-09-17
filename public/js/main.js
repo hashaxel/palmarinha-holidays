@@ -69,12 +69,12 @@ $(document).ready(function() {
 	var $delModal = $('.delete-modal');
 	
 	$delBtn.click(function() {
-		var prodID = $(this).attr('data-book-id');
-		var prodName = $(this).attr('data-book-name');
-		var dataType = $(this).attr('data-type');
+		var hotelID = $(this).attr('data-hotel-id');
+		var hotelName = $(this).attr('data-hotel-name');
+		//var dataType = $(this).attr('data-type');
 
-		$delModal.find('form').attr('action', dataType + '/destroy/' + prodID);
-		$delModal.find('h4.modal-title span').text(dataType + ": " +prodName);
+		$delModal.find('form').attr('action', 'hotel/destroy/' + hotelID);
+		$delModal.find('h4.modal-title span').text("Hotel: " +hotelName);
 		
 		$delModal.modal();
 		

@@ -88,6 +88,7 @@ get '/hotels/new' do
 	@body_class += " new-hotel"
 	erb :new_hotel
 end
+
 get '/hotels/:id/:slug' do
 	@hotel = Hotel.get(params[:id])
 	
@@ -112,7 +113,7 @@ post '/create' do
 	if hotel.save
 		hotel.handle_upload(params[:hotel][:thumbnail], hotel.id.to_s)
 		hotel.update(:thumbnail => hotel.id.to_s + "-" + hotel.thumbnail)
-		redirect "/hotels/#{hotel.id}/#{hotel.slug}"
+		redirect "/admin"
 	else
 		redirect "/admin"
 	end
@@ -125,6 +126,23 @@ get '/admin' do
 	@body_class += " admin"
 	@hotels = Hotel.all
 	erb :admin
+end
+
+delete '/:delresource/destroy/:id' do
+	require_admin
+	@delresource = params[:delresource]
+	case @delresource
+	when "hotel"
+		@delval = Hotel.get(params[:id])
+	else
+		raise "Nothing planned yet"
+	end
+
+	if @delval.destroy!
+		redirect '/admin'
+	else
+		redirect '/'
+	end
 end
 
 post '/request-membership' do
@@ -146,5 +164,3 @@ post '/request-membership' do
 	)
 	redirect '/membership'
 end
-
-load 'actions/route_state.rb'

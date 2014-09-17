@@ -15,26 +15,43 @@
 			<a href="/hotels/new" class="btn btn-large btn-primary">Create New Hotel</a>
 		</div> -->
 		<div class="col-md-8">
-			<ul class="list-group" id="admin-hotels-list">
+			<!-- <ul class="list-group" id="admin-hotels-list"> -->
 			  <% @hotels.each do |hotel| %>
-			  	<li class="list-group-item clearfix">
+				<div class="col-md-12">
+					<div class="row hotel-item">
+						<div class="col-md-4">
+							<img src="hotels/images/<%= hotel.thumbnail %>" alt="" />
+						</div>
+						<div class="col-md-6">
+							<span class="hotel-title"><%= hotel.name %></span>
+							<span class="hotel-location"><%= hotel.location %></span>
+							<p class="hotel-desc"><%= hotel.desc %></p>
+							<span class="action"> <a class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit</a></span>
+							<span class="action">
+								<button class="btn btn-primary delete-btn" data-hotel-name="<%= hotel.name %>" data-hotel-id="<%= hotel.id %>" data-target=".delete-modal">
+				  				  <span class="glyphicon glyphicon-remove"></span>  Delete
+				  				</button><!-- <a class="btn btn-primary">Delete</a></span> -->
+						</div>
+					</div>
+				</div>
+			  	<!-- <li class="list-group-item clearfix">
 			  			<div class="img-block col-md-1">
-			  				<a href="/hotels/<%= hotel.id %>/<%= hotel.slug %>"><img src="/hotels/images/<%= hotel.thumbnail %>" alt="" width="40" /></a>
+			  				<a href="/hotels/<%#= hotel.id %>/<%#= hotel.slug %>"><img src="/hotels/images/<%#= hotel.thumbnail %>" alt="" width="40" /></a>
 			  			</div>
 			  			<div class="col-md-6 hotel-name">
-				  			<a href="/hotels/<%= hotel.id %>/<%= hotel.slug %>"><%= hotel.slug %></a>
+				  			<a href="/hotels/<%#= hotel.id %>/<%#= hotel.slug %>"><%#= hotel.slug %></a>
 			  			</div>
 			  			<div class="col-md-5 text-right">
-				  			<span class="action"><span class="glyphicon glyphicon-pencil"></span> <a href="/hotels/<%= hotel.id %>/edit">Edit Hotel</a></span>
+				  			<span class="action"><span class="glyphicon glyphicon-pencil"></span> <a href="/hotels/<%#= hotel.id %>/edit">Edit Hotel</a></span>
 				  			<span class="action">
-				  				<button class="delete-btn" data-hotel-name="<%= hotel.name %>" data-hotel-id="<%= hotel.id %>" data-target=".delete-modal">
+				  				<button class="delete-btn" data-hotel-name="<%#= hotel.name %>" data-hotel-id="<%#= hotel.id %>" data-target=".delete-modal">
 				  				  <span class="glyphicon glyphicon-remove"></span>  Delete
 				  				</button>
 				  			</span>
 			  			</div>
-			  	</li>
+			  	</li> -->
 			  <% end %>
-			</ul>
+			<!-- </ul> -->
 		</div>
 		<div class="col-md-4">
 			<h3 class="title">Create A New Hotel</h3>
