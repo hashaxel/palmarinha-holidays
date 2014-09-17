@@ -32,14 +32,19 @@ class Hotel
 	property :name,			String
 	property :slug,			String
 	property :desc,			Text
-	property :short_desc,	String			# For thumbnail description
-	property :city,			String
-	property :state,		String
-	property :country,		String
+	property :location,		String
 	property :price,		Integer
 	property :thumbnail,	String
 	property :created_at,	DateTime
 	property :updated_at,	DateTime
+
+	def handle_upload(file, hotelid)
+		path = File.join(Dir.pwd, "/public/hotels/images", hotelid + "-" + file[:filename].downcase.gsub(" ", "-"))
+		File.open(path, "wb") do |f|
+			f.write(file[:tempfile].read)
+		end	
+		
+	end
 end
 
 DataMapper.auto_upgrade!
@@ -82,6 +87,35 @@ get '/hotels/new' do
 	@page_title += " | New Hotel"
 	@body_class += " new-hotel"
 	erb :new_hotel
+end
+get '/hotels/:id/:slug' do
+	@hotel = Hotel.get(params[:id])
+	
+	if @hotel
+		erb :hotel
+	else
+		redirect('/')
+	end
+end
+
+
+post '/create' do
+	require_admin
+	newhotel = params[:hotel]
+	hotel = Hotel.new(newhotel)
+
+	hotel.slug = "#{hotel.name}-#{hotel.location}"
+	hotel.slug = hotel.slug.downcase.gsub(" ", "-")
+	hotel.price = (hotel.price == "") ? 0 : params[:hotel][:price].downcase.gsub(",", "").to_i
+	hotel.thumbnail = params[:hotel][:thumbnail][:filename].downcase.gsub(" ", "-")
+
+	if hotel.save
+		hotel.handle_upload(params[:hotel][:thumbnail], hotel.id.to_s)
+		hotel.update(:thumbnail => hotel.id.to_s + "-" + hotel.thumbnail)
+		redirect "/hotels/#{hotel.id}/#{hotel.slug}"
+	else
+		redirect "/admin"
+	end
 end
 
 get '/admin' do	

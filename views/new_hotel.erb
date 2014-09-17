@@ -2,41 +2,8 @@
 	<%= erb :navigation %>
 </div>
 <div class="container">
-	<div class="row section">
+	<div class="row">
 		<div class="col-md-12">
-			<h2>Hi Palmarinha!</h2>
-			<p class="lead">You can change pretty much anything from this admin page.</p>
-		</div>
-	</div>
-
-	<div class="row section">
-		<!-- <div class="col-md-12">
-			<h3 class="title">Hotels</h3>
-			<a href="/hotels/new" class="btn btn-large btn-primary">Create New Hotel</a>
-		</div> -->
-		<div class="col-md-8">
-			<ul class="list-group" id="admin-hotels-list">
-			  <% @hotels.each do |hotel| %>
-			  	<li class="list-group-item clearfix">
-			  			<div class="img-block col-md-1">
-			  				<a href="/hotels/<%= hotel.id %>/<%= hotel.slug %>"><img src="/hotels/images/<%= hotel.thumbnail %>" alt="" width="40" /></a>
-			  			</div>
-			  			<div class="col-md-6 hotel-name">
-				  			<a href="/hotels/<%= hotel.id %>/<%= hotel.slug %>"><%= hotel.slug %></a>
-			  			</div>
-			  			<div class="col-md-5 text-right">
-				  			<span class="action"><span class="glyphicon glyphicon-pencil"></span> <a href="/hotels/<%= hotel.id %>/edit">Edit Hotel</a></span>
-				  			<span class="action">
-				  				<button class="delete-btn" data-hotel-name="<%= hotel.name %>" data-hotel-id="<%= hotel.id %>" data-target=".delete-modal">
-				  				  <span class="glyphicon glyphicon-remove"></span>  Delete
-				  				</button>
-				  			</span>
-			  			</div>
-			  	</li>
-			  <% end %>
-			</ul>
-		</div>
-		<div class="col-md-4">
 			<h3 class="title">Create A New Hotel</h3>
 			<form role="form" action="/create" method="post" id="hotel" enctype="multipart/form-data">			
 				<div class="row form-group">
@@ -78,4 +45,3 @@
 		</div>
 	</div>
 </div>
-<%= erb :_modal %>
