@@ -26,7 +26,7 @@
 							<span class="hotel-title"><%= hotel.name %></span>
 							<span class="hotel-location"><%= hotel.location %></span>
 							<p class="hotel-desc"><%= hotel.desc %></p>
-							<span class="action"> <a class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit</a></span>
+							<span class="action"> <a class="btn btn-primary" href="/hotels/<%= hotel.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> Edit</a></span>
 							<span class="action">
 								<button class="btn btn-primary delete-btn" data-hotel-name="<%= hotel.name %>" data-hotel-id="<%= hotel.id %>" data-target=".delete-modal">
 				  				  <span class="glyphicon glyphicon-remove"></span>  Delete

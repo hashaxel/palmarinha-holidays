@@ -89,6 +89,16 @@ get '/hotels/new' do
 	erb :new_hotel
 end
 
+get '/hotels/:id/edit' do
+	@hotel = Hotel.get(params[:id])
+	
+	if @hotel
+		erb :edit_hotel
+	else
+		redirect('/')
+	end
+end
+
 get '/hotels/:id/:slug' do
 	@hotel = Hotel.get(params[:id])
 	
