@@ -33,7 +33,7 @@ class Hotel
 	property :slug,			String
 	property :desc,			Text
 	property :location,		String
-	property :price,		Integer
+	property :price,		String
 	property :thumbnail,	String
 	property :created_at,	DateTime
 	property :updated_at,	DateTime
@@ -117,7 +117,7 @@ post '/create' do
 
 	hotel.slug = "#{hotel.name}-#{hotel.location}"
 	hotel.slug = hotel.slug.downcase.gsub(" ", "-")
-	hotel.price = (hotel.price == "") ? 0 : params[:hotel][:price].downcase.gsub(",", "").to_i
+	# hotel.price = (hotel.price == "") ? 0 : params[:hotel][:price].downcase.gsub(",", "").to_i
 	hotel.thumbnail = params[:hotel][:thumbnail][:filename].downcase.gsub(" ", "-")
 
 	if hotel.save
