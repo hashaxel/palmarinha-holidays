@@ -6,6 +6,7 @@ require 'sass'
 require 'lib/authorization'
 require 'carrierwave'
 require 'carrierwave/datamapper'
+require 'mini_magick'
 require 'data_mapper'
 enable :sessions
 
@@ -43,7 +44,13 @@ class Hotel
 		File.open(path, "wb") do |f|
 			f.write(file[:tempfile].read)
 		end	
-		
+	end
+
+	def generate_thumb(file, hotelid)
+		path = File.join(Dir.pwd, "/public/hotels/images", hotelid + "-" + file[:filename].downcase.gsub(" ", "-"))
+		image = MiniMagick::Image.open(path)
+		image.resize "500x800"
+		image.write Dir.pwd + "/public/hotels/images/thumbs/" + hotelid + "-" + file[:filename].downcase.gsub(" ", "-")
 	end
 end
 
@@ -52,7 +59,8 @@ DataMapper.auto_upgrade!
 get '/first-run' do
 	require_admin
 
-	cc = Country.create(:name => 'India', :short_name => 'IN')
+	DataMapper.auto_migrate!
+	DataMapper.finalize
 end
 
 before do
@@ -109,6 +117,29 @@ get '/hotels/:id/:slug' do
 	end
 end
 
+post '/update' do
+	require_admin
+
+	@hotel = Hotel.get(params[:hotel][:id])
+	@updateparams = params[:hotel]
+
+	@thumbnail = params[:hotel][:thumbnail]
+
+	unless @thumbnail.nil?
+		@updateparams[:thumbnail] = @hotel.id.to_s + "-" + @thumbnail[:filename].downcase.gsub(" ", "-")
+	end
+
+	if @hotel.update(@updateparams)
+		unless @thumbnail.nil?
+			@hotel.handle_upload(@thumbnail, @hotel.id.to_s)
+			@hotel.generate_thumb(@thumbnail, @hotel.id.to_s)
+		end
+		redirect "/admin"
+	else
+		redirect back
+	end
+
+end
 
 post '/create' do
 	require_admin
@@ -122,10 +153,11 @@ post '/create' do
 
 	if hotel.save
 		hotel.handle_upload(params[:hotel][:thumbnail], hotel.id.to_s)
+		hotel.generate_thumb(params[:hotel][:thumbnail], hotel.id.to_s)
 		hotel.update(:thumbnail => hotel.id.to_s + "-" + hotel.thumbnail)
 		redirect "/admin"
 	else
-		redirect "/admin"
+		redirect back
 	end
 end
 
