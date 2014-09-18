@@ -56,11 +56,18 @@ end
 
 DataMapper.auto_upgrade!
 
-get '/first-run' do
+get '/reset/?:reqtype?' do
 	require_admin
 
-	DataMapper.auto_migrate!
-	DataMapper.finalize
+	@reqtype = params[:reqtype]
+	case @reqtype
+	when 'yes'
+		DataMapper.auto_migrate!
+		DataMapper.finalize
+		halt 'Done <br />Redirect to <a href="/" class="btn btn-primary btn-large">home</a> page'
+	else
+		halt 'Are you sure you want to reset DB?<br /><a href="/reset/yes" class="btn btn-primary btn-large">Yes Reset</a><br /><a href="/" class="btn btn-primary btn-large">No go to home page</a>'
+	end
 end
 
 before do
