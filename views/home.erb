@@ -1,4 +1,4 @@
-<div id="page-bg" class="cover anystretch" data-stretch="images/<%= @bg_img %>.png">
+<div id="page-bg" class="cover anystretch" data-stretch="/images/<%= @bg_img %>.png">
 	<%= erb :navigation %>
 	<%= erb @controls %>
 </div>
@@ -33,7 +33,7 @@
 	<div class="row" id="how-it-works">
 		<div class="col-md-8">
 			<img src="/images/how-it-works.png" alt="" />
-			<h3><small>Plans Include</small>Your Holiday Needs</h3>
+			<h3><small>Plans tailored to</small>Your Holiday Needs</h3>
 		</div>
 		<div class="col-md-4 right">
 			<h4>How it works</h4>
@@ -52,16 +52,17 @@
 			<h3>Travel. <small>Across the globe.</small></h3>
 		</div>
 		<div class="col-md-6" id="partnerships-block">
-			<img src="/images/partnership.png" alt="" class="pull-right" />
+			<img src="/images/partnership.png" alt="" class="pull-right auto-width" />
 		</div>
 	</div>
 </div>
 
-<div id="loc-img"></div>
-
 <div class="container">
 	<div class="row">
-		<div id="loc-intro" class="col-md-7">
+		<div class="col-md-12">
+			<img src="/images/locations.png" alt="" />
+		</div>
+		<div id="loc-intro" class="col-md-7 col-md-offset-1">
 			<p class="lead">Palmarinha Holidays brings you a selection of over 5000 affiliated hotels and resorts in nearly 100 countries worldwide.</p>
 			<p>As part of the two most sought after Holiday Exchange companies in the world ­ DAE and RCI. The advantage of being a Palmarinha Holidays member is the option to exchange your holiday entitlements to other exotic resorts in a wide choice of destinations.</p>
 		</div>
@@ -153,17 +154,20 @@
 
 
 <div id="resort-img">
-	<div class="resort-intro">
-		<span class="label">Includes</span>
-		<h3>Our family of resorts</h3>
-		<span class="subtitle">+5000 more from our partners</span>
+	<div class="container">
+		<div class="row">
+			<div class="resort-intro col-md-6">
+				<span class="label">Includes</span>
+				<h3>Our family of resorts</h3>
+				<span class="subtitle">+5000 more from our partners</span>
+			</div>
+		</div>
 	</div>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3 text-center resorts-desc">
-			
+		<div class="col-md-6 resorts-desc">
 			<p>Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend.</p>
 		</div>
 	</div>

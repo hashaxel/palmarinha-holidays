@@ -45,6 +45,13 @@ ul {
 	}
 }
 
+.label {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	color: #aaa;
+}
+
 #navigation {
 
 	background: white;
@@ -269,7 +276,7 @@ ul {
 	.right {
 		background: $vib;
 		color: white;
-		height: 448px;
+		height: 459px;
 		padding: 35px;
 	}
 	.btn-link-block {
@@ -327,7 +334,11 @@ ul {
 }
 
 .row img {
-	max-width: 100%;
+	width: 100%;
+}
+
+img.auto-width {
+	width: auto !important;
 }
 
 #locations-block {
@@ -464,34 +475,29 @@ ul {
 }
 
 .resort-intro {
-	width: 600px;
-	margin: 0px auto;
 	text-align: center;
-	padding-top: 200px;
-	color: white;
-	text-shadow: 0px 1px 5px transparentize(black, 0.6);
+	padding: 50px 30px;
+	color: black;
+	/*text-shadow: 0px 1px 5px transparentize(black, 0.6);*/
+	background: white;
+	background: transparentize(white, 0.1);
 	h3 {
-		font-size: 90px;
+		font-size: 60px;
+		text-shadow: 0px 1px #fff;
 		font-weight: Bold;
 		text-align: center;
-		font-family: $script;
-		small {
-			display: block;
-			font-family: $sans;
-			color: white;
-		}
-
+		color: $vib;
+		text-transform: uppercase;
 	}
 	.label {
 		text-transform: uppercase;
 		font-family: $sansAlt;
 		font-size: 24px;
-		border-bottom: 1px solid white;
 	}
 	.subtitle {
-		font-size: 24px;
+		font-size: 18px;
 		font-weight: bold;
-
+		margin-top: 20px;
 		margin-bottom: 10px;
 		display: block;
 	}
@@ -722,12 +728,12 @@ h2 {
 
 #member-area-intro {
 	margin-bottom: 25px;
-	margin-top: 20px;
-	img {
-		width: 100%;
-	}
+	margin-top: 0px;
+	height: 408px;
+	border: 1px solid #ddd;
+	padding-top: 20px;
 	ul {
-		margin-top: 20px;
+		margin-top: 10px;
 		li {
 			margin-bottom: 8px;
 			font-weight: 100;
@@ -736,7 +742,6 @@ h2 {
 			padding-bottom: 8px;
 			font-size: 16px;
 			text-align: center;
-			border-bottom: 1px solid #eee;
 			a {
 				color: inherit;
 			}
@@ -782,22 +787,59 @@ h2 {
 
 #dashboard-secondary {
 	margin-top: 25px;
+	h3 {
+		font-weight: 100;
+		/*text-transform: uppercase;*/
+		color: #000;
+		font-size: 48px;
+		margin-bottom: 25px;
+	}
 }
 
 .hotel-item {
+	margin-bottom: 25px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 25px;
 	.hotel-title {
 		font-weight: bold;
 		display: block;
 		font-size: 18px;
+		margin-bottom: 5px;
 	}
 	.hotel-location {
 		font-size: 14px;
-		display: block;
-		border-bottom: 1px solid #ddd;
 		padding-bottom: 4px;
 		margin-bottom: 5px;
+		display: inline-block;
 	}
 	.hotel-desc {
 		font-size: 14px;
+	}
+	.btn {
+		padding: 0;
+		font-weight: bold;
+	}
+}
+
+#resort-linkouts {
+	margin-top: 90px;
+	h4 {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	p {
+		margin-bottom: 15px;
+	}
+	.resort-linkout {
+		display: block;
+		font-weight: bold;
+		
+		padding: 20px 0 10px;
+		border-radius: 3px;
+		margin-bottom: 15px;
+		color: white;
+		img {
+			width: auto;
+		}
 	}
 }
