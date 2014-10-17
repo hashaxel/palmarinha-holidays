@@ -20,6 +20,12 @@ configure :development do
 	DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/palmarinha.db")
 end
 
+configure :production do
+	require 'mysql'
+	require 'dm-mysql-adapter'
+	DataMapper::setup(:default, "mysql://root:hash2014@127.0.0.1/palmarinha")
+end
+
 DataMapper::Property::String.length(255)
 DataMapper::Model.raise_on_save_failure = true 
 
