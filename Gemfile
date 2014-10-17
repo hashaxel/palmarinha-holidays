@@ -17,7 +17,6 @@ group :development do
 end
 
 group :production do
-	gem 'mysql2'
 	gem 'mysql'
 	gem 'dm-mysql-adapter'
 end
