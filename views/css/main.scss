@@ -815,10 +815,6 @@ h2 {
 	.hotel-desc {
 		font-size: 14px;
 	}
-	.btn {
-		padding: 0;
-		font-weight: bold;
-	}
 }
 
 #resort-linkouts {
@@ -841,5 +837,61 @@ h2 {
 		img {
 			width: auto;
 		}
+	}
+}
+
+.btn-checkbox {
+	background: white;
+	font-size: 13px;
+	text-transform: none;
+	padding: 3px 7px;
+	color: $vib;
+	border-color: $vib;
+	.label {
+		color: $vib;
+	}
+	&:hover {
+		background: $vib;
+		border-color: $vib;
+		color: white;
+		.label {
+			color: white;
+		}
+	}
+}
+
+.btn-active {
+	background: $vib;
+	color: white;
+}
+
+.btn-disabled {
+	opacity: .6;
+}
+
+#hidden-form {
+	display: none;
+	background: white;
+	overflow: none;
+	#new-special-bar {
+		margin-top: 0;
+		padding-bottom: 50px;
+		padding-top: 50px;
+	}
+}
+
+.special-item {
+	margin-bottom: 25px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 25px;
+	.special-img {
+		height: 50px;
+		width: 100px;
+	}
+	.special-doc {
+		font-weight: bold;
+		display: block;
+		font-size: 18px;
+		margin-bottom: 5px;
 	}
 }

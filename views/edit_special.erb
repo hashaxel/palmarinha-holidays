@@ -1,0 +1,43 @@
+<div class="container">
+	<%= erb :navigation %>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form role="form" action="/specials" method="post" id="special" enctype="multipart/form-data">
+				<input type="hidden" name="_method" value="put" />
+				<input type="hidden" name="special[id]" value="<%= @special.id %>" />
+				<div class="row form-group">
+					<div class="col-md-12">
+						<label for="offer_img">Offer Image</label>
+						<div class="file-input-wrap">
+							<img src="/hotels/specials/<%= @special.offer_img %>" alt="">
+							<input type="file" id="offer-img" name="special[offer_img]" class="file-picker file-inputs new-feature-file" data-filename-placement="inside" title="Offer Image" />
+						</div>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-12">			
+						<label for="offer_doc">Offer Document</label>
+						<div class="file-input-wrap">
+							<a class="btn btn-link" href="/hotels/specials/<%= @special.offer_doc %>">View</a>
+							<input type="file" id="offer-doc" name="special[offer_doc]" class="file-picker file-inputs new-feature-file" data-filename-placement="inside" title="Offer Document" />
+						</div>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-md-3">
+						<% if @special.is_active %>
+							<input type="hidden" name="special[is_active]" value="true" %><button class="btn btn-primary btn-checkbox btn-active"><span class="glyphicon glyphicon-ok"></span> Active</button>
+						<% else %>
+							<input type="hidden" name="special[is_active]" value="false" %><button class="btn btn-primary btn-checkbox btn-disabled"><span class="glyphicon glyphicon-remove"></span> Active</button>
+						<% end %>
+					</div>
+				</div>
+				<div class="form-group">
+					<button id="submit" type="Submit" class="btn btn-primary btn-large submit-btn">Update Special Offer</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

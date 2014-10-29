@@ -2,72 +2,80 @@
 	<%= erb :navigation %>
 </div>
 <div class="container">
-
 	<div class="row section">
-		<!-- <div class="col-md-12">
-			<h3 class="title">Hotels</h3>
-			<a href="/hotels/new" class="btn btn-large btn-primary">Create New Hotel</a>
-		</div> -->
-		<div class="col-md-8">
-			  <% @hotels.each do |hotel| %>
+		
+		<div class="col-md-12">
+			<a id="specials" class="btn btn-primary" href="#">Specials</a>
+			<h3 id="hotel-section" class="title">Hotels</h3>
+			<div class="col-md-8">
+				<% @hotels.each do |hotel| %>
+					<div class="col-md-12">
+						<div class="row hotel-item">
+							<div class="col-md-4">
+								<img src="hotels/images/thumbs/<%= hotel.thumbnail %>" alt="" />
+							</div>
+							<div class="col-md-6">
+								<span class="hotel-title"><%= hotel.name %></span>
+								<span class="hotel-location"><%= hotel.location %></span>
+								<p class="hotel-desc"><%= hotel.desc %></p>
+								<span class="action"> <a class="btn btn-primary" href="/hotels/<%= hotel.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> Edit</a></span>
+								<span class="action">
+									<button class="btn btn-primary delete-btn" data-name="<%= hotel.name %>" data-id="<%= hotel.id %>" data-type="hotel" data-target=".delete-modal">
+					  				  <span class="glyphicon glyphicon-remove"></span>  Delete
+					  				</button>
+					  			</span>
+							</div>
+						</div>
+					</div>
+				 <% end %>
+			</div>
+			<div class="col-md-4">
+				<h3 class="title">Add New Hotel</h3>
+				<%= erb :_new_hotel_form %>
+			</div>
+		</div>
+		
+		<div class="col-md-12">
+			<a id="hotels" class="btn btn-primary" href="#">Hotels</a>
+			<h3 id="special-section" class="title">Special Offers <a id="new-special" class="btn btn-link" href="#">Create New</a> </h3>
+			<div id="hidden-form" aria-hidden="true">
+				<div class="container">
+					<div class="row">
+						<div id="new-special-bar">
+							<%= erb :_new_special_form %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% @specials.each do |special| %>
 				<div class="col-md-12">
-					<div class="row hotel-item">
-						<div class="col-md-4">
-							<img src="hotels/images/thumbs/<%= hotel.thumbnail %>" alt="" />
+					<div class="row special-item">
+						<div class="col-md-2">
+							<img class="special-img" src="hotels/specials/<%= special.offer_img %>"  alt="" />
 						</div>
 						<div class="col-md-6">
-							<span class="hotel-title"><%= hotel.name %></span>
-							<span class="hotel-location"><%= hotel.location %></span>
-							<p class="hotel-desc"><%= hotel.desc %></p>
-							<span class="action"> <a class="btn btn-primary" href="/hotels/<%= hotel.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> Edit</a></span>
+							<span class="special-doc"><a class="btn btn-link" href="/hotels/specials/<%= special.offer_doc %>"><%= special.offer_doc %></a></span>
+						</div>
+						<div class="col-md-4">
+							
+							<span class="action"> <a class="btn btn-link" href="/special/<%= special.id %>/edit"><span class="glyphicon glyphicon-pencil"></span> Edit</a></span>
 							<span class="action">
-								<button class="btn btn-primary delete-btn" data-hotel-name="<%= hotel.name %>" data-hotel-id="<%= hotel.id %>" data-target=".delete-modal">
+								<button class="btn btn-link delete-btn" data-name="<%= special.id %>" data-type="special" data-id="<%= special.id %>" data-target=".delete-modal">
 				  				  <span class="glyphicon glyphicon-remove"></span>  Delete
 				  				</button>
+				  			</span>
+				  			<span class="special-active">
+								<form role="form" action="/specials" method="post" id="special">
+									<input type="hidden" name="_method" value="put" />
+									<input type="hidden" name="special[id]" value="<%= special.id %>" />
+									<input type="hidden" name="special[is_active]" value="<%= special.is_active ? "false" : "true" %>" />
+									<input type="Submit" class="btn btn-link" value="<%= special.is_active ? "Deactivate" : "Activate" %>">
+								</form>
+							</span>
 						</div>
 					</div>
 				</div>
-			  <% end %>
-		</div>
-		<div class="col-md-4">
-			<h3 class="title">Add New Hotel</h3>
-			<form role="form" action="/create" method="post" id="hotel" enctype="multipart/form-data">			
-				<div class="row form-group">
-					<div class="col-md-12">
-						<label>Hotel Name</label><br />
-						<input type="text" name="hotel[name]" id="name" class="form-control" placeholder="Hotel name" />
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-md-12">			
-						<label>Price</label><br />
-						<input type="text" name="hotel[price]" id="price" placeholder="In Rs." class="form-control" />	
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-md-12">
-						<label for="desc">Hotel Description</label>
-						<textarea name="hotel[desc]" class="form-control" id="desc"></textarea>
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-md-12">			
-						<label>Location</label><br />
-						<input type="text" name="hotel[location]" id="location" placeholder="eg. Goa"  class="form-control" />	
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-md-12">
-						<label for="thumbnail">Thumbnail</label>
-						<div class="file-input-wrap">
-							<input type="file" id="featured-img-picker" name="hotel[thumbnail]" class="file-picker file-inputs new-feature-file" data-demo="#demo-img" data-filename-placement="inside" title="Thumbnail" />
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-						<button id="submit" type="Submit" class="btn btn-primary btn-large submit-btn">Add New Hotel</button>
-				</div>
-			</form>
+			 <% end %>
 		</div>
 	</div>
 </div>

@@ -69,12 +69,12 @@ $(document).ready(function() {
 	var $delModal = $('.delete-modal');
 	
 	$delBtn.click(function() {
-		var hotelID = $(this).attr('data-hotel-id');
-		var hotelName = $(this).attr('data-hotel-name');
-		//var dataType = $(this).attr('data-type');
+		var dataID = $(this).attr('data-id');
+		var dataName = $(this).attr('data-name');
+		var dataType = $(this).attr('data-type');
 
-		$delModal.find('form').attr('action', 'hotel/destroy/' + hotelID);
-		$delModal.find('h4.modal-title span').text("Hotel: " +hotelName);
+		$delModal.find('form').attr('action', "/" + dataType + '/' + dataID);
+		$delModal.find('h4.modal-title span').text(dataType.substr(0, 1).toUpperCase() + dataType.substr(1) + ": " + dataName);
 		
 		$delModal.modal();
 		
@@ -93,6 +93,39 @@ $(document).ready(function() {
 	
 	$('#resort-img').height(fullWidthHeight);
 	
+	// is_active checkbox
+	$('.btn-checkbox').click(function() {
+		var $this = $(this);
+		
+		if ($this.hasClass('btn-active')) {
+			$this.removeClass('btn-active').addClass('btn-disabled');
+			$this.prev().val('false');
+			$this.find('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-remove');
+		} else {
+			$this.find('.glyphicon').removeClass('glyphicon-remove').addClass('glyphicon-ok');
+			$this.removeClass('btn-disabled').addClass('btn-active');
+			$this.prev().val('true');
+		}
+		
+		return false;
+	});
+
+	//admin controls
+	$('a#new-special').click(function() {
+		$('#hidden-form').slideToggle(500);
+		return false;
+	});
+
+	$('a#hotels').click(function() {
+		$.scrollTo(0, 800);
+		return false;
+	});
+
+	$('a#specials').click(function() {
+		$.scrollTo('#special-section', 800);
+		return false;
+	});
+
 });
 
 $(window).load(function() {

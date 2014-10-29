@@ -60,6 +60,39 @@ class Hotel
 	end
 end
 
+class Special
+	include DataMapper::Resource
+	property :id,			Serial
+	property :offer_img,	String
+	property :offer_doc,	String
+	property :is_active,	Boolean
+	property :created_at,	DateTime
+	property :updated_at,	DateTime
+
+	def handle_upload(file, offerid)
+		path = File.join(Dir.pwd, "/public/hotels/specials", offerid + "-" + file[:filename].downcase.gsub(" ", "-"))
+		File.open(path, "wb") do |f|
+			f.write(file[:tempfile].read)
+		end	
+	end
+
+	def handle_pdf_upload(file, offerid)
+		path = File.join(Dir.pwd, "/public/hotels/specials", offerid + "-" + file[:filename].downcase.gsub(" ", "-"))
+		File.open(path, "wb") do |f|
+			f.write(file[:tempfile].read)
+		end	
+	end
+
+	def is_active=(switch)
+		if switch == "on" || switch == "true"
+			super true
+		else
+			super false
+		end
+	end
+
+end
+
 DataMapper.auto_upgrade!
 
 get '/reset/?:reqtype?' do
@@ -174,30 +207,101 @@ post '/create' do
 	end
 end
 
+# Create Action
+post '/specials' do
+	require_admin
+	new_special = params[:special]
+	new_special[:is_active] = "" unless !new_special[:is_active].nil? # if no value is present for is_active set false
+	special = Special.new(new_special)
+
+	special.offer_img = params[:special][:offer_img][:filename].downcase.gsub(" ", "-")
+	special.offer_doc = params[:special][:offer_doc][:filename].downcase.gsub(" ", "-")
+
+	if special.save
+		special.handle_upload(params[:special][:offer_img], special.id.to_s)
+		special.handle_pdf_upload(params[:special][:offer_doc], special.id.to_s)
+		special.update(:offer_img => special.id.to_s + "-" + special.offer_img, :offer_doc => special.id.to_s + "-" + special.offer_doc)
+		redirect "/admin"
+	else
+		redirect back
+	end
+end
+
+# Update Action
+put '/specials' do
+	require_admin
+	@special = Special.get(params[:special][:id])
+	update_special = params[:special]
+
+	update_special.each_pair {|k,v| update_special[k] = nil if v.empty? }
+	
+	offer_img = params[:special][:offer_img] unless params[:special][:offer_img].nil?
+	offer_doc = params[:special][:offer_doc] unless params[:special][:offer_doc].nil?
+	
+	update_special[:offer_img] = @special.id.to_s + "-" + params[:special][:offer_img][:filename].downcase.gsub(" ", "-") unless params[:special][:offer_img].nil?
+	update_special[:offer_doc] = @special.id.to_s + "-" + params[:special][:offer_doc][:filename].downcase.gsub(" ", "-") unless params[:special][:offer_doc].nil?
+
+	@special.handle_upload(offer_img, @special.id.to_s) unless offer_img.nil?
+	
+	@special.handle_pdf_upload(offer_doc, @special.id.to_s) unless offer_doc.nil?
+	
+
+	if @special.update(update_special)
+		redirect "/admin"
+	else
+		redirect back
+	end
+end
+
 get '/admin' do	
 	require_admin
 	
 	@page_title += " | Palmarinha Admin"
 	@body_class += " admin"
 	@hotels = Hotel.all
+	@specials = Special.all
 	erb :admin
 end
 
-delete '/:delresource/destroy/:id' do
+get '/special/new' do	
 	require_admin
-	@delresource = params[:delresource]
-	case @delresource
-	when "hotel"
-		@delval = Hotel.get(params[:id])
-	else
-		raise "Nothing planned yet"
-	end
+	
+	@page_title += " | Palmarinha Admin"
+	@body_class += " specials"
+	erb :new_special
+end
 
-	if @delval.destroy!
+get '/special/:id/edit' do	
+	require_admin
+	
+	@page_title += " | Palmarinha Admin"
+	@body_class += " specials"
+
+	@special = Special.get(params[:id])
+
+	erb :edit_special
+end
+
+delete '/hotel/:id' do
+	require_admin
+	@hotel = Hotel.get(params[:id])
+
+	if @hotel.destroy!
 		redirect '/admin'
 	else
 		redirect '/'
-	end
+	end	
+end
+
+delete '/special/:id' do
+	require_admin
+	@special = Special.get(params[:id])
+
+	if @special.destroy!
+		redirect '/admin'
+	else
+		redirect '/'
+	end	
 end
 
 post '/request-membership' do
