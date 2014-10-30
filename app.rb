@@ -77,7 +77,7 @@ class Special
 	end
 
 	def handle_pdf_upload(file, offerid)
-		path = File.join(Dir.pwd, "/public/hotels/specials", offerid + "-" + file[:filename].downcase.gsub(" ", "-"))
+		path = File.join(Dir.pwd, "/public/hotels/specials/document", offerid + "-" + file[:filename].downcase.gsub(" ", "-"))
 		File.open(path, "wb") do |f|
 			f.write(file[:tempfile].read)
 		end	
