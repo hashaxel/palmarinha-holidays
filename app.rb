@@ -132,6 +132,7 @@ end
 get '/member-area' do
 	@page_title += " | Members Area (Private)"
 	@body_class += " members-area"
+	@specials = Special.all(:limit => 1)
 	erb :member_area
 end
 

@@ -20,7 +20,13 @@
 			</ul>
 		</div>
 		<div class="col-md-8">
-			<img src="/images/special-ad.jpg" alt="" />
+			<% if @specials.nil? %>
+				<img src="/images/special-ad.jpg" alt="" />
+			<% else %>
+				<% @specials.each do |special| %>
+					<a href="/hotels/specials/document/<%= special.offer_doc %>" ><img src="/hotels/specials/<%= special.offer_img %>" alt="" /></a>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 	<div class="row" id="dashboard-secondary">
