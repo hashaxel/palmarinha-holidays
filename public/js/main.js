@@ -11,6 +11,7 @@ $(document).ready(function() {
 
 	//email validation code starts
 	var form = $('#memberenroll');
+	var bookform = $('#book');
 	var email = $('#eadd');
 	var emailInfo = $('#emailInfo');
 	var eaddgrp = $('#eaddgrp');
@@ -20,6 +21,14 @@ $(document).ready(function() {
 		top: ((winH - 260) / 2) + 160
 	});
 	form.submit(function() {
+		if (validateEmail()) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+
+	bookform.submit(function() {
 		if (validateEmail()) {
 			return true;
 		} else {
@@ -88,12 +97,65 @@ $(document).ready(function() {
 	
 	$bookBtn.click(function() {
 		var hotel_id = $(this).attr('data-id');
-		$('#hotel-id').val(hotel_id);
+		$('#hotel_id').val(hotel_id);
 		
 		$bookModal.modal();
 		
 		return false;
 	});
+
+	//check-in check-out datepickers
+	$('#checkinpicker').datepicker({
+		format: "dd/mm/yyyy",
+		pickTime: false,
+		startDate: "today",
+		endDate: "+3m",
+		todayBtn: "linked",
+		autoclose: true
+	});
+
+	$('#checkoutpicker').datepicker({
+		format: "dd/mm/yyyy",
+		pickTime: false,
+		endDate: "+3m",
+		autoclose: true,
+	});
+
+	//Past and dependent date disabling for check-out.
+	var nowTemp = new Date();
+	var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+	var checkin = $('#checkinpicker').datepicker({
+		beforeShowDay: function(date) {
+			return date.valueOf() >= now.valueOf();
+		}
+	}).on('changeDate', function(ev) {
+		var coutdate = $('#checkoutpicker').datepicker("getDate").valueOf();
+		var newDate = new Date(ev.date)
+		newDate.setDate(newDate.getDate() + 2);
+		if (ev.date.valueOf() > coutdate || isNaN(coutdate)) {
+			checkout.setValue(newDate);
+			checkout.setStartDate(newDate);
+			checkout.setDate(newDate);
+			checkout.update();
+		}
+		else {
+			checkout.setStartDate(newDate);
+			checkout.update();
+		}
+		checkin.hide();
+		$('#check_out').focus();
+	}).data('datepicker');
+	
+	var checkout = $('#checkoutpicker').datepicker({
+		beforeShowDay: function(date) {
+			return date.valueOf() > checkin.date.valueOf();
+		}
+	}).on('changeDate', function(ev) {
+		checkout.hide();
+	}).data('datepicker');
+	//Past and dependent date disabling for check-out ends here.
+
 	
 	var locBlockCount = $('#loc-blocks li').length;
 	

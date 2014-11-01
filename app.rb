@@ -332,13 +332,16 @@ end
 # Book vacation
 post '/book' do
 	require 'pony'
+	name = params[:book][:name]
 	hotel = Hotel.get(params[:book][:hotel_id])
 	message = "<br />Message: " + params[:book][:mailbody] unless params[:book][:mailbody].nil?
+	body = name + " wishes to book: " + hotel.name + " <br />Check-In: " + params[:book][:check_in] + "<br />Check-Out: " + params[:book][:check_out] + "<br />Contact by email: " + params[:book][:eadd] + message
 	Pony.mail(
-		:from => params[:book][:name],
+		:from => name,
 		:to => 'alistair.rodrigues@gmail.com',
 		:subject => "Vacation Booking",
-		:html_body => params[:book][:name] + " wishes to book: " + hotel.name + " <br />Check-In: " + params[:book][:check_in] + "<br />Check-Out: " + params[:book][:check_out] + "Contact by email: " + params[:book][:email] + message,
+		:headers => { 'Content-Type' => 'text/html' },
+		:body => body,
 		:via => :smtp,
 		:via_options => {
 			:address              => 'smtp.sendgrid.net', 

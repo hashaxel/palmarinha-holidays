@@ -12,18 +12,25 @@
             <label for="name" class="hidden">Your Name</label>
             <input type="text" name="book[name]" placeholder="Your name" value="" class="form-control" />
           </div>
-          <div class="form-group">
-            <label for="email" class="hidden">Your Email</label>
-            <input type="text" name="book[email]" placeholder="Your email" value="" class="form-control" />
+          <div id="eaddgrp" class="form-group">
+            <label for="eadd" class="hidden">Your Email</label>
+            <input type="text" name="book[eadd]" placeholder="Your email" value="" class="form-control" />
+            <span id="emailInfo" class="text-justified"></span>
           </div>
-          <div class="form-group">
+          <div class="row form-group">
             <div class="col-md-6">
-              <label for="check_in" class="">Check-In</label>
-              <input type="text" name="book[check_in]" placeholder="Check-In" value="" class="form-control" />
+              <div class="input-group date" id="checkinpicker">
+                <label for="check_in" class="hidden">Check-In</label>
+                <input type="text" name="book[check_in]" id="check_in" placeholder="Check-In" value="" class="form-control" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
             </div>
             <div class="col-md-6">
-              <label for="check_out" class="">Check-Out</label>
-              <input type="text" name="book[check_out]" placeholder="Check-Out" value="" class="form-control" />
+              <div class="input-group date" id="checkoutpicker">
+                <label for="check_out" class="hidden">Check-Out</label>
+                <input type="text" name="book[check_out]" id="check_out" placeholder="Check-Out" value="" class="form-control" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
             </div>
           </div>
           <div class="form-group">
@@ -32,7 +39,7 @@
           </div>
           <input type="hidden" name="_method" value="book">
           <button type="button" class="btn btn-primary btn-default" data-dismiss="modal">Cancel</button>
-          <input type="submit" value="Book vacation" class="btn btn-primary btn-default">
+          <input type="submit" name="submit" value="Book vacation" class="btn btn-primary btn-default">
         </form>
       </div>
     </div><!-- /.modal-content -->
