@@ -42,6 +42,7 @@ class Hotel
 	property :location,		String
 	property :price,		String
 	property :thumbnail,	String
+	property :is_active, 	Boolean, :default => true
 	property :created_at,	DateTime
 	property :updated_at,	DateTime
 
@@ -58,6 +59,14 @@ class Hotel
 		image.resize "500x800"
 		image.write Dir.pwd + "/public/hotels/images/thumbs/" + hotelid + "-" + file[:filename].downcase.gsub(" ", "-")
 	end
+
+	def is_active=(switch)
+		if switch == "on" || switch == "true"
+			super true
+		else
+			super false
+		end
+	end
 end
 
 class Special
@@ -69,15 +78,9 @@ class Special
 	property :created_at,	DateTime
 	property :updated_at,	DateTime
 
-	def handle_upload(file, offerid)
-		path = File.join(Dir.pwd, "/public/hotels/specials", offerid + "-" + file[:filename].downcase.gsub(" ", "-"))
-		File.open(path, "wb") do |f|
-			f.write(file[:tempfile].read)
-		end	
-	end
-
-	def handle_pdf_upload(file, offerid)
-		path = File.join(Dir.pwd, "/public/hotels/specials/document", offerid + "-" + file[:filename].downcase.gsub(" ", "-"))
+	def handle_upload(file, offerid, doctype)
+		doctype = "/" + doctype unless doctype == ""
+		path = File.join(Dir.pwd, "/public/hotels/specials" + doctype, offerid + "-" + file[:filename].downcase.gsub(" ", "-"))
 		File.open(path, "wb") do |f|
 			f.write(file[:tempfile].read)
 		end	
@@ -133,10 +136,11 @@ get '/member-area' do
 	@page_title += " | Members Area (Private)"
 	@body_class += " members-area"
 	@specials = Special.all(:limit => 1)
+	@hotels = Hotel.all
 	erb :member_area
 end
 
-get '/hotels/new' do
+get '/hotel/new' do
 	require_admin
 
 	@page_title += " | New Hotel"
@@ -144,7 +148,7 @@ get '/hotels/new' do
 	erb :new_hotel
 end
 
-get '/hotels/:id/edit' do
+get '/hotel/:id/edit' do
 	@hotel = Hotel.get(params[:id])
 	
 	if @hotel
@@ -154,7 +158,7 @@ get '/hotels/:id/edit' do
 	end
 end
 
-get '/hotels/:id/:slug' do
+get '/hotel/:id/:slug' do
 	@hotel = Hotel.get(params[:id])
 	
 	if @hotel
@@ -164,7 +168,7 @@ get '/hotels/:id/:slug' do
 	end
 end
 
-post '/update' do
+put '/hotels' do
 	require_admin
 
 	@hotel = Hotel.get(params[:hotel][:id])
@@ -188,7 +192,7 @@ post '/update' do
 
 end
 
-post '/create' do
+post '/hotels' do
 	require_admin
 	newhotel = params[:hotel]
 	hotel = Hotel.new(newhotel)
@@ -219,8 +223,8 @@ post '/specials' do
 	special.offer_doc = params[:special][:offer_doc][:filename].downcase.gsub(" ", "-")
 
 	if special.save
-		special.handle_upload(params[:special][:offer_img], special.id.to_s)
-		special.handle_pdf_upload(params[:special][:offer_doc], special.id.to_s)
+		special.handle_upload(params[:special][:offer_img], special.id.to_s, "")
+		special.handle_upload(params[:special][:offer_doc], special.id.to_s, "document")
 		special.update(:offer_img => special.id.to_s + "-" + special.offer_img, :offer_doc => special.id.to_s + "-" + special.offer_doc)
 		redirect "/admin"
 	else
@@ -242,9 +246,9 @@ put '/specials' do
 	update_special[:offer_img] = @special.id.to_s + "-" + params[:special][:offer_img][:filename].downcase.gsub(" ", "-") unless params[:special][:offer_img].nil?
 	update_special[:offer_doc] = @special.id.to_s + "-" + params[:special][:offer_doc][:filename].downcase.gsub(" ", "-") unless params[:special][:offer_doc].nil?
 
-	@special.handle_upload(offer_img, @special.id.to_s) unless offer_img.nil?
+	@special.handle_upload(offer_img, @special.id.to_s, "") unless offer_img.nil?
 	
-	@special.handle_pdf_upload(offer_doc, @special.id.to_s) unless offer_doc.nil?
+	@special.handle_upload(offer_doc, @special.id.to_s, "document") unless offer_doc.nil?
 	
 
 	if @special.update(update_special)
@@ -312,7 +316,7 @@ post '/request-membership' do
 		:from => params[:member][:name],
 		:to => 'alistair.rodrigues@gmail.com',
 		:subject => "Membership Request",
-		:html_body => params[:member][:name] << " wishes to be a member <br /> Contact by phone: " << params[:member][:phone] << " by email: " << params[:member][:eadd],
+		:html_body => params[:member][:name] + " wishes to be a member <br /> Contact by phone: " + params[:member][:phone] + " by email: " + params[:member][:eadd],
 		:via => :smtp,
 		:via_options => {
 			:address              => 'smtp.sendgrid.net', 
@@ -323,4 +327,26 @@ post '/request-membership' do
 		}
 	)
 	redirect '/membership'
+end
+
+# Book vacation
+post '/book' do
+	require 'pony'
+	hotel = Hotel.get(params[:book][:hotel_id])
+	message = "<br />Message: " + params[:book][:mailbody] unless params[:book][:mailbody].nil?
+	Pony.mail(
+		:from => params[:book][:name],
+		:to => 'alistair.rodrigues@gmail.com',
+		:subject => "Vacation Booking",
+		:html_body => params[:book][:name] + " wishes to book: " + hotel.name + " <br />Check-In: " + params[:book][:check_in] + "<br />Check-Out: " + params[:book][:check_out] + "Contact by email: " + params[:book][:email] + message,
+		:via => :smtp,
+		:via_options => {
+			:address              => 'smtp.sendgrid.net', 
+	        :port                 => '587', 
+	        :user_name            => 'hashcookies', 
+	        :password             => 'Nor1nderchqMudi', 
+	        :authentication       => :plain
+		}
+	)
+	redirect '/member-area'
 end

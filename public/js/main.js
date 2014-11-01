@@ -65,6 +65,7 @@ $(document).ready(function() {
         }
     }
 		
+	// Delete Modal for Hotel and Specials
 	var $delBtn = $('.delete-btn');
 	var $delModal = $('.delete-modal');
 	
@@ -77,6 +78,19 @@ $(document).ready(function() {
 		$delModal.find('h4.modal-title span').text(dataType.substr(0, 1).toUpperCase() + dataType.substr(1) + ": " + dataName);
 		
 		$delModal.modal();
+		
+		return false;
+	});
+
+	// Book Modal
+	var $bookBtn = $('.book-btn');
+	var $bookModal = $('.book-modal');
+	
+	$bookBtn.click(function() {
+		var hotel_id = $(this).attr('data-id');
+		$('#hotel-id').val(hotel_id);
+		
+		$bookModal.modal();
 		
 		return false;
 	});

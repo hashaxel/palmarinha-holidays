@@ -1,0 +1,40 @@
+<div class="modal fade book-modal" tabindex="-1" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <h4 class="modal-title title">Book Vacation</h4>
+      </div>
+      <div class="modal-footer">
+        <form id="book" action="/book" method="post" class="book-modal-form">
+          <input type="hidden" id="hotel_id" name="book[hotel_id]" value="" />
+          <div class="form-group">
+            <label for="name" class="hidden">Your Name</label>
+            <input type="text" name="book[name]" placeholder="Your name" value="" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="email" class="hidden">Your Email</label>
+            <input type="text" name="book[email]" placeholder="Your email" value="" class="form-control" />
+          </div>
+          <div class="form-group">
+            <div class="col-md-6">
+              <label for="check_in" class="">Check-In</label>
+              <input type="text" name="book[check_in]" placeholder="Check-In" value="" class="form-control" />
+            </div>
+            <div class="col-md-6">
+              <label for="check_out" class="">Check-Out</label>
+              <input type="text" name="book[check_out]" placeholder="Check-Out" value="" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mailbody" class="hidden">Description</label>
+            <textarea type="text" name="book[mailbody]" rows="4" placeholder="Message (optional)" value="" class="form-control"></textarea>
+          </div>
+          <input type="hidden" name="_method" value="book">
+          <button type="button" class="btn btn-primary btn-default" data-dismiss="modal">Cancel</button>
+          <input type="submit" value="Book vacation" class="btn btn-primary btn-default">
+        </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
