@@ -272,12 +272,35 @@ ul {
 	color: darken($vib, 0%);
 }
 
+.whimsy {
+	background: $vib;
+	color: white;
+	display: inline-block;
+	padding: 2px 7px;
+	-webkit-transform: rotate(-2deg);
+}
+
+#howitworks-title {
+	background: lighten($vib, 10%);
+	-webkit-transform: rotate(2deg);
+	text-align: center;
+	padding: 10px 40px;
+	position: absolute;
+	top: -23px;
+	margin-top: 0;
+	-webkit-box-shadow: 3px 6px 10px darken($vib, 5%);
+}
+
+
 #how-it-works {
+	
 	.right {
 		background: $vib;
 		color: white;
-		height: 459px;
+		height: 420px;
 		padding: 35px;
+		margin-top: 80px;
+		padding-top: 60px;
 	}
 	.btn-link-block {
 		padding: 0;
