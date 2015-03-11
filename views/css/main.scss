@@ -432,7 +432,7 @@ img.auto-width {
 		li {
 			width: 100%;
 			overflow: auto;
-			border-bottom: 1px solid white;
+			border-bottom: 1px solid lighten($vib, 40%);
 			padding-bottom: 15px;
 			margin-bottom: 10px;
 			&:last-child {
@@ -594,45 +594,39 @@ img.auto-width {
 	overflow-y: scroll;
 }
 
-#resort-img {
+/*#resort-img {
 	width: 100%;
 	background: url(../images/resorts.jpg) no-repeat center center;
 	background-size: cover;
 	height: 800px;
 	margin-top: 80px;
-}
+}*/
 
 .resort-intro {
-	text-align: center;
-	padding: 50px 30px;
-	color: black;
-	/*text-shadow: 0px 1px 5px transparentize(black, 0.6);*/
-	background: white;
-	background: transparentize(white, 0.1);
 	h3 {
-		font-size: 60px;
+		font-size: 56px;
 		text-shadow: 0px 1px #fff;
 		font-weight: Bold;
-		text-align: center;
 		color: $vib;
+		font-family: $sansAlt;
 		text-transform: uppercase;
+		margin-top: 0;
 	}
 	.label {
-		text-transform: uppercase;
-		font-family: $sansAlt;
+		font-weight: 100;
 		font-size: 24px;
 	}
 	.subtitle {
 		font-size: 18px;
-		font-weight: bold;
 		margin-top: 20px;
 		margin-bottom: 10px;
 		display: block;
+		font-family: $serif;
+		font-style: italic;
 	}
 }
 
 .resorts-desc {
-	margin-top: -100px;
 	background: white;
 	background: transparentize(white, 0.1);
 	padding: 40px 50px 50px;
