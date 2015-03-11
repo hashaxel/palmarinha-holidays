@@ -1,0 +1,58 @@
+<div class="modal fade" id="sign-up-modal" aria-hidden="true" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    	
+      <div class="modal-body">
+        <div class="row">
+        	<div class="col-md-8" id="modal-body-content">
+        		<h4 class="modal-title">Sign up for Membership!</h4>
+        		<p class="lead">Palmarinha Holidays brings you a selection of exclusive hotels and resorts, and destinations, and themes that suit your holiday needs.</p>
+        		<ul>
+        			<li>
+        				<img src="/images/perk-1.jpg" alt="" />
+        				<h4>Expert Team</h4>
+        				<p>Looking for family friendly options or romantic couple’s getaway, let the Palmarinha Holidays expert team organize every aspect of your holiday type and pattern.</p>
+        			</li>
+        			<li>
+        				<img src="/images/perk-2.jpg" alt="" />
+        				<h4>5000 Resorts Worldwide</h4>
+        				<p>Enjoy the flexibility of the concept ­ use your week to exchange holiday time across any of the 5000 resorts worldwide</p>
+        			</li>
+        			<li>
+        				<img src="/images/perk-3.jpg" alt="" />
+        				<h4>Luxury Services</h4>
+        				<p>Take advantage of the high variety of services, including body bliss luxury spas and ayurvedic treatments, the wine club and relaxations for your children.</p>
+        			</li>
+        		</ul>
+        	</div>
+        	<div class="col-md-4" id="modal-form">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<p class="lead">Just fill in the details below and we'll get back to you with an amazing offer!</p>
+        	<form id="member-enroll" method="post" action="/request-membership">	
+        			<div class="form-group">
+        				<label for="name" class="">Your Name</label>
+        				<input type="text" name="member[name]" class="form-control" value="">
+        			</div>
+        			<div class="form-group">
+        				<label for="phone" class="">Your Phone</label>
+        				<input type="text" name="member[phone]" class="form-control" value="">
+        			</div>
+        			<div id="eaddgrp" class="form-group">
+        				<label for="eadd" class="">Your Email</label>
+        					<input type="text" name="member[eadd]" id="eadd" class="form-control" value="">
+        				<span id="emailInfo" class="text-justified"></span>
+        			</div>
+        			<div class="form-group">
+        				<label for="phone" class="">Your City</label>
+        				<input type="text" name="member[city]" class="form-control" value="">
+        			</div>
+        			
+        			<button type="submit" name="submit" value="Submit" id="send-btn" class="btn btn-primary">Send Inquiry</button>
+        		</form>
+        	</div>
+        	
+	     </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
