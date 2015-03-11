@@ -241,6 +241,13 @@ ul {
 		font-size: 80px;
 		font-weight: 100;
 		color: white;
+		text-shadow: 0px 1px darken($vib, 20%);
+		span {
+			display: block;
+			font-size: 36px;
+			letter-spacing: 50px;
+			font-weight: bold;
+		}
 	}
 	img {
 		width: 100%;
