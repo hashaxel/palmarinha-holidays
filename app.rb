@@ -17,7 +17,7 @@ end
 
 configure :development do
 	require 'dm-sqlite-adapter'
-	DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/palmarinha.db")
+	DataMapper::setup(:default, "sqlite3:/palmarinha.db")
 end
 
 configure :production do
