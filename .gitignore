@@ -1,3 +1,4 @@
+**.sass-cache**
 *.db
 **/public/hotels/**
 .sass-cache/**
