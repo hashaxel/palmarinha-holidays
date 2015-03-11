@@ -185,6 +185,36 @@ ul {
 	
 }
 
+.btn-checkbox {
+	background: white;
+	font-size: 16px;
+	text-transform: none;
+	margin-top: 15px;
+	padding: 3px 7px;
+	color: $vib;
+	border-color: $vib;
+	.label {
+		color: $vib;
+	}
+	&:hover {
+		background: $vib;
+		border-color: $vib;
+		color: white;
+		.label {
+			color: white;
+		}
+	}
+}
+
+
+.btn-disabled {
+	opacity: .3;
+}
+
+.btn-small {
+	font-size: 14px;
+}
+
 .close {
 	float: right;
 	font-size: 21px;
@@ -615,6 +645,8 @@ img.auto-width {
 	.label {
 		font-weight: 100;
 		font-size: 24px;
+		margin-top: 25px;
+		display: block;
 	}
 	.subtitle {
 		font-size: 18px;
@@ -962,35 +994,7 @@ h2 {
 	}
 }
 
-.btn-checkbox {
-	background: white;
-	font-size: 16px;
-	text-transform: none;
-	margin-top: 15px;
-	padding: 3px 7px;
-	color: $vib;
-	border-color: $vib;
-	.label {
-		color: $vib;
-	}
-	&:hover {
-		background: $vib;
-		border-color: $vib;
-		color: white;
-		.label {
-			color: white;
-		}
-	}
-}
 
-.btn-active {
-	background: $vib;
-	color: white;
-}
-
-.btn-disabled {
-	opacity: .6;
-}
 
 #hidden-form {
 	display: none;
@@ -1032,4 +1036,21 @@ h2 {
 
 .datepicker {
 	z-index: 1500 !important;
+}
+
+#deactivate-hotel-btn {
+	float: left;
+}
+
+.hotel-item {
+	.btn {
+		margin-right: 15px;
+	}
+}
+
+.tab-content {
+	border: 1px solid #ddd;
+	border-top: none;
+	padding:25px;
+	margin-bottom: 20px;
 }

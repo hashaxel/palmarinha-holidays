@@ -1,23 +1,21 @@
 <form role="form" action="/specials" method="post" id="special" enctype="multipart/form-data">			
 	<div class="row form-group">
-		<div class="col-md-3">
+		<div class="col-md-12">
 			<label for="offer_img">Offer Image</label>
 			<div class="file-input-wrap">
 				<input type="file" id="offer-img" name="special[offer_img]" class="file-picker file-inputs new-feature-file" data-filename-placement="inside" title="Offer Image" />
 			</div>
+			<hr />
 		</div>
-		<div class="col-md-3">			
+		<div class="col-md-12">			
 			<label for="offer_doc">Offer Document</label>
 			<div class="file-input-wrap">
 				<input type="file" id="offer-doc" name="special[offer_doc]" class="file-picker file-inputs new-feature-file" data-filename-placement="inside" title="Offer Document" />
 			</div>
+			<hr />
 		</div>
 		<div class="col-md-3">
-			<input type="hidden" name="special[is_active]" value="true" %>
-			<button class="btn btn-primary btn-checkbox btn-active"><span class="glyphicon glyphicon-ok"></span> Active</button>
-		</div>
-		<div class="col-md-3">
-			<button id="submit" type="Submit" class="btn btn-primary btn-small submit-btn">Create Special Offer</button>
+			<button id="submit" type="Submit" class="btn btn-primary btn-small submit-btn">Update Special Offer</button>
 		</div>
 	</div>
 </form>
