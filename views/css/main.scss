@@ -10,6 +10,11 @@ $vibAlt: #ecb680;
 
 body {
 	font-family: $sans;
+	overflow-x:hidden 
+}
+
+html {
+	overflow-x:hidden;
 }
 
 p {
@@ -97,7 +102,10 @@ ul {
 	width: 230px;
 	height: 175px;
 	text-indent: -9999px;
-	
+	@media(max-width: $screen-xs-max) {
+			margin-left:0px !important;
+			width:100%;
+	}
 	.home & {
 		margin-left: 70px;
 	}
@@ -107,10 +115,20 @@ ul {
 	margin-top: 50px;
 	background: lighten($vib, 55%);
 	border-top: 1px solid lighten($vib, 47%);
+	@media(max-width: $screen-xs-max) {
+		margin-top:10px; 
+		.col-md-12 {
+			padding: 0px;
+		}
+	}
 	#logo-main {
 		margin-top: 0;
 		float: left;
 		margin-right: 35px;
+		@media(max-width: $screen-xs-max) {
+			float:none;
+
+		}
 	}
 	p {
 		font-weight: 100;
@@ -131,13 +149,27 @@ ul {
 		}
 	}
 }
+#page-bg {
+	@media(max-width: $screen-xs-max) {
+		background-position:-200px;
+	}
+}
+#home-controls {
 
-#dream-holiday {
-	background: url(../images/dream-holiday.png) no-repeat;
-	width: 730px;
-	height: 168px;
-	text-indent: -9999px;
-	margin: 0 auto 40px;
+	#dream-holiday {
+		background: url(../images/dream-holiday.png) no-repeat;
+		width: 730px;
+		height: 168px;
+		text-indent: -9999px;
+		margin: 0 auto 40px;
+		@media(max-width: $screen-xs-max) {
+			background-size:300px; 
+			margin-top: -100px;
+			margin-bottom: 0px;
+			background-position:center;
+			width: 100%;
+		}
+	}
 }
 
 .cover-controls {
@@ -147,11 +179,18 @@ ul {
 	text-align: center;
 	.btn {
 		margin: 0 10px;
+		@media(max-width: $screen-xs-max) {
+			margin-bottom:10px;
+			.btn-text {
+				width: 190px;
+			}
+		}
 	}
 }
 
 .btn {
 	color: $vib;
+
 }
 
 .btn-primary {
@@ -272,12 +311,21 @@ button.close {
 	text-transform: uppercase;
 	font-weight: bold;
 }
-
 .testimonial-block {
 	padding: 50px 0;
+	@media(max-width: $screen-xs-max) {
+		padding:0px;
+		text-align: center !important;
+		.text-right {
+			text-align: center;
+		}
+	}
 	.row img {
 		width: auto;
-		
+		@media(max-width: $screen-xs-max) {
+			width:245px;
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -291,6 +339,9 @@ button.close {
 
 #introducing-palmarinha {
 	position: relative;
+	@media(max-width: $screen-xs-max) {
+		margin-top:60px;
+	}
 	h2 {
 		position: absolute;
 		top: 150px;
@@ -309,6 +360,16 @@ button.close {
 			font-weight: bold;
 			margin-top: 10px;
 		}
+		@media(max-width: $screen-xs-max) {
+			top:-110px;
+			font-size:20px;
+			background-color:$vib;
+			padding:15px;
+			span {
+				font-size: 16px;
+				letter-spacing: 10px;
+			}
+		}
 	}
 	img {
 		width: 100%;
@@ -322,6 +383,10 @@ button.close {
 	overflow: auto;
 	margin: -100px 30px 0px;
 	padding: 50px 25px;
+	@media(max-width: $screen-xs-max) {
+		margin: 20px 0px;
+		padding: 0px;
+	}
 	p {
 		font-size: 18px;
 		line-height: 160%;
@@ -354,6 +419,13 @@ button.close {
 	font-size: 22px;
 	font-weight: 300;
 	color: darken($vib, 0%);
+	@media(max-width: $screen-xs-max) {
+		margin-top:20px;
+		p.lead {
+			font-size:16px;
+			line-height: 30px;
+		}
+	}
 }
 
 .whimsy {
@@ -362,19 +434,11 @@ button.close {
 	display: inline-block;
 	padding: 2px 7px;
 	-webkit-transform: rotate(-2deg);
+	@media(max-width: $screen-xs-max) {
+		margin-bottom:15px;
+		width: 100%;
+	}
 }
-
-#howitworks-title {
-	background: lighten($vib, 10%);
-	-webkit-transform: rotate(2deg);
-	text-align: center;
-	padding: 10px 40px;
-	position: absolute;
-	top: -23px;
-	margin-top: 0;
-	-webkit-box-shadow: 3px 6px 10px darken($vib, 5%);
-}
-
 
 #how-it-works {
 	
@@ -385,11 +449,34 @@ button.close {
 		margin-top: 80px;
 		padding-top: 60px;
 		-webkit-transform: rotate(-1deg);
+		transform:rotate(-1deg);
+		@media(max-width: $screen-xs-max) {
+			-webkit-transform:none;
+			margin-top: 20px;
+			padding-top: 5px;
+		}
 	}
 	.btn {
 		color: white;
 		font-size: 18px;
 		margin-top: 15px;
+	}
+
+	#howitworks-title {
+		background: lighten($vib, 10%);
+		-webkit-transform: rotate(2deg);
+		transform: rotate(2deg);
+		text-align: center;
+		padding: 10px 40px;
+		position: absolute;
+		top: -23px;
+		margin-top: 0;
+		-webkit-box-shadow: 3px 6px 10px darken($vib, 5%);
+		@media(max-width: $screen-xs-max) {
+			position:relative;
+			font-size: 20px;
+			-webkit-transform:none;
+		}
 	}
 	h3 {
 		font-weight: bold;
@@ -414,6 +501,7 @@ button.close {
 			margin: 0 auto 10px;
 			padding-bottom: 7px;
 		}
+
 	}
 	h4 {
 		font-weight: bold;
@@ -518,10 +606,19 @@ img.auto-width {
 	height: 100px;
 	text-indent: -9999px;
 	margin-top: 100px;
+	@media(max-width: $screen-xs-max) {
+		background-image:none;
+		margin-top:0px;
+		text-indent: 0px;
+	}
 }
 
 #locations-block {
 	margin-top: 50px;
+	@media(max-width: $screen-xs-max) {
+		margin-top:0px;
+		margin-bottom: 30px;
+	}
 	h3 {
 		font-weight: 100;
 		color: $vib;
@@ -554,6 +651,9 @@ img.auto-width {
 	background: transparentize(white, 0.1);
 	font-weight: 100;
 	padding: 25px 30px;
+	@media(max-width: $screen-xs-max) {
+		margin-top:0px;
+	}
 	p {
 		margin-bottom: 10px;
 	}
@@ -596,6 +696,10 @@ img.auto-width {
 
 #loc-cta {
 	margin-top: 30px;
+	media(max-width: $screen-xs-max) {
+		text-align:center !important;
+		float: none;
+	}
 	.btn {
 		color: lighten(desaturate($red, 10%), 10%);
 	}
@@ -936,6 +1040,7 @@ h2 {
 		float: none;
 		height: 150px;
 		display: block;
+		
 	}
 	.title {
 		font-weight: bold;
