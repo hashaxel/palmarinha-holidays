@@ -363,14 +363,13 @@ post '/book' do
 	message = "<br />Message: " + params[:book][:mailbody] unless params[:book][:mailbody].nil?
 	body = name + " wishes to book: " + hotel.name + " <br />Check-In: " + params[:book][:check_in] + "<br />Check-Out: " + params[:book][:check_out] + "<br />Contact by email: " + params[:book][:eadd] + message
 	Pony.mail(
-		:from => name,
+		:from => 'milind@hashcooki.es',
 		:to => 'milind@hashcooki.es',
 		:subject => "Vacation Booking",
-		:headers => { 'Content-Type' => 'text/html' },
-		:body => body,
+		:html_body => body,
 		:via => :smtp,
 		:via_options => {
-			:address              => 'smtp.sendgrid.net', 
+			  :address              => 'smtp.sendgrid.net', 
 	        :port                 => '587', 
 	        :user_name            => 'hashcookies', 
 	        :password             => 'Nor1nderchqMudi', 
