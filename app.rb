@@ -148,6 +148,10 @@ get '/about' do
 	erb :about
 end
 
+get '/contact' do
+	erb :contact
+end
+
 post '/login' do
 	if params[:pass] == 'abc'
 		session[:member] = true
