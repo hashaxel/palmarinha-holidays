@@ -378,3 +378,26 @@ post '/book' do
 	)
 	redirect '/member-area'
 end
+
+
+
+post '/support-request' do
+	require 'pony'
+	name = params[:name]
+	body = "#{params[:name]} has made a new support request. #{params[:name]} can be contacted via email (#{params[:email]}) or phone (#{params[:phone]}). Their support message is: #{params[:message]}"
+	Pony.mail(
+		:from => 'milind@hashcooki.es',
+		:to => 'milind@hashcooki.es',
+		:subject => "Support Request",
+		:html_body => body,
+		:via => :smtp,
+		:via_options => {
+			  :address              => 'smtp.sendgrid.net', 
+	        :port                 => '587', 
+	        :user_name            => 'hashcookies', 
+	        :password             => 'Nor1nderchqMudi', 
+	        :authentication       => :plain
+		}
+	)
+	redirect '/member-area'
+end
