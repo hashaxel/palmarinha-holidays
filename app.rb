@@ -144,6 +144,10 @@ get '/member-area' do
 	end
 end
 
+get '/about' do
+	erb :about
+end
+
 post '/login' do
 	if params[:pass] == 'abc'
 		session[:member] = true

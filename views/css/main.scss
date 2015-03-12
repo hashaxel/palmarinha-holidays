@@ -1075,3 +1075,20 @@ h2 {
 	padding:25px;
 	margin-bottom: 20px;
 }
+
+#small-cover {
+	background: url(/images/about-bg.jpg) no-repeat;
+	width: 100%;
+	background-size: cover;
+	height: 480px;
+	padding-top: 200px;
+	margin-bottom: 25px;
+	h1 {
+		margin-top: 0;
+		text-align: center;
+		color: white;
+		font-weight: bold;
+		font-family: $sansAlt;
+		font-size: 72px;
+	}
+}
