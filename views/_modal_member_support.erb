@@ -1,0 +1,35 @@
+<div class="modal fade" id="support-modal" tabindex="-1" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  	<form id="book" action="/support-request" method="post" class="support-modal-form">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <h4 class="modal-title title">Member Support</h4>
+      </div>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" placeholder="Your name" value="" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="text" name="email" placeholder="Your email" value="" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Phone</label>
+            <input type="text" name="phone" placeholder="Your email" value="" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" name="message"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+      	<input type="hidden" name="_method" value="book">
+      	<button type="button" class="btn btn-primary btn-default" data-dismiss="modal">Cancel</button>
+      	<input type="submit" name="submit" value="Send Support Request" class="btn btn-primary btn-default" />
+      </div>
+    </div><!-- /.modal-content -->
+   </form>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
