@@ -133,11 +133,24 @@ get '/membership' do
 end
 
 get '/member-area' do
-	@page_title += " | Members Area (Private)"
-	@body_class += " members-area"
-	@specials = Special.all(:limit => 1)
-	@hotels = Hotel.all
-	erb :member_area
+	if session[:member] == true
+		@page_title += " | Members Area (Private)"
+		@body_class += " members-area"
+		@specials = Special.all(:limit => 1)
+		@hotels = Hotel.all
+		erb :member_area
+	else
+		redirect to('/membership')
+	end
+end
+
+post '/login' do
+	if params[:pass] == 'abc'
+		session[:member] = true
+		redirect to('/member-area')
+	else
+		redirect to('/')
+	end
 end
 
 get '/hotel/new' do

@@ -4,8 +4,11 @@
 
 <div id="member-controls">
 	<div class="login-form">
-		<input type="text" placeholder="Enter your password" />
-		<button type="button" class="btn btn-primary btn-blue">Log in</button>
+		<form method="post" action="/login">
+			<input type="text" name="pass" placeholder="Enter your password" />
+			<button type="submit" class="btn btn-primary btn-blue">Log in</button>
+		</form>
+		
 		<div class="clearfix"></div>
 		<a id="trouble-logging" href="#">Having trouble logging in?</a>
 	</div>
