@@ -153,6 +153,11 @@ post '/login' do
 	end
 end
 
+post '/logout' do
+	session[:member] = false
+	redirect to('/')
+end
+
 get '/hotel/new' do
 	require_admin
 
@@ -327,9 +332,9 @@ post '/request-membership' do
 	#Pony.options = { :from => params[:member][:name] }
 	Pony.mail(
 		:from => params[:member][:name],
-		:to => 'alistair.rodrigues@gmail.com',
+		:to => 'milind@hashcooki.es',
 		:subject => "Membership Request",
-		:html_body => params[:member][:name] + " wishes to be a member <br /> Contact by phone: " + params[:member][:phone] + " by email: " + params[:member][:eadd],
+		:html_body => params[:member][:name] + " from " + params[:member][:city] + " wishes to be a member <br /> Contact by phone: " + params[:member][:phone] + "<br /> by email: " + params[:member][:eadd],
 		:via => :smtp,
 		:via_options => {
 			:address              => 'smtp.sendgrid.net', 
@@ -351,7 +356,7 @@ post '/book' do
 	body = name + " wishes to book: " + hotel.name + " <br />Check-In: " + params[:book][:check_in] + "<br />Check-Out: " + params[:book][:check_out] + "<br />Contact by email: " + params[:book][:eadd] + message
 	Pony.mail(
 		:from => name,
-		:to => 'alistair.rodrigues@gmail.com',
+		:to => 'milind@hashcooki.es',
 		:subject => "Vacation Booking",
 		:headers => { 'Content-Type' => 'text/html' },
 		:body => body,

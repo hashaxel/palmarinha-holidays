@@ -479,7 +479,10 @@ img.auto-width {
 		}
 	}
 	#modal-form {
-		padding: 20px 20px 20px 20px;
+		padding: 20px 10px 20px 20px;
+		label {
+			font-size: 12px;
+		}
 	}
 	.modal-title {
 		background: $vib;
@@ -488,6 +491,24 @@ img.auto-width {
 		text-transform: uppercase;
 		font-family: $sansAlt;
 		font-size: 24px;
+	}
+	.checkbox-group {
+		font-size: 11px;
+		.btn {
+			float: left;
+			margin-right: 10px;
+			margin-top: 2px;
+			font-size: 12px;
+			&:hover {
+				background: white;
+				border-color: $vib;
+				color: $vib;
+				cursor: default;
+			}
+		}
+		.meta-label {
+
+		}
 	}
 }
 
