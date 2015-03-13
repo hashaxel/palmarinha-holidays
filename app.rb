@@ -37,7 +37,6 @@ class Hotel
 	include DataMapper::Resource
 	property :id,				Serial
 	property :name,			String
-	property :slug,			String
 	property :desc,			Text
 	property :location,		String
 	property :url,				String
@@ -189,16 +188,6 @@ get '/hotel/:id/edit' do
 	end
 end
 
-get '/hotel/:id/:slug' do
-	@hotel = Hotel.get(params[:id])
-	
-	if @hotel
-		erb :hotel
-	else
-		redirect('/')
-	end
-end
-
 put '/hotels' do
 	require_admin
 
@@ -228,9 +217,6 @@ post '/hotels' do
 	newhotel = params[:hotel]
 	hotel = Hotel.new(newhotel)
 
-	hotel.slug = "#{hotel.name}-#{hotel.location}"
-	hotel.slug = hotel.slug.downcase.gsub(" ", "-")
-	# hotel.price = (hotel.price == "") ? 0 : params[:hotel][:price].downcase.gsub(",", "").to_i
 	hotel.thumbnail = params[:hotel][:thumbnail][:filename].downcase.gsub(" ", "-")
 
 	if hotel.save
