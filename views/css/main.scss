@@ -1115,9 +1115,12 @@ h2 {
 
 	li {
 		padding: 7px 20px;
+		-webkit-transition-duration: 400ms;
+		border: 1px solid white;
 		&:hover {
 			background: lighten($vib, 55%);
 			cursor: pointer;
+			border: 1px solid lighten($vib, 45%);
 		}
 	}
 	.active {
