@@ -757,7 +757,7 @@ img.auto-width {
 		@media(max-width: $screen-xs-max) {
 			width:auto;
 			float: none;
-			padding: 5px 15px;
+			padding: 5px 20px;
 		}
 		img {
 			width: 100%;
@@ -915,6 +915,25 @@ img.auto-width {
 		margin-top: 5px;
 		display: block;
 	}
+	@media(max-width: $screen-xs-max) {
+		height:250px;
+		padding-top:80px;
+		.login-form {
+			width: 100%;
+			text-align: center;
+		}
+		input {
+			font-size: 18px;
+			width: auto;
+			float: none;
+			padding: 5px 10px 8px;
+		}
+		.btn-blue {
+			font-size: 18px;
+			padding:5px 20px 8px;
+			float: none;
+		}
+	}
 }
 
 #learn-more-btn {
@@ -990,6 +1009,9 @@ img.auto-width {
 	padding: 30px 50px;
 	color: white;
 	border-right: 20px solid #fff;
+	@media(max-width: $screen-xs-max) {
+		border:none;
+	}
 }
 
 #package-blocks {
