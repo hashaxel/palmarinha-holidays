@@ -148,6 +148,19 @@ ul {
 			font-size: 18px;
 		}
 	}
+	@media(max-width: $screen-xs-max) {
+		ul {
+			margin:20px 0px 10px;
+			li {
+				text-align: center;
+				color: $vib;
+				margin-right: 0px;
+				float: none;
+				padding: 5px;
+				font-size: 20px;
+			}
+		}
+	}
 }
 #page-bg {
 	@media(max-width: $screen-xs-max) {
@@ -155,7 +168,6 @@ ul {
 	}
 }
 #home-controls {
-
 	#dream-holiday {
 		background: url(../images/dream-holiday.png) no-repeat;
 		width: 730px;
@@ -163,10 +175,10 @@ ul {
 		text-indent: -9999px;
 		margin: 0 auto 40px;
 		@media(max-width: $screen-xs-max) {
-			background-size:300px; 
 			margin-top: -100px;
 			margin-bottom: 0px;
-			background-position:center;
+			background: url(../images/dream-holiday-mobile.png) no-repeat center;
+			background-size:200px; 
 			width: 100%;
 		}
 	}
@@ -692,14 +704,18 @@ img.auto-width {
 		font-size: 18px;
 		font-weight: 100;
 	}
+	@media(max-width: $screen-xs-max) {
+		h3 {
+			font-size: 24px;
+		}
+		p {
+			font-size: 16px;
+		}
+	}
 }
 
 #loc-cta {
 	margin-top: 30px;
-	media(max-width: $screen-xs-max) {
-		text-align:center !important;
-		float: none;
-	}
 	.btn {
 		color: lighten(desaturate($red, 10%), 10%);
 	}
@@ -707,6 +723,15 @@ img.auto-width {
 		color: white;
 		background-color: lighten(desaturate($red, 10%), 10%);
 	}
+	@media(max-width: $screen-xs-max) {
+		text-align:center !important;
+		float: none !important;
+		margin:10px 0px;
+		.btn-primary {
+			width: 100%;
+			padding: 10px;
+		}
+	}	
 }
 
 #loc-blocks {
@@ -718,6 +743,10 @@ img.auto-width {
 		margin-right: 5px;
 		margin-bottom: 10px;
 		position: relative;
+		@media(max-width: $screen-xs-max) {
+			width:auto;
+			padding: 5px 15px;
+		}
 		img {
 			width: 100%;
 			height: 100%;
@@ -772,6 +801,9 @@ img.auto-width {
 		font-size: 24px;
 		margin-top: 25px;
 		display: block;
+		@media(max-width: $screen-xs-max) {
+			margin-top:0px;
+		}
 	}
 	.subtitle {
 		font-size: 18px;
