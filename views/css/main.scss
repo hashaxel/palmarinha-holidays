@@ -447,8 +447,7 @@ button.close {
 	padding: 2px 7px;
 	-webkit-transform: rotate(-2deg);
 	@media(max-width: $screen-xs-max) {
-		margin-bottom:15px;
-		width: 100%;
+		margin:5px 15% 10px;
 	}
 }
 
@@ -627,10 +626,6 @@ img.auto-width {
 
 #locations-block {
 	margin-top: 50px;
-	@media(max-width: $screen-xs-max) {
-		margin-top:0px;
-		margin-bottom: 30px;
-	}
 	h3 {
 		font-weight: 100;
 		color: $vib;
@@ -642,6 +637,13 @@ img.auto-width {
 			display: block;
 			color: $vib;
 			font-weight: bold;
+		}
+	}
+	@media(max-width: $screen-xs-max) {
+		margin-top:15px;
+		margin-bottom: 30px;
+		h3 {
+			margin-bottom: 5px;
 		}
 	}
 }
@@ -688,6 +690,15 @@ img.auto-width {
 	img {
 		border-radius: 5px;
 		margin-bottom: 10px;
+	}
+	@media(max-width: $screen-xs-max) {
+		margin-top:0px;
+		img {
+			padding:5px 30px;
+		}
+		div {
+			margin-bottom: 10px;
+		}
 	}
 }
 
@@ -745,6 +756,7 @@ img.auto-width {
 		position: relative;
 		@media(max-width: $screen-xs-max) {
 			width:auto;
+			float: none;
 			padding: 5px 15px;
 		}
 		img {
@@ -954,6 +966,7 @@ img.auto-width {
 			padding: 0 15px;
 			margin-bottom: 25px;
 		}
+
 	}
 }
 
