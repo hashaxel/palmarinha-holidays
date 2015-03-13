@@ -137,7 +137,7 @@ get '/member-area' do
 	if session[:member] == true
 		@page_title += " | Members Area (Private)"
 		@body_class += " members-area"
-		@specials = Special.all(:limit => 1)
+		@special = Special.last
 		@hotels = Hotel.all
 		erb :member_area
 	else
@@ -295,7 +295,7 @@ get '/admin' do
 	@page_title += " | Palmarinha Admin"
 	@body_class += " admin"
 	@hotels = Hotel.all
-	@specials = Special.all
+	@special = Special.last
 	erb :admin
 end
 

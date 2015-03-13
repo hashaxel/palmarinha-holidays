@@ -47,18 +47,15 @@
 			    	</div>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="special">
-		    		<% @specials.each do |special| %>
-	    				<div class="row">
-	    					<div class="col-md-8">
-	    						<img class="special-img" src="hotels/specials/<%= special.offer_img %>"  alt="" />
-	    					</div>
-	    				
-	    					<div class="col-md-4">		    						
-	    						<h4>Change Special Offer</h4>
-	    						<%= erb :_new_special_form %>
-	    					</div>
+		    		<div class="row">
+    					<div class="col-md-8">
+    						<img class="special-img" src="hotels/specials/<%= @special.offer_img %>"  alt="" />
+    					</div>
+	    				<div class="col-md-4">		    						
+	    					<h4>Change Special Offer</h4>
+	    					<%= erb :_new_special_form %>
 	    				</div>
-		    		 <% end %>
+	    			</div>
 			    </div><!-- end tab -->
 			  </div>
 			

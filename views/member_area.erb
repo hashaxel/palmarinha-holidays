@@ -16,13 +16,9 @@
 			</ul>
 		</div>
 		<div class="col-md-8">
-			<% if @specials.nil? %>
-				<img src="/images/special-ad.jpg" alt="" />
-			<% else %>
-				<% @specials.each do |special| %>
-					<a href="/hotels/specials/document/<%= special.offer_doc %>" ><img src="/hotels/specials/<%= special.offer_img %>" alt="" /></a>
-				<% end %>
-			<% end %>
+			<div class="special-wrap">
+				<a href="/hotels/specials/document/<%= @special.offer_doc %>" ><img src="/hotels/specials/<%= @special.offer_img %>" alt="" /></a>
+			</div>
 		</div>
 	</div>
 	<div class="row" id="dashboard-secondary">
