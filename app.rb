@@ -35,13 +35,14 @@ end
 
 class Hotel
 	include DataMapper::Resource
-	property :id,			Serial
+	property :id,				Serial
 	property :name,			String
 	property :slug,			String
 	property :desc,			Text
 	property :location,		String
-	property :price,		String
-	property :thumbnail,	String
+	property :url,				String
+	property :price,			String
+	property :thumbnail,		String
 	property :is_active, 	Boolean, :default => true
 	property :created_at,	DateTime
 	property :updated_at,	DateTime
@@ -142,6 +143,10 @@ get '/member-area' do
 	else
 		redirect to('/membership')
 	end
+end
+
+get '/frequently-asked-questions' do
+	erb :faqs
 end
 
 get '/about' do

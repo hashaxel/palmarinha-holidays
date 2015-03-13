@@ -989,12 +989,24 @@ h2 {
 	.hotel-location {
 		font-size: 14px;
 		padding-bottom: 4px;
-		margin-bottom: 5px;
 		display: inline-block;
 	}
 	.hotel-desc {
 		font-size: 14px;
+		margin-top: 5px;
 	}
+	.hotel-website {
+		display: block;
+	}
+	.hotel-thumb {
+		height: 240px;
+		overflow: hidden;
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+	
 }
 
 #resort-linkouts {
@@ -1096,5 +1108,20 @@ h2 {
 		font-family: $sansAlt;
 		font-size: 72px;
 		text-shadow: 0px 1px #333;
+	}
+}
+
+#faqs {
+
+	li {
+		padding: 7px 20px;
+		&:hover {
+			background: lighten($vib, 55%);
+			cursor: pointer;
+		}
+	}
+	.active {
+		background: lighten($vib, 55%);
+		border: 1px solid lighten($vib, 45%);
 	}
 }

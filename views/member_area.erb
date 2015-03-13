@@ -6,7 +6,7 @@
 			<ul>
 				<li><a href="#">Affliate Resorts</a></li>
 				<li><a href="#">Renew Account</a></li>
-				<li><a href="#">FAQs</a></li>
+				<li><a href="/frequently-asked-questions">FAQs</a></li>
 				<li><a href="#" data-toggle="modal" data-target="#support-modal">Member Support</a></li>
 				<li>
 					<form method="post" action="/logout">
@@ -33,11 +33,17 @@
 				</div>
 				<% @hotels.each do |hotel| %>
 					<div class="col-md-4 hotel-item">
-						<img src="/hotels/images/<%= hotel.thumbnail %>" alt="" />
+						<div class="hotel-thumb">
+							<img src="/hotels/images/<%= hotel.thumbnail %>" alt="" />
+						</div>
 						<span class="hotel-title"><%= hotel.name %></span>
 						<span class="label">Location</span> <span class="hotel-location"><%= hotel.location %></span>
+						<% if !hotel.url.nil? %>
+							<span class="hotel-website"><a href="<%= hotel.url %>">Website</a></span>
+						<% end %>
 						<div class="clearfix"></div>
 						<p class="hotel-desc"><%= hotel.desc %></p>
+						
 						<a class="btn book-btn btn-default btn-small" data-id="<%= hotel.id %>">Book Vacation</a>
 					</div>
 				<% end %>				
