@@ -7,7 +7,9 @@ $(document).ready(function() {
 	$('.home .cover').height(winH).width(winW);
 	$('.members-page .cover').height(winH).width(winW);
 	$('#page-bg').anystretch();
-	$('#login-btn').insertBefore('#more-info-btn')
+	if(Modernizr.mq('(max-width: 767px)')) {
+		$('#login-btn').insertBefore('#more-info-btn');
+	}
 
 	//email validation code starts
 	var form = $('#memberenroll');
