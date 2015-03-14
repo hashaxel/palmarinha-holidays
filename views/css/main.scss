@@ -1035,10 +1035,11 @@ img.auto-width {
 	}
 	@media(max-width: $screen-xs-max) {
 		h3 {
-		    font-size:24px;	
+		    font-size:22px;	
+		    line-height: 35px;
 		}
 		p {
-			font-size: 16px;
+			font-size: 15px;
 		}
 	}
 }
@@ -1059,6 +1060,9 @@ img.auto-width {
 #package-blocks {
 	p {
 		font-size: 16px;
+		@media(max-width: $screen-xs-max) {
+			font-size:15px;
+		}
 	}	
 }
 
@@ -1084,7 +1088,7 @@ img.auto-width {
 	@media(max-width: $screen-xs-max) {
 		padding:10px 25px;
 		h4 {
-			font-size: 24px;
+			font-size: 22px;
 		}
 		.text-right {
 			text-align: center;
