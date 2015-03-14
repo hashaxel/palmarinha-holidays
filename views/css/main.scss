@@ -116,7 +116,7 @@ ul {
 	background: lighten($vib, 55%);
 	border-top: 1px solid lighten($vib, 47%);
 	@media(max-width: $screen-xs-max) {
-		margin-top:10px; 
+		margin-top:0px; 
 		.col-md-12 {
 			padding: 0px;
 		}
@@ -882,6 +882,9 @@ img.auto-width {
 
 #final-cta {
 	margin-top: 40px;
+	@media (max-width: $screen-xs-max) {
+		margin: 25px 0;
+	}
 }
 
 #special-offers-block {
@@ -960,7 +963,7 @@ img.auto-width {
 #members-content {
 	margin-bottom: 50px;
 	@media(max-width: $screen-xs-max) {
-
+		margin-bottom:0px;
 	}
 }
 
