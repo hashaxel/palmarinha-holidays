@@ -1029,10 +1029,17 @@ img.auto-width {
 		font-size: 30px;
 		text-transform: uppercase;
 		font-weight: bold;
-		
 	}
 	p {
 		font-size: 18px;
+	}
+	@media(max-width: $screen-xs-max) {
+		h3 {
+		    font-size:24px;	
+		}
+		p {
+			font-size: 16px;
+		}
 	}
 }
 
@@ -1044,6 +1051,8 @@ img.auto-width {
 	border-right: 20px solid #fff;
 	@media(max-width: $screen-xs-max) {
 		border:none;
+		height:auto;
+		padding:15px 25px;
 	}
 }
 
@@ -1071,6 +1080,31 @@ img.auto-width {
 		position: absolute;
 		bottom: 25px;
 		left: 25px;
+	}
+	@media(max-width: $screen-xs-max) {
+		h4 {
+			font-size: 24px;
+		}
+		.text-right {
+			text-align: center;
+		}
+		#send-btn {
+			font-size: 14px;
+			border:1px solid white;
+			padding: 5px;
+		}
+		input {
+			padding: 25px 20px;
+			width: 100%;
+		}
+		.input-group {
+			width: 100%;
+		}
+		form {
+			position: relative;
+			bottom: 0px;
+			top: 20px;
+		}
 	}
 }
 
