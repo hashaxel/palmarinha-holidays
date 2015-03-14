@@ -49,7 +49,9 @@
 			    <div role="tabpanel" class="tab-pane" id="special">
 		    		<div class="row">
     					<div class="col-md-8">
+    						<% if !@special.nil? %>
     						<img class="special-img" src="hotels/specials/<%= @special.offer_img %>"  alt="" />
+    						<% end %>
     					</div>
 	    				<div class="col-md-4">		    						
 	    					<h4>Change Special Offer</h4>
