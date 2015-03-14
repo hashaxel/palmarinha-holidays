@@ -116,11 +116,7 @@ ul {
 	background: lighten($vib, 55%);
 	border-top: 1px solid lighten($vib, 47%);
 	@media(max-width: $screen-xs-max) {
-<<<<<<< HEAD
 		margin-top:0px; 
-=======
-		margin-top:10px; 
->>>>>>> 79bd68f49419a074553b2c4dcca07b3cd954337d
 		.col-md-12 {
 			padding: 0px;
 		}
@@ -967,11 +963,7 @@ img.auto-width {
 #members-content {
 	margin-bottom: 50px;
 	@media(max-width: $screen-xs-max) {
-<<<<<<< HEAD
 		margin-bottom:0px;
-=======
-
->>>>>>> 79bd68f49419a074553b2c4dcca07b3cd954337d
 	}
 }
 
