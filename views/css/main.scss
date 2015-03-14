@@ -1082,6 +1082,7 @@ img.auto-width {
 		left: 25px;
 	}
 	@media(max-width: $screen-xs-max) {
+		padding:10px 25px;
 		h4 {
 			font-size: 24px;
 		}
