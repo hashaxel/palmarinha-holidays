@@ -375,6 +375,7 @@ button.close {
 	}
 	@media(max-width: $screen-xs-max) {
 		margin-top:60px;
+		padding:0px;
 		h2 {
 			top:-110px;
 			font-size:20px;
@@ -386,6 +387,9 @@ button.close {
 				letter-spacing: 10px;
 			}
 		}	
+		img {
+			margin-top: -12px;
+		}
 	}
 }
 
@@ -423,6 +427,12 @@ button.close {
 				margin-bottom: 10px;
 			}
 		}
+	}
+	
+	@media(max-width: $screen-xs-max) {
+		#introducing-bullets {
+			margin-left:5px;
+		}	
 	}
 }
 
@@ -1141,6 +1151,11 @@ h2 {
 	.btn {
 		margin-top: -10px;
 		margin-left: 25px;
+		border: 1px solid $vib;
+		padding: 10px;
+		@media(max-width: $screen-xs-max) {
+			margin-bottom:10px;
+		}
 	}
 }
 
@@ -1152,6 +1167,11 @@ h2 {
 		color: #000;
 		font-size: 48px;
 		margin-bottom: 25px;
+	}
+	@media(max-width: $screen-xs-max) {
+		h3 {
+			font-size:32px;
+		}
 	}
 }
 
