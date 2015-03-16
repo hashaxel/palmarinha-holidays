@@ -63,7 +63,6 @@ ul {
 	border: none;
 	border-bottom: 1px solid transparentize(white, 0.8);
 	border-radius: 0;
-
 	.nav {
 		margin-right: 30px;
 		li {
@@ -81,6 +80,13 @@ ul {
 				}
 			}
 		}
+		@media(max-width: $screen-xs-max) {
+			li {
+				font-size: 16px;
+				padding: 2px;
+				margin-top: -50px;
+			}
+		}
 	}
 	.home & {
 		background: transparentize(white, 0.9);
@@ -91,11 +97,21 @@ ul {
 			}
 		}
 	}
+	.navbar-toggle {
+		padding: 10px;
+		margin-bottom: 0px;
+		margin-top: 10px;
+		margin-right: 0px;
+		background-color: white;
+		&:hover {
+			background-color: white;
+		}
+	}
+	.navbar-collapse {
+		padding-left: 5px;
+	}
 }
 
-.navbar {
-	margin-bottom: 0;
-}
 
 #logo-main {
 	background: white url(../images/palmarinha-logo.png) no-repeat center center;
@@ -103,8 +119,10 @@ ul {
 	height: 175px;
 	text-indent: -9999px;
 	@media(max-width: $screen-xs-max) {
-			margin-left:0px !important;
 			width:100%;
+			margin-left: 0px !important;
+			background-size: 140px;
+			height: 135px;
 	}
 	.home & {
 		margin-left: 70px;
@@ -170,7 +188,7 @@ ul {
 		text-indent: -9999px;
 		margin: 0 auto 40px;
 		@media(max-width: $screen-xs-max) {
-			margin-top: -80px;
+			margin-top: -100px;
 			background: url(../images/dream-holiday-mobile.png) no-repeat center;
 			background-size:contain; 
 			width: auto;
@@ -941,6 +959,7 @@ img.auto-width {
 	@media(max-width: $screen-xs-max) {
 		height:250px;
 		padding-top:80px;
+		border-radius:0px;
 		.login-form {
 			width: 100%;
 			padding: 5px;
@@ -956,6 +975,9 @@ img.auto-width {
 			font-size: 18px;
 			padding:5px 20px 8px;
 			float: none;
+			@media(max-width: 320px) {
+				margin-top:10px;
+			}
 		}
 	}
 }
