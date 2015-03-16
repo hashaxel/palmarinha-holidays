@@ -162,11 +162,6 @@ ul {
 		}
 	}
 }
-#page-bg {
-	@media(max-width: $screen-xs-max) {
-		background-position:-200px;
-	}
-}
 #home-controls {
 	#dream-holiday {
 		background: url(../images/dream-holiday.png) no-repeat;
@@ -175,10 +170,10 @@ ul {
 		text-indent: -9999px;
 		margin: 0 auto 40px;
 		@media(max-width: $screen-xs-max) {
-			margin-top: -100px;
+			margin-top: -80px;
 			background: url(../images/dream-holiday-mobile.png) no-repeat center;
 			background-size:contain; 
-			width: 100%;
+			width: auto;
 		}
 	}
 }
@@ -191,7 +186,8 @@ ul {
 	.btn {
 		margin: 0 10px;
 		@media(max-width: $screen-xs-max) {
-			margin-bottom:10px;
+			margin-bottom: 30px;
+			margin-top: -20px;
 			.btn-text {
 				width: 190px;
 			}
@@ -1069,6 +1065,12 @@ img.auto-width {
 	background: url(../images/inquiry-bg.png);
 	padding: 25px;
 	height: 400px;
+	::-webkit-input-placeholder {
+		color:white;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+  		color:white;
+	}
 	h4 {
 		color: white;
 		font-weight: bold;
