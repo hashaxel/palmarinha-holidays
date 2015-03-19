@@ -54,12 +54,7 @@ class Hotel
 		end	
 	end
 	
-	def upload_document(file, hotelid)
-		path = File.join(Dir.pwd, "/public/hotels/documents/" + file[:filename].downcase.gsub(" ", "-"))
-		File.open(path, "wb") do |f|
-			f.write(file[:tempfile].read)
-		end	
-	end
+	
 
 	def generate_thumb(file, hotelid)
 		path = File.join(Dir.pwd, "/public/hotels/images", hotelid + "-" + file[:filename].downcase.gsub(" ", "-"))
@@ -75,6 +70,13 @@ class Hotel
 			super false
 		end
 	end
+end
+
+def upload_document(file)
+	path = File.join(Dir.pwd, "/public/hotels/documents/" + file[:filename].downcase.gsub(" ", "-"))
+	File.open(path, "wb") do |f|
+		f.write(file[:tempfile].read)
+	end	
 end
 
 class Special
@@ -203,16 +205,27 @@ put '/hotels' do
 	@updateparams = params[:hotel]
 
 	@thumbnail = params[:hotel][:thumbnail]
+	@document = params[:hotel][:document]
 
 	unless @thumbnail.nil?
 		@updateparams[:thumbnail] = @hotel.id.to_s + "-" + @thumbnail[:filename].downcase.gsub(" ", "-")
 	end
+	
+	unless params[:hotel][:document].nil?
+		@updateparams[:document] = params[:hotel][:document][:filename].downcase.gsub(" ", "-")
+	end
 
 	if @hotel.update(@updateparams)
+	
+		unless @document.nil?
+			upload_document(@document)
+		end
+		
 		unless @thumbnail.nil?
 			@hotel.handle_upload(@thumbnail, @hotel.id.to_s)
 			@hotel.generate_thumb(@thumbnail, @hotel.id.to_s)
 		end
+		
 		redirect "/admin"
 	else
 		redirect back
@@ -235,11 +248,13 @@ post '/hotels' do
 	
 	if hotel.save
 		if !params[:hotel][:document].nil?
-			hotel.upload_document(params[:hotel][:document], hotel.id.to_s)
+			upload_document(params[:hotel][:document])
 		end
-		hotel.handle_upload(params[:hotel][:thumbnail], hotel.id.to_s)
-		hotel.generate_thumb(params[:hotel][:thumbnail], hotel.id.to_s)
-		hotel.update(:thumbnail => hotel.id.to_s + "-" + hotel.thumbnail)
+		if !params[:hotel][:thumbnail].nil?
+			hotel.handle_upload(params[:hotel][:thumbnail], hotel.id.to_s)
+			hotel.generate_thumb(params[:hotel][:thumbnail], hotel.id.to_s)
+			hotel.update(:thumbnail => hotel.id.to_s + "-" + hotel.thumbnail)
+		end
 		redirect "/admin"
 	else
 		redirect back
