@@ -67,29 +67,11 @@
 			
 		</div>
 		<div class="col-md-4" id="inquiry-form">
-			<h4>Become a member today!</h4>
+			<h4>Have your own dream of a lifetime holiday!</h4>
 			
-			<form id="member-enroll" method="post" action="/request-membership">
-				
-				<div class="form-group">
-					<label for="name" class="hidden"></label>
-					<input type="text" name="member[name]" placeholder="your name" class="form-control" value="Your Name">
-				</div>
-				<div class="form-group">
-					<label for="phone" class="hidden"></label>
-					<input type="text" name="member[phone]" placeholder="your contact number" class="form-control" value="contact number">
-				</div>
-				<div id="eaddgrp" class="form-group">
-					<label for="eadd" class="hidden"></label>
-					<div class="input-group">
-						<input type="text" name="member[eadd]" id="eadd" placeholder="your email" class="form-control" value="email address">
-					</div>
-					<span id="emailInfo" class="text-justified"></span>
-				</div>
-				<p class="text-right">
-					<button type="submit" name="submit" value="Submit" id="send-btn">Send Inquiry <span class="glyphicon glyphicon-chevron-right"></span></button>
-				</p>
-			</form>
+			<p><a href="#" class="btn btn-link" data-toggle="modal" data-target="#sign-up-modal">Become a Member &raquo;</a></p>
 		</div>
 	</div>
 </div>
+
+<%= erb :_sign_up_form %>

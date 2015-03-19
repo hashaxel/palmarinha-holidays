@@ -702,6 +702,18 @@ img.auto-width {
 	}
 }
 
+.website-link {
+	border-bottom: 1px solid $vib;
+	color: $vib;
+	display: inline-block;
+	padding-bottom: 2px;
+	&:hover {
+		text-decoration: none;
+		color: #333;
+		border-color: #333;
+	}
+}
+
 .hotel-block {
 	position: relative;
 	.inner {
@@ -856,36 +868,17 @@ img.auto-width {
 	height: 400px;
 	h4 {
 		color: white;
-		font-weight: bold;
+		font-weight: 100;
 		font-size: 36px;
 		line-height: 42px;
-		text-transform: uppercase;
 	}
-	form {
-		position: absolute;
-		bottom: 20px;
-	}
-	input {
-		background: transparent;
-		border: 1px solid transparentize(white, 0.5);
-		border-radius: 0;
-		color: white;		
-		width: 280px;
-		font-family: $serif;
-		font-style: italic;
-		font-size: 16px;
-		padding: 20px 15px 15px;
-	}
-	#send-btn {
-		background: none;
-		font-weight: bold;
+	.btn-link {
+		border: 1px solid #fff;
 		color: white;
-		border: none;
-		font-size: 18px;
-		text-transform: uppercase;
-		.glyphicon {
-			font-size: 14px;
-		}
+		padding: 8px 15px;
+		position: absolute;
+		bottom: 25px;
+		left: 25px;
 	}
 }
 

@@ -163,6 +163,14 @@ $(document).ready(function() {
 		$.scrollTo('#special-section', 800);
 		return false;
 	});
+	
+	$('.scrollto').click(function() {
+		var url = $(this).data('target');
+		if ($(url).length) {
+			$.scrollTo(url, 800);
+			return false;	
+		}		
+	});
 
 });
 

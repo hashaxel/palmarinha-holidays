@@ -17,7 +17,9 @@
 		</div>
 		<div class="col-md-8">
 			<div class="special-wrap">
-				<a href="/hotels/specials/document/<%= @special.offer_doc %>" ><img src="/hotels/specials/<%= @special.offer_img %>" alt="" /></a>
+				<% if !@special.nil? %>
+					<a href="/hotels/specials/document/<%= @special.offer_doc %>" ><img src="/hotels/specials/<%= @special.offer_img %>" alt="" /></a>
+				<% end %>
 			</div>
 		</div>
 	</div>
