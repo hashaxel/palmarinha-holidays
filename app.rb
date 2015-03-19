@@ -331,7 +331,7 @@ post '/request-membership' do
 	#Pony.options = { :from => params[:member][:name] }
 	Pony.mail(
 		:from => params[:member][:name],
-		:to => 'milind@hashcooki.es',
+		:to => 'info@palmarinha-holidays.com',
 		:subject => "Membership Request",
 		:html_body => params[:member][:name] + " from " + params[:member][:city] + " wishes to be a member <br /> Contact by phone: " + params[:member][:phone] + "<br /> by email: " + params[:member][:eadd],
 		:via => :smtp,
@@ -355,7 +355,7 @@ post '/book' do
 	body = name + " wishes to book: " + hotel.name + " <br />Check-In: " + params[:book][:check_in] + "<br />Check-Out: " + params[:book][:check_out] + "<br />Contact by email: " + params[:book][:eadd] + message
 	Pony.mail(
 		:from => 'milind@hashcooki.es',
-		:to => 'milind@hashcooki.es',
+		:to => 'customerservices@palmarinha-holidays.com',
 		:subject => "Vacation Booking",
 		:html_body => body,
 		:via => :smtp,
