@@ -42,12 +42,20 @@ class Hotel
 	property :url,				String
 	property :price,			String
 	property :thumbnail,		String
+	property :document,		String
 	property :is_active, 	Boolean, :default => true
 	property :created_at,	DateTime
 	property :updated_at,	DateTime
 
 	def handle_upload(file, hotelid)
 		path = File.join(Dir.pwd, "/public/hotels/images", hotelid + "-" + file[:filename].downcase.gsub(" ", "-"))
+		File.open(path, "wb") do |f|
+			f.write(file[:tempfile].read)
+		end	
+	end
+	
+	def upload_document(file, hotelid)
+		path = File.join(Dir.pwd, "/public/hotels/documents/" + file[:filename].downcase.gsub(" ", "-"))
 		File.open(path, "wb") do |f|
 			f.write(file[:tempfile].read)
 		end	
@@ -216,10 +224,19 @@ post '/hotels' do
 	require_admin
 	newhotel = params[:hotel]
 	hotel = Hotel.new(newhotel)
-
-	hotel.thumbnail = params[:hotel][:thumbnail][:filename].downcase.gsub(" ", "-")
-
+	
+	if !params[:hotel][:thumbnail].nil?
+		hotel.thumbnail = params[:hotel][:thumbnail][:filename].downcase.gsub(" ", "-")
+	end
+	
+	if !params[:hotel][:document].nil?
+		hotel.document = params[:hotel][:document][:filename].downcase.gsub(" ", "-")
+	end
+	
 	if hotel.save
+		if !params[:hotel][:document].nil?
+			hotel.upload_document(params[:hotel][:document], hotel.id.to_s)
+		end
 		hotel.handle_upload(params[:hotel][:thumbnail], hotel.id.to_s)
 		hotel.generate_thumb(params[:hotel][:thumbnail], hotel.id.to_s)
 		hotel.update(:thumbnail => hotel.id.to_s + "-" + hotel.thumbnail)

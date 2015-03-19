@@ -969,15 +969,20 @@ h2 {
 }
 
 .hotel-item {
-	margin-bottom: 25px;
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 25px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 	.hotel-title {
 		font-weight: bold;
 		display: block;
 		font-size: 18px;
 		margin-bottom: 0px;
 		margin-top: 10px;
+		small {
+			font-family: $serif;
+			font-style: italic;
+			color: #999;
+			font-weight: normal;
+		}
 	}
 	.hotel-location {
 		font-size: 14px;
@@ -989,6 +994,15 @@ h2 {
 		margin-top: 5px;
 	}
 	.hotel-website {
+		display: block;
+		border-bottom: 1px solid $bc;
+		padding-bottom: 10px;
+	}
+	.hotel-document {
+		border-bottom: 1px solid $bc;
+		padding-bottom: 5px;
+		padding-top: 5px;
+		margin-bottom: 10px;
 		display: block;
 	}
 	.hotel-thumb {

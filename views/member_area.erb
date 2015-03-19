@@ -29,15 +29,17 @@
 				<div class="col-md-12">
 					<h3>Resorts <small>in package</small></h3>
 				</div>
-				<% @hotels.each do |hotel| %>
+				<% @hotels.each_with_index do |hotel, index| %>
 					<div class="col-md-4 hotel-item">
 						<div class="hotel-thumb">
 							<img src="/hotels/images/<%= hotel.thumbnail %>" alt="" />
 						</div>
-						<span class="hotel-title"><%= hotel.name %></span>
-						<span class="label">Location</span> <span class="hotel-location"><%= hotel.location %></span>
+						<span class="hotel-title"><%= hotel.name %> <small><%= hotel.location %></small></span>
 						<% if !hotel.url.nil? %>
 							<span class="hotel-website"><a href="<%= hotel.url %>">Website</a></span>
+						<% end %>
+						<% if !hotel.document.nil? %>
+							<span class="hotel-document"><a href="/hotels/documents/<%= hotel.document %>">Download PDF Brochure</a></span>
 						<% end %>
 						<div class="clearfix"></div>
 						<p class="hotel-desc"><%= hotel.desc %></p>
@@ -45,6 +47,11 @@
 						<span class="hotel-price">Rate: <%= hotel.price %></span>
 						<a class="btn book-btn btn-default btn-small" data-id="<%= hotel.id %>">Book Vacation</a>
 					</div>
+					<% if (index + 1) % 3 == 0 %>
+						<div class="col-md-12">
+							<hr />
+						</div>
+					<% end %>
 				<% end %>
 			</div>
 		</div>
