@@ -35,17 +35,24 @@
 							<img src="/hotels/images/<%= hotel.thumbnail %>" alt="" />
 						</div>
 						<span class="hotel-title"><%= hotel.name %> <small><%= hotel.location %></small></span>
+						
+						
+						
+						<p class="hotel-desc"><%= hotel.desc %></p>
 						<% if !hotel.url.nil? %>
 							<span class="hotel-website"><a href="<%= hotel.url %>">Website</a></span>
 						<% end %>
 						<% if !hotel.document.nil? %>
 							<span class="hotel-document"><a href="/hotels/documents/<%= hotel.document %>">Download PDF Brochure</a></span>
 						<% end %>
-						<div class="clearfix"></div>
-						<p class="hotel-desc"><%= hotel.desc %></p>
 						
-						<span class="hotel-price">Rate: <%= hotel.price %></span>
-						<a class="btn book-btn btn-default btn-small" data-id="<%= hotel.id %>">Book Vacation</a>
+						<div class="hotel-cta-block text-center">
+							<% if !hotel.price.nil? %>
+								<a class="book-btn" data-id="<%= hotel.id %>" href="#"><span class="hotel-price"><%= hotel.price %></span></a>
+							<% end %>
+							<a class="btn book-btn btn-default btn-small" data-id="<%= hotel.id %>">Book Vacation</a>
+						</div>
+						
 					</div>
 					<% if (index + 1) % 3 == 0 %>
 						<div class="col-md-12">

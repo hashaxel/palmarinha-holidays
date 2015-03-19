@@ -995,14 +995,14 @@ h2 {
 	}
 	.hotel-website {
 		display: block;
-		border-bottom: 1px solid $bc;
-		padding-bottom: 10px;
+		border-top: 1px solid $bc;
+		padding-bottom: 7px;
+		padding-top: 5px;
 	}
 	.hotel-document {
-		border-bottom: 1px solid $bc;
-		padding-bottom: 5px;
+		border-top: 1px solid $bc;
+		padding-bottom: 7px;
 		padding-top: 5px;
-		margin-bottom: 10px;
 		display: block;
 	}
 	.hotel-thumb {
@@ -1014,9 +1014,25 @@ h2 {
 		}
 	}
 	.hotel-price {
+		display: block;
+		float:left;
+		background: $vib;
+		padding: 6px 15px;
+		color: white;
+		font-family: $serif;
 		font-weight: bold;
-		margin-right: 10px;
-		display: inline-block;
+	}
+	.hotel-cta-block {
+		margin-top: 10px;
+		.btn {
+			float: left;
+			-webkit-transition-duration: 400ms;
+			&:hover {
+				color: white;
+				background: $vib;
+				border-color: $vib;
+			}
+		}
 	}
 }
 
