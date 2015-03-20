@@ -47,7 +47,7 @@
 						<% end %>
 						
 						<div class="hotel-cta-block text-center">
-							<% if !hotel.price.nil? %>
+							<% if !hotel.price.blank? %>
 								<a class="book-btn" data-id="<%= hotel.id %>" href="#"><span class="hotel-price"><%= hotel.price %></span></a>
 							<% end %>
 							<a class="btn book-btn btn-default btn-small" data-id="<%= hotel.id %>">Book Vacation</a>
