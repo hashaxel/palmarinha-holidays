@@ -8,6 +8,7 @@
 			  <ul class="nav nav-tabs" role="tablist">
 			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Hotels</a></li>
 			    <li role="presentation"><a href="#special" aria-controls="special" role="tab" data-toggle="tab">Special Offer</a></li>
+			    <li role="presentation"><a href="#affiliate" aria=controls="affiliate" role="tab" data-toggle="tab">Affiliate</a></li>
 			  </ul>
 			
 			  <!-- Tab panes -->
@@ -59,6 +60,10 @@
 	    				</div>
 	    			</div>
 			    </div><!-- end tab -->
+			    <div role="tabpanel" class="tab-pane" id="affiliate">
+			    	<h4>Change Affiliate PDF</h4>
+			    	<%= erb :_new_affiliate_form %>
+			    </div>
 			  </div>
 			
 			</div>

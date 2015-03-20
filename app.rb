@@ -106,6 +106,15 @@ class Special
 
 end
 
+class Affiliate
+	include DataMapper::Resource
+	property :id,		Serial
+	property :url,		String
+	property :created_at,	DateTime
+	property :updated_at,	DateTime
+	
+end
+
 DataMapper.auto_upgrade!
 
 get '/reset/?:reqtype?' do
@@ -148,6 +157,7 @@ get '/member-area' do
 		@body_class += " members-area"
 		@special = Special.last
 		@hotels = Hotel.all
+		@affiliate = Affiliate.last
 		erb :member_area
 	else
 		redirect to('/membership')
@@ -256,6 +266,20 @@ post '/hotels' do
 			hotel.update(:thumbnail => hotel.id.to_s + "-" + hotel.thumbnail)
 		end
 		redirect "/admin"
+	else
+		redirect back
+	end
+end
+
+post '/affiliates' do
+	require_admin
+	affiliate = Affiliate.new
+	
+	affiliate.url = params[:affiliate][:document][:filename].downcase.gsub(" ", "-")
+	
+	if affiliate.save
+		upload_document(params[:affiliate][:document])
+		redirect '/admin'
 	else
 		redirect back
 	end
