@@ -433,8 +433,8 @@ post '/support-request' do
 	name = params[:name]
 	body = "#{params[:name]} has made a new support request. #{params[:name]} can be contacted via email (#{params[:email]}) or phone (#{params[:phone]}). Their support message is: #{params[:message]}"
 	Pony.mail(
-		:from => 'milind@hashcooki.es',
-		:to => 'milind@hashcooki.es',
+		:from => params[:email],
+		:to => 'customerservices@palmarinha-holidays.com',
 		:subject => "Support Request",
 		:html_body => body,
 		:via => :smtp,

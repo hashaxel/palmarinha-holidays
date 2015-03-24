@@ -171,6 +171,13 @@ $(document).ready(function() {
 			return false;	
 		}		
 	});
+	
+	$('#learnmore-btn').click(function() {
+		
+		$.scrollTo(winH, 800);
+		
+		return false;
+	});
 
 });
 
