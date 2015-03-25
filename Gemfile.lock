@@ -1,32 +1,31 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.1.1)
-      activesupport (= 4.1.1)
+    CFPropertyList (2.3.0)
+    activemodel (4.2.0)
+      activesupport (= 4.2.0)
       builder (~> 3.1)
-    activesupport (4.1.1)
-      i18n (~> 0.6, >= 0.6.9)
+    activesupport (4.2.0)
+      i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.1)
+      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
-    backports (3.6.0)
-    bcrypt (3.1.7)
-    bcrypt (3.1.7-x86-mingw32)
+    addressable (2.3.7)
+    backports (3.6.4)
+    bcrypt (3.1.10)
+    bcrypt (3.1.10-x86-mingw32)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
     bcrypt-ruby (3.1.5-x86-mingw32)
       bcrypt (>= 3.1.3)
     builder (3.2.2)
-    carrierwave (0.10.0)
+    carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
-    carrierwave-datamapper (0.1.1)
-      carrierwave
-      dm-core (~> 1.0)
+    carrierwave-datamapper (0.2.2)
+      carrierwave (~> 0.8.0)
+      dm-core (~> 1.1)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -37,7 +36,7 @@ GEM
       dm-transactions (~> 1.2.0)
       dm-types (~> 1.2.0)
       dm-validations (~> 1.2.0)
-    data_objects (0.10.14)
+    data_objects (0.10.15)
       addressable (~> 2.1)
     dm-aggregates (1.2.0)
       dm-core (~> 1.2.0)
@@ -76,67 +75,131 @@ GEM
       uuidtools (~> 2.1)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
-    do_mysql (0.10.14)
-      data_objects (= 0.10.14)
-    do_mysql (0.10.14-x86-mingw32)
-      data_objects (= 0.10.14)
-    do_sqlite3 (0.10.14)
-      data_objects (= 0.10.14)
-    do_sqlite3 (0.10.14-x86-mingw32)
-      data_objects (= 0.10.14)
-    excon (0.33.0)
+    do_mysql (0.10.15)
+      data_objects (= 0.10.15)
+    do_mysql (0.10.15-x86-mingw32)
+      data_objects (= 0.10.15)
+    do_sqlite3 (0.10.15)
+      data_objects (= 0.10.15)
+    do_sqlite3 (0.10.15-x86-mingw32)
+      data_objects (= 0.10.15)
+    excon (0.44.4)
     fastercsv (1.5.5)
-    fog (1.22.0)
-      fog-brightbox
-      fog-core (~> 1.21, >= 1.21.1)
+    fission (0.5.0)
+      CFPropertyList (~> 2.2)
+    fog (1.28.0)
+      fog-atmos
+      fog-aws (~> 0.0)
+      fog-brightbox (~> 0.4)
+      fog-core (~> 1.27, >= 1.27.3)
+      fog-ecloud
       fog-json
+      fog-profitbricks
+      fog-radosgw (>= 0.0.2)
+      fog-riakcs
+      fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
+      fog-softlayer
+      fog-storm_on_demand
+      fog-terremark
+      fog-vmfusion
+      fog-voxel
+      fog-xml (~> 0.1.1)
+      ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
-    fog-brightbox (0.0.2)
+    fog-atmos (0.1.0)
       fog-core
+      fog-xml
+    fog-aws (0.1.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-brightbox (0.7.1)
+      fog-core (~> 1.22)
       fog-json
-    fog-core (1.22.0)
+      inflecto (~> 0.0.2)
+    fog-core (1.29.0)
       builder
-      excon (~> 0.33)
+      excon (~> 0.38)
       formatador (~> 0.2)
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
+    fog-ecloud (0.0.2)
+      fog-core
+      fog-xml
     fog-json (1.0.0)
       multi_json (~> 1.0)
-    formatador (0.2.4)
-    i18n (0.6.9)
-    json (1.8.1)
-    json_pure (1.8.1)
-    mail (2.5.4)
-      mime-types (~> 1.16)
-      treetop (~> 1.4.8)
-    mime-types (1.25.1)
-    mini_magick (3.7.0)
-      subexec (~> 0.2.1)
-    mini_portile (0.6.0)
-    minitest (5.3.3)
-    multi_json (1.9.2)
+    fog-profitbricks (0.0.1)
+      fog-core
+      fog-xml
+      nokogiri
+    fog-radosgw (0.0.3)
+      fog-core (>= 1.21.0)
+      fog-json
+      fog-xml (>= 0.0.1)
+    fog-riakcs (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-sakuracloud (1.0.0)
+      fog-core
+      fog-json
+    fog-serverlove (0.1.1)
+      fog-core
+      fog-json
+    fog-softlayer (0.4.1)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.0)
+      fog-core
+      fog-json
+    fog-terremark (0.0.4)
+      fog-core
+      fog-xml
+    fog-vmfusion (0.0.1)
+      fission
+      fog-core
+    fog-voxel (0.0.2)
+      fog-core
+      fog-xml
+    fog-xml (0.1.1)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
+    formatador (0.2.5)
+    i18n (0.7.0)
+    inflecto (0.0.2)
+    ipaddress (0.8.0)
+    json (1.8.2)
+    json_pure (1.8.2)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mime-types (2.4.3)
+    mini_magick (4.1.0)
+    mini_portile (0.6.2)
+    minitest (5.5.1)
+    multi_json (1.11.0)
     mysql (2.9.1)
     mysql (2.9.1-x86-mingw32)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.1)
-    nokogiri (1.6.2.1)
-      mini_portile (= 0.6.0)
-    nokogiri (1.6.2.1-x86-mingw32)
-      mini_portile (= 0.6.0)
-    polyglot (0.3.4)
-    pony (1.8)
+    net-ssh (2.9.2)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    nokogiri (1.6.6.2-x86-mingw32)
+      mini_portile (~> 0.6.0)
+    pony (1.11)
       mail (>= 2.0)
-    rack (1.5.2)
-    rack-protection (1.5.1)
+    rack (1.6.0)
+    rack-protection (1.5.3)
       rack
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
-    sass (3.3.3)
-    shotgun (0.9)
+    sass (3.4.13)
+    shotgun (0.9.1)
       rack (>= 1.0)
-    sinatra (1.4.4)
+    sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
@@ -147,18 +210,14 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
-    sqlite3 (1.3.9)
-    sqlite3 (1.3.9-x86-mingw32)
+    sqlite3 (1.3.10)
+    sqlite3 (1.3.10-x86-mingw32)
     stringex (1.5.1)
-    subexec (0.2.3)
-    thread_safe (0.3.3)
+    thread_safe (0.3.5)
     tilt (1.4.1)
-    treetop (1.4.15)
-      polyglot
-      polyglot (>= 0.3.1)
-    tzinfo (1.1.0)
+    tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uuidtools (2.1.4)
+    uuidtools (2.1.5)
 
 PLATFORMS
   ruby

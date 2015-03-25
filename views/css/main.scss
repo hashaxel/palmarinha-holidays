@@ -10,6 +10,11 @@ $vibAlt: #ecb680;
 
 body {
 	font-family: $sans;
+	overflow-x:hidden 
+}
+
+html {
+	overflow-x:hidden;
 }
 
 p {
@@ -58,7 +63,6 @@ ul {
 	border: none;
 	border-bottom: 1px solid transparentize(white, 0.8);
 	border-radius: 0;
-
 	.nav {
 		margin-right: 30px;
 		li {
@@ -76,6 +80,13 @@ ul {
 				}
 			}
 		}
+		@media(max-width: $screen-xs-max) {
+			li {
+				font-size: 16px;
+				padding: 2px;
+				margin-top: -50px;
+			}
+		}
 	}
 	.home & {
 		background: transparentize(white, 0.9);
@@ -86,18 +97,33 @@ ul {
 			}
 		}
 	}
+	.navbar-toggle {
+		padding: 10px;
+		margin-bottom: 0px;
+		margin-top: 10px;
+		margin-right: 0px;
+		background-color: white;
+		&:hover {
+			background-color: white;
+		}
+	}
+	.navbar-collapse {
+		padding-left: 5px;
+	}
 }
 
-.navbar {
-	margin-bottom: 0;
-}
 
 #logo-main {
 	background: white url(../images/palmarinha-logo.png) no-repeat center center;
 	width: 230px;
 	height: 175px;
 	text-indent: -9999px;
-	
+	@media(max-width: $screen-xs-max) {
+			width:100%;
+			margin-left: 0px !important;
+			background-size: 140px;
+			height: 135px;
+	}
 	.home & {
 		margin-left: 70px;
 	}
@@ -107,10 +133,20 @@ ul {
 	margin-top: 50px;
 	background: lighten($vib, 55%);
 	border-top: 1px solid lighten($vib, 47%);
+	@media(max-width: $screen-xs-max) {
+		margin-top:0px; 
+		.col-md-12 {
+			padding: 0px;
+		}
+	}
 	#logo-main {
 		margin-top: 0;
 		float: left;
 		margin-right: 35px;
+		@media(max-width: $screen-xs-max) {
+			float:none;
+
+		}
 	}
 	p {
 		font-weight: 100;
@@ -130,14 +166,34 @@ ul {
 			font-size: 18px;
 		}
 	}
+	@media(max-width: $screen-xs-max) {
+		ul {
+			margin:20px 0px 10px;
+			li {
+				text-align: center;
+				color: $vib;
+				margin-right: 0px;
+				float: none;
+				padding: 5px;
+				font-size: 20px;
+			}
+		}
+	}
 }
-
-#dream-holiday {
-	background: url(../images/dream-holiday.png) no-repeat;
-	width: 730px;
-	height: 168px;
-	text-indent: -9999px;
-	margin: 0 auto 40px;
+#home-controls {
+	#dream-holiday {
+		background: url(../images/dream-holiday.png) no-repeat;
+		width: 730px;
+		height: 168px;
+		text-indent: -9999px;
+		margin: 0 auto 40px;
+		@media(max-width: $screen-xs-max) {
+			margin-top: -100px;
+			background: url(../images/dream-holiday-mobile.png) no-repeat center;
+			background-size:contain; 
+			width: auto;
+		}
+	}
 }
 
 .cover-controls {
@@ -147,11 +203,19 @@ ul {
 	text-align: center;
 	.btn {
 		margin: 0 10px;
+		@media(max-width: $screen-xs-max) {
+			margin-bottom: 30px;
+			margin-top: -20px;
+			.btn-text {
+				width: 190px;
+			}
+		}
 	}
 }
 
 .btn {
 	color: $vib;
+
 }
 
 .btn-primary {
@@ -178,11 +242,13 @@ ul {
 
 .btn-large {
 	font-size: 22px;
-	padding: 15px 25px;
+	padding: 20px;
 	font-family: $sansAlt;
 	text-transform: uppercase;
 	font-weight: bold;
-	
+	@media(max-width: $screen-xs-max) {
+		padding:10px 10px;
+	}
 }
 
 .btn-checkbox {
@@ -272,12 +338,21 @@ button.close {
 	text-transform: uppercase;
 	font-weight: bold;
 }
-
 .testimonial-block {
 	padding: 50px 0;
+	@media(max-width: $screen-xs-max) {
+		padding:0px;
+		text-align: center !important;
+		.text-right {
+			text-align: center;
+		}
+	}
 	.row img {
 		width: auto;
-		
+		@media(max-width: $screen-xs-max) {
+			width:245px;
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -313,6 +388,24 @@ button.close {
 	img {
 		width: 100%;
 	}
+	@media(max-width: $screen-xs-max) {
+		margin-top:60px;
+		padding:0px;
+		h2 {
+			top:-110px;
+			font-size:20px;
+			background-color:$vib;
+			padding:15px;
+			text-shadow:none;
+			span {
+				font-size: 16px;
+				letter-spacing: 10px;
+			}
+		}	
+		img {
+			margin-top: -12px;
+		}
+	}
 }
 
 #introducing-palmarinha-text {
@@ -322,6 +415,10 @@ button.close {
 	overflow: auto;
 	margin: -100px 30px 0px;
 	padding: 50px 25px;
+	@media(max-width: $screen-xs-max) {
+		margin: 20px 0px;
+		padding: 0px;
+	}
 	p {
 		font-size: 18px;
 		line-height: 160%;
@@ -346,6 +443,12 @@ button.close {
 			}
 		}
 	}
+	
+	@media(max-width: $screen-xs-max) {
+		#introducing-bullets {
+			margin-left:5px;
+		}	
+	}
 }
 
 #introducing-intro {
@@ -354,6 +457,13 @@ button.close {
 	font-size: 22px;
 	font-weight: 300;
 	color: darken($vib, 0%);
+	@media(max-width: $screen-xs-max) {
+		margin-top:20px;
+		p.lead {
+			font-size:16px;
+			line-height: 30px;
+		}
+	}
 }
 
 .whimsy {
@@ -362,19 +472,10 @@ button.close {
 	display: inline-block;
 	padding: 2px 7px;
 	-webkit-transform: rotate(-2deg);
+	@media(max-width: $screen-xs-max) {
+		margin:5px 15% 10px;
+	}
 }
-
-#howitworks-title {
-	background: lighten($vib, 10%);
-	-webkit-transform: rotate(2deg);
-	text-align: center;
-	padding: 10px 40px;
-	position: absolute;
-	top: -23px;
-	margin-top: 0;
-	-webkit-box-shadow: 3px 6px 10px darken($vib, 5%);
-}
-
 
 #how-it-works {
 	
@@ -385,11 +486,34 @@ button.close {
 		margin-top: 80px;
 		padding-top: 60px;
 		-webkit-transform: rotate(-1deg);
+		transform:rotate(-1deg);
+		@media(max-width: $screen-xs-max) {
+			-webkit-transform:none;
+			margin-top: 20px;
+			padding-top: 5px;
+		}
 	}
 	.btn {
 		color: white;
 		font-size: 18px;
 		margin-top: 15px;
+	}
+
+	#howitworks-title {
+		background: lighten($vib, 10%);
+		-webkit-transform: rotate(2deg);
+		transform: rotate(2deg);
+		text-align: center;
+		padding: 10px 40px;
+		position: absolute;
+		top: -23px;
+		margin-top: 0;
+		-webkit-box-shadow: 3px 6px 10px darken($vib, 5%);
+		@media(max-width: $screen-xs-max) {
+			position:relative;
+			font-size: 20px;
+			-webkit-transform:none;
+		}
 	}
 	h3 {
 		font-weight: bold;
@@ -414,6 +538,7 @@ button.close {
 			margin: 0 auto 10px;
 			padding-bottom: 7px;
 		}
+
 	}
 	h4 {
 		font-weight: bold;
@@ -518,6 +643,11 @@ img.auto-width {
 	height: 100px;
 	text-indent: -9999px;
 	margin-top: 100px;
+	@media(max-width: $screen-xs-max) {
+		background-image:none;
+		margin-top:0px;
+		text-indent: 0px;
+	}
 }
 
 #locations-block {
@@ -534,6 +664,10 @@ img.auto-width {
 			color: $vib;
 			font-weight: bold;
 		}
+	}
+	@media(max-width: $screen-xs-max) {
+		margin-top:15px;
+		margin-bottom: 30px;
 	}
 }
 
@@ -554,6 +688,9 @@ img.auto-width {
 	background: transparentize(white, 0.1);
 	font-weight: 100;
 	padding: 25px 30px;
+	@media(max-width: $screen-xs-max) {
+		margin-top:0px;
+	}
 	p {
 		margin-bottom: 10px;
 	}
@@ -577,6 +714,15 @@ img.auto-width {
 		border-radius: 5px;
 		margin-bottom: 10px;
 	}
+	@media(max-width: $screen-xs-max) {
+		margin-top:0px;
+		img {
+			padding:5px 30px;
+		}
+		div {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 #loc-sec-2 {
@@ -592,6 +738,14 @@ img.auto-width {
 		font-size: 18px;
 		font-weight: 100;
 	}
+	@media(max-width: $screen-xs-max) {
+		h3 {
+			font-size: 24px;
+		}
+		p {
+			font-size: 16px;
+		}
+	}
 }
 
 #loc-cta {
@@ -603,6 +757,15 @@ img.auto-width {
 		color: white;
 		background-color: lighten(desaturate($red, 10%), 10%);
 	}
+	@media(max-width: $screen-xs-max) {
+		text-align:center !important;
+		float: none !important;
+		margin:10px 0px;
+		.btn-primary {
+			width: 100%;
+			padding: 10px;
+		}
+	}	
 }
 
 #loc-blocks {
@@ -637,6 +800,20 @@ img.auto-width {
 		}
 	}
 	
+	@media(max-width: $screen-xs-max) {
+		li {
+			width:50%;
+			margin: 0px;
+			padding: 5px 5px;
+			img {
+				width:100%;
+			}
+			span {
+				padding: 5px 15px;
+				font-size: 12px;
+			}
+		}
+	}	
 }
 
 .viewport {
@@ -676,6 +853,15 @@ img.auto-width {
 		display: block;
 		font-family: $serif;
 		font-style: italic;
+	}
+	@media(max-width: $screen-xs-max) {
+		h3 {
+			font-size: 34px;
+		}
+		.label {
+			margin-top: 0px;
+			font-size: 18px;
+		}
 	}
 }
 
@@ -732,6 +918,9 @@ img.auto-width {
 
 #final-cta {
 	margin-top: 40px;
+	@media (max-width: $screen-xs-max) {
+		margin: 25px 0;
+	}
 }
 
 #special-offers-block {
@@ -779,6 +968,30 @@ img.auto-width {
 		margin-top: 5px;
 		display: block;
 	}
+	@media(max-width: $screen-xs-max) {
+		height:250px;
+		padding-top:80px;
+		border-radius:0px;
+		.login-form {
+			width: 100%;
+			padding: 5px;
+			text-align: center;
+		}
+		input {
+			font-size: 18px;
+			width: auto;
+			float: none;
+			padding: 5px 10px 8px;
+		}
+		.btn-blue {
+			font-size: 18px;
+			padding:5px 20px 8px;
+			float: none;
+			@media(max-width: 320px) {
+				margin-top:10px;
+			}
+		}
+	}
 }
 
 #learn-more-btn {
@@ -789,6 +1002,9 @@ img.auto-width {
 
 #members-content {
 	margin-bottom: 50px;
+	@media(max-width: $screen-xs-max) {
+		margin-bottom:0px;
+	}
 }
 
 #member-benefits {
@@ -830,6 +1046,7 @@ img.auto-width {
 			padding: 0 15px;
 			margin-bottom: 25px;
 		}
+
 	}
 }
 
@@ -840,10 +1057,18 @@ img.auto-width {
 		font-size: 30px;
 		text-transform: uppercase;
 		font-weight: bold;
-		
 	}
 	p {
 		font-size: 18px;
+	}
+	@media(max-width: $screen-xs-max) {
+		h3 {
+		    font-size:22px;	
+		    line-height: 35px;
+		}
+		p {
+			font-size: 15px;
+		}
 	}
 }
 
@@ -853,11 +1078,19 @@ img.auto-width {
 	padding: 30px 50px;
 	color: white;
 	border-right: 20px solid #fff;
+	@media(max-width: $screen-xs-max) {
+		border:none;
+		height:auto;
+		padding:15px 25px;
+	}
 }
 
 #package-blocks {
 	p {
 		font-size: 16px;
+		@media(max-width: $screen-xs-max) {
+			font-size:15px;
+		}
 	}	
 }
 
@@ -866,6 +1099,12 @@ img.auto-width {
 	background: url(../images/inquiry-bg.png);
 	padding: 25px;
 	height: 400px;
+	::-webkit-input-placeholder {
+		color:white;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+  		color:white;
+	}
 	h4 {
 		color: white;
 		font-weight: 100;
@@ -879,6 +1118,32 @@ img.auto-width {
 		position: absolute;
 		bottom: 25px;
 		left: 25px;
+	}
+	@media(max-width: $screen-xs-max) {
+		padding:10px 25px;
+		h4 {
+			font-size: 22px;
+		}
+		.text-right {
+			text-align: center;
+		}
+		#send-btn {
+			font-size: 14px;
+			border:1px solid white;
+			padding: 5px;
+		}
+		input {
+			padding: 25px 20px;
+			width: 100%;
+		}
+		.input-group {
+			width: 100%;
+		}
+		form {
+			position: relative;
+			bottom: 0px;
+			top: 20px;
+		}
 	}
 }
 
@@ -929,6 +1194,7 @@ h2 {
 		float: none;
 		height: 150px;
 		display: block;
+		
 	}
 	.title {
 		font-weight: bold;
@@ -954,6 +1220,11 @@ h2 {
 	.btn {
 		margin-top: -10px;
 		margin-left: 25px;
+		border: 1px solid $vib;
+		padding: 10px;
+		@media(max-width: $screen-xs-max) {
+			margin-bottom:10px;
+		}
 	}
 }
 
@@ -965,6 +1236,11 @@ h2 {
 		color: #000;
 		font-size: 48px;
 		margin-bottom: 25px;
+	}
+	@media(max-width: $screen-xs-max) {
+		h3 {
+			font-size:32px;
+		}
 	}
 }
 
