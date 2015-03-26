@@ -1325,6 +1325,11 @@ h2 {
 .hotel-item {
 	padding-bottom: 10px;
 	padding-top: 10px;
+	@media (max-width: $screen-xs-max) {
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 25px;
+		margin-bottom: 15px;
+	}
 	.hotel-title {
 		font-weight: bold;
 		display: block;
@@ -1378,6 +1383,8 @@ h2 {
 	}
 	.hotel-cta-block {
 		margin-top: 10px;
+		width: 100%;
+		overflow:auto;
 		.btn {
 			float: left;
 			-webkit-transition-duration: 400ms;
@@ -1447,9 +1454,13 @@ h2 {
 	}
 }
 
-.special-wrap {
-	height: 408px;
-	overflow: hidden;
+@media (min-width: $screen-sm-min) {
+
+	.special-wrap {
+		height: 408px;
+		overflow: hidden;
+	}
+
 }
 
 .book-modal-form {
