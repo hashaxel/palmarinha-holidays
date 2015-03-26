@@ -128,6 +128,21 @@ ul {
 	}
 }
 
+#logo-footer  {
+	background: white url(../images/palmarinha-logo.png) no-repeat center center;
+	width: 230px;
+	height: 175px;
+	text-indent: -9999px;
+	@media(max-width: $screen-xs-max) {
+
+			margin-left:0px !important;
+			width:100%;
+	}
+	.home & {
+		margin-left: 70px;
+	}
+}
+
 #footer {
 	margin-top: 50px;
 	background: lighten($vib, 55%);
