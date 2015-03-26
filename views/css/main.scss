@@ -103,6 +103,8 @@ ul {
 		margin-top: 10px;
 		margin-right: 0px;
 		background-color: white;
+		position: absolute;
+		right: 5px;
 		&:hover {
 			background-color: white;
 		}
@@ -374,10 +376,11 @@ button.close {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
 .testimonial-block {
 	padding: 50px 0;
 	@media(max-width: $screen-xs-max) {
-		padding:0px;
+		padding: 15px 0 0;
 		text-align: center !important;
 		.text-right {
 			text-align: center;
@@ -469,14 +472,16 @@ button.close {
 		margin-top: 0;
 	}
 	#introducing-bullets {
-		border-left: 1px solid $vibAlt;
-		padding-left: 25px;
 		ul {
 			padding-left: 0;
 			li {
 				list-style: none;
 				margin-bottom: 10px;
 			}
+		}
+		@media (min-width: $screen-sm-min) {
+			border-left: 1px solid $vibAlt;
+			padding-left: 25px;
 		}
 	}
 	
@@ -495,9 +500,10 @@ button.close {
 	color: darken($vib, 0%);
 	@media(max-width: $screen-xs-max) {
 		margin-top:20px;
+		margin-bottom: 70px;
 		p.lead {
 			font-size:16px;
-			line-height: 30px;
+			line-height: 24px;
 		}
 	}
 }
@@ -750,13 +756,21 @@ img.auto-width {
 		border-radius: 5px;
 		margin-bottom: 10px;
 	}
+	
 	@media(max-width: $screen-xs-max) {
 		margin-top:0px;
 		img {
-			padding:5px 30px;
+			padding:5px 0 0;
+			margin-bottom: 0;
 		}
 		div {
-			margin-bottom: 10px;
+			margin-bottom: 15px;
+		}
+		h5 {
+			margin-bottom: 3px;
+		}
+		p {
+			line-height: 18px;
 		}
 	}
 }
@@ -912,7 +926,6 @@ img.auto-width {
 }
 
 #hotel-blocks {
-	margin-top: 50px;
 	h3 {
 		color: $vib;
 		font-size: 32px;
@@ -921,6 +934,9 @@ img.auto-width {
 		small {
 			font-weight: bold;
 		}
+	}
+	@media (max-width: $screen-xs-max) {
+		margin-top: 15px;
 	}
 }
 
@@ -965,7 +981,6 @@ img.auto-width {
 }
 
 #member-controls {
-	border-radius: 7px;
 	height: 400px;
 	background: url(../images/member-banner.jpg) no-repeat center center;
 	background-size: cover;
@@ -1005,24 +1020,31 @@ img.auto-width {
 		display: block;
 	}
 	@media(max-width: $screen-xs-max) {
-		height:250px;
+
 		padding-top:80px;
 
 		.login-form {
-			width: 100%;
-			padding: 5px;
+			width: 90%;
+			margin: 0 auto;
 			text-align: center;
 		}
 		input {
 			font-size: 18px;
-			width: auto;
+			width: 100%;
+			border-radius: 0;
 			float: none;
-			padding: 5px 10px 8px;
+			padding: 12px 10px 15px;
+			text-align: center;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
 		}
 		.btn-blue {
 			font-size: 18px;
 			padding:5px 20px 8px;
 			float: none;
+			width: 100%;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
 		}
 	}
 }
@@ -1071,7 +1093,9 @@ img.auto-width {
 		color: $vib;
 	}
 	img {
-		margin-bottom: 15px;
+		@media (min-width: $screen-sm-min) {
+			margin-bottom: 15px;
+		}
 	}
 	.info-blocks {
 		margin-top: 30px;
@@ -1155,15 +1179,14 @@ img.auto-width {
 	@media(max-width: $screen-xs-max) {
 		padding:10px 25px;
 		h4 {
-			font-size: 22px;
+			font-size: 52px;
+			line-height: 56px;
 		}
 		.text-right {
 			text-align: center;
 		}
-		#send-btn {
-			font-size: 14px;
-			border:1px solid white;
-			padding: 5px;
+		.btn-link {
+			font-size: 20px;
 		}
 		input {
 			padding: 25px 20px;
