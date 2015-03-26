@@ -18,10 +18,12 @@ $(document).ready(function() {
 	var emailInfo = $('#emailInfo');
 	var eaddgrp = $('#eaddgrp');
 	
-
-	$('#home-controls').css({
-		top: ((winH - 260) / 2) + 160
-	});
+	if (winW > 321) {
+		$('#home-controls').css({
+			top: ((winH - 260) / 2) + 160
+		});
+	}
+	
 	form.submit(function() {
 		if (validateEmail()) {
 			return true;
