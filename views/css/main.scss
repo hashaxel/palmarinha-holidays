@@ -1354,14 +1354,20 @@ h2 {
 	}
 	.hotel-website {
 		display: block;
-		border-top: 1px solid $bc;
 		padding-bottom: 7px;
-		padding-top: 5px;
+		
+		@media (min-width: $screen-sm-min) {
+			border-top: 1px solid $bc;
+			padding-top: 5px;
+		}
 	}
 	.hotel-document {
-		border-top: 1px solid $bc;
+		@media (min-width: $screen-sm-min) {
+			border-top: 1px solid $bc;
+			padding-top: 5px;
+		}
 		padding-bottom: 7px;
-		padding-top: 5px;
+		
 		display: block;
 	}
 	.hotel-thumb {
