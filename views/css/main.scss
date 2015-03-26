@@ -503,10 +503,13 @@ button.close {
 
 #introducing-intro {
 	margin-top: 70px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	font-size: 22px;
 	font-weight: 300;
 	color: darken($vib, 0%);
+	.lead {
+		line-height: 160%;
+	}
 	@media(max-width: $screen-xs-max) {
 		margin-top:20px;
 		margin-bottom: 70px;
