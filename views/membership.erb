@@ -1,27 +1,4 @@
-
-<div class="container">
-	<div class="navbar navbar-default" role="navigation" id="navigation">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a id="logo-main" class="navbar-brand" href="/">Palmarinha Holidays</a>
-			<!-- <h3 class="subtitle">Other India Bookstore</h3> -->
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/about">About</a></li>
-				<li><a href="#">Resorts</a></li>
-				<li><a href="#">Locations</a></li>
-				<li><a href="/membership">Members Area</a></li>
-				<li><a href="/contact">Contact</a></li>
-			</ul>
-		</div>
-</div>
-</div>
+<%= erb :navigation %>
 
 
 <div id="member-controls">
@@ -32,7 +9,7 @@
 		</form>
 		
 		<div class="clearfix"></div>
-		<a id="trouble-logging" href="#">Having trouble logging in?</a>
+		<a id="trouble-logging" href="/contact">Having trouble logging in?</a>
 	</div>
 </div>
 
@@ -90,30 +67,7 @@
 		</div>
 		<div class="col-md-4" id="inquiry-form">
 			<h4>Have your own dream holiday!</h4>
-			
-
-			<form id="member-enroll" method="post" action="/request-membership">
-				
-				<div class="form-group">
-					<label for="name" class="hidden"></label>
-					<input type="text" name="member[name]" placeholder="your name" class="form-control">
-				</div>
-				<div class="form-group">
-					<label for="phone" class="hidden"></label>
-					<input type="text" name="member[phone]" placeholder="your contact number" class="form-control">
-				</div>
-				<div id="eaddgrp" class="form-group">
-					<label for="eadd" class="hidden"></label>
-					<div class="input-group">
-						<input type="text" name="member[eadd]" id="eadd" placeholder="your email" class="form-control">
-					</div>
-					<span id="emailInfo" class="text-justified"></span>
-				</div>
-				<p class="text-right">
-					<button type="submit" name="submit" value="Submit" id="send-btn">Send Inquiry <span class="glyphicon glyphicon-chevron-right"></span></button>
-				</p>
-			</form>
-
+			<a href="#" class="btn btn-primary btn-link"  data-toggle="modal" data-target="#sign-up-modal">Become a Member Today!</a>
 		</div>
 	</div>
 </div>

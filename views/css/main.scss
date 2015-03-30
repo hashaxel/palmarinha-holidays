@@ -88,28 +88,46 @@ ul {
 			}
 		}
 	}
-	.home & {
-		background: transparentize(white, 0.9);
-		li {
-			color: white;
-			a {
-				padding: 80px 45px 75px;
+	@media (min-width: $screen-sm-min) {
+		.home & {
+			background: transparentize(white, 0.9);
+			li {
+				color: white;
+				a {
+					padding: 80px 45px 75px;
+				}
 			}
 		}
 	}
-	.navbar-toggle {
-		padding: 10px;
-		margin-bottom: 0px;
-		margin-top: 10px;
-		margin-right: 0px;
-		background-color: white;
-		&:hover {
+	@media (max-width: $screen-xs-max) {
+		.navbar-collapse {
+			padding-left: 5px;
+			padding-bottom: 15px;
+			position: absolute;
+			z-index: 100;
+			background: white;
+			left: 0;
+			right: 0;
+		}
+		.navbar-toggle {
+			padding: 15px 15px 25px 25px;
+			margin-bottom: 0px;
+			margin-top: 10px;
+			margin-right: 0px;
 			background-color: white;
+			position: absolute;
+			right: 5px;
+			z-index: 5000;
+			border: none;
+			&:hover {
+				background-color: white;
+			}
 		}
 	}
-	.navbar-collapse {
-		padding-left: 5px;
-	}
+}
+
+#navigation-container {
+	padding: 0;
 }
 
 .navbar {
@@ -140,13 +158,12 @@ ul {
 	width: 230px;
 	height: 175px;
 	text-indent: -9999px;
+	float: left;
+	margin-right: 40px;
+	margin-top: 0;
 	@media(max-width: $screen-xs-max) {
-
 			margin-left:0px !important;
 			width:100%;
-	}
-	.home & {
-		margin-left: 70px;
 	}
 }
 
@@ -160,33 +177,27 @@ ul {
 			padding: 0px;
 		}
 	}
-	#logo-main {
-		margin-top: 0;
-		float: left;
-		margin-right: 35px;
-		@media(max-width: $screen-xs-max) {
-			float:none;
-
-		}
-	}
-	p {
-		font-weight: 100;
-		font-size: 14px;
-		margin-top: 50px;
-	}
 	ul {
 		padding-left: 0;
-		margin-top: 50px;
 		li {
 			list-style: none;
 			text-transform: uppercase;
-			font-family: $sansAlt;
-			float: left;
-			margin-right: 15px;
+			font-family: $sans;
 			font-weight: 500;
-			font-size: 18px;
+			font-size: 15px;
+			margin-top: 10px;
+		}
+		@media (min-width: $screen-sm-min) {
+			margin-top: 50px;
+			float: left;
+			li {
+				margin-right: 25px;
+				margin-top: 35px;	
+				float: left;
+			}	
 		}
 	}
+	
 	@media(max-width: $screen-xs-max) {
 		ul {
 			margin:20px 0px 10px;
@@ -196,7 +207,7 @@ ul {
 				margin-right: 0px;
 				float: none;
 				padding: 5px;
-				font-size: 20px;
+				font-size: 14px;
 			}
 		}
 	}
@@ -374,10 +385,11 @@ button.close {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
 .testimonial-block {
 	padding: 50px 0;
 	@media(max-width: $screen-xs-max) {
-		padding:0px;
+		padding: 15px 0 0;
 		text-align: center !important;
 		.text-right {
 			text-align: center;
@@ -469,14 +481,16 @@ button.close {
 		margin-top: 0;
 	}
 	#introducing-bullets {
-		border-left: 1px solid $vibAlt;
-		padding-left: 25px;
 		ul {
 			padding-left: 0;
 			li {
 				list-style: none;
 				margin-bottom: 10px;
 			}
+		}
+		@media (min-width: $screen-sm-min) {
+			border-left: 1px solid $vibAlt;
+			padding-left: 25px;
 		}
 	}
 	
@@ -489,15 +503,19 @@ button.close {
 
 #introducing-intro {
 	margin-top: 70px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	font-size: 22px;
 	font-weight: 300;
 	color: darken($vib, 0%);
+	.lead {
+		line-height: 160%;
+	}
 	@media(max-width: $screen-xs-max) {
 		margin-top:20px;
+		margin-bottom: 70px;
 		p.lead {
 			font-size:16px;
-			line-height: 30px;
+			line-height: 24px;
 		}
 	}
 }
@@ -750,13 +768,21 @@ img.auto-width {
 		border-radius: 5px;
 		margin-bottom: 10px;
 	}
+	
 	@media(max-width: $screen-xs-max) {
 		margin-top:0px;
 		img {
-			padding:5px 30px;
+			padding:5px 0 0;
+			margin-bottom: 0;
 		}
 		div {
-			margin-bottom: 10px;
+			margin-bottom: 15px;
+		}
+		h5 {
+			margin-bottom: 3px;
+		}
+		p {
+			line-height: 18px;
 		}
 	}
 }
@@ -912,7 +938,6 @@ img.auto-width {
 }
 
 #hotel-blocks {
-	margin-top: 50px;
 	h3 {
 		color: $vib;
 		font-size: 32px;
@@ -921,6 +946,9 @@ img.auto-width {
 		small {
 			font-weight: bold;
 		}
+	}
+	@media (max-width: $screen-xs-max) {
+		margin-top: 15px;
 	}
 }
 
@@ -965,7 +993,6 @@ img.auto-width {
 }
 
 #member-controls {
-	border-radius: 7px;
 	height: 400px;
 	background: url(../images/member-banner.jpg) no-repeat center center;
 	background-size: cover;
@@ -1005,24 +1032,34 @@ img.auto-width {
 		display: block;
 	}
 	@media(max-width: $screen-xs-max) {
-		height:250px;
+
 		padding-top:80px;
 
 		.login-form {
-			width: 100%;
-			padding: 5px;
+			width: 90%;
+			margin: 0 auto;
 			text-align: center;
+			position: absolute;
+			bottom: 20px;
+			left: 5%;
 		}
 		input {
 			font-size: 18px;
-			width: auto;
+			width: 100%;
+			border-radius: 0;
 			float: none;
-			padding: 5px 10px 8px;
+			padding: 12px 10px 15px;
+			text-align: center;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
 		}
 		.btn-blue {
 			font-size: 18px;
 			padding:5px 20px 8px;
 			float: none;
+			width: 100%;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
 		}
 	}
 }
@@ -1041,7 +1078,10 @@ img.auto-width {
 }
 
 #member-benefits {
-	margin-top: 50px;
+	margin-top: 25px;
+	@media (min-width: $screen-sm-min) {
+		margin-top: 50px;
+	}
 	h3 {
 		font-weight: 400;
 		color: lighten($red, 20%);
@@ -1071,7 +1111,9 @@ img.auto-width {
 		color: $vib;
 	}
 	img {
-		margin-bottom: 15px;
+		@media (min-width: $screen-sm-min) {
+			margin-bottom: 15px;
+		}
 	}
 	.info-blocks {
 		margin-top: 30px;
@@ -1155,15 +1197,14 @@ img.auto-width {
 	@media(max-width: $screen-xs-max) {
 		padding:10px 25px;
 		h4 {
-			font-size: 22px;
+			font-size: 52px;
+			line-height: 56px;
 		}
 		.text-right {
 			text-align: center;
 		}
-		#send-btn {
-			font-size: 14px;
-			border:1px solid white;
-			padding: 5px;
+		.btn-link {
+			font-size: 20px;
 		}
 		input {
 			padding: 25px 20px;
@@ -1280,6 +1321,11 @@ h2 {
 .hotel-item {
 	padding-bottom: 10px;
 	padding-top: 10px;
+	@media (max-width: $screen-xs-max) {
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 25px;
+		margin-bottom: 15px;
+	}
 	.hotel-title {
 		font-weight: bold;
 		display: block;
@@ -1304,14 +1350,20 @@ h2 {
 	}
 	.hotel-website {
 		display: block;
-		border-top: 1px solid $bc;
 		padding-bottom: 7px;
-		padding-top: 5px;
+		
+		@media (min-width: $screen-sm-min) {
+			border-top: 1px solid $bc;
+			padding-top: 5px;
+		}
 	}
 	.hotel-document {
-		border-top: 1px solid $bc;
+		@media (min-width: $screen-sm-min) {
+			border-top: 1px solid $bc;
+			padding-top: 5px;
+		}
 		padding-bottom: 7px;
-		padding-top: 5px;
+		
 		display: block;
 	}
 	.hotel-thumb {
@@ -1333,6 +1385,8 @@ h2 {
 	}
 	.hotel-cta-block {
 		margin-top: 10px;
+		width: 100%;
+		overflow:auto;
 		.btn {
 			float: left;
 			-webkit-transition-duration: 400ms;
@@ -1402,9 +1456,13 @@ h2 {
 	}
 }
 
-.special-wrap {
-	height: 408px;
-	overflow: hidden;
+@media (min-width: $screen-sm-min) {
+
+	.special-wrap {
+		height: 408px;
+		overflow: hidden;
+	}
+
 }
 
 .book-modal-form {

@@ -176,7 +176,7 @@ $(document).ready(function() {
 		}		
 	});
 	
-	$('#learnmore-btn').click(function() {
+	$('#more-info-btn').click(function() {
 		
 		$.scrollTo(winH, 800);
 		

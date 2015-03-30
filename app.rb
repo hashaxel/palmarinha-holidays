@@ -141,7 +141,6 @@ get '/' do
 	@page_title = "#{@page_title} | Home"
 	@body_class += " home"
 	@bg_img = "home-banner"
-	@controls = :_home_controls
 	erb :home
 end
 
