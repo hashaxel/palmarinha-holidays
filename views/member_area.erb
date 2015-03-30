@@ -18,7 +18,7 @@
 		<div class="col-md-8">
 			<div class="special-wrap">
 				<% if !@special.nil? %>
-					<a href="/hotels/specials/document/<%= @special.offer_doc %>" ><img src="/hotels/specials/<%= @special.offer_img %>" alt="" /></a>
+					<a href="/hotels/specials/document/<%= @special.offer_doc %>" ><img src="/hotels/specials/<%= @special.offer_img %>" alt="Display image for special offers by Palmarinha Holidays" /></a>
 				<% end %>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 				<% @hotels.each_with_index do |hotel, index| %>
 					<div class="col-md-4 hotel-item">
 						<div class="hotel-thumb">
-							<img src="/hotels/images/<%= hotel.thumbnail %>" alt="" />
+							<img src="/hotels/images/<%= hotel.thumbnail %>" alt="Hotel display image" />
 						</div>
 						<span class="hotel-title"><%= hotel.name %> <small><%= hotel.location %></small></span>
 						
