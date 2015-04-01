@@ -18,12 +18,24 @@ end
 configure :development do
 	require 'dm-sqlite-adapter'
 	DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/palmarinha.db")
+	
 end
 
 configure :production do
 	require 'mysql'
 	require 'dm-mysql-adapter'
 	DataMapper::setup(:default, "mysql://root:hash2014@127.0.0.1/palmarinha")
+	
+end
+
+configure do
+	@@pony_options = {
+		  :address              => 'smtp.mandrillapp.com', 
+	     :port                 => '587', 
+	     :user_name            => 'milind@hashcooki.es', 
+	     :password             => 'N_y81H9kFFX5E9DObShfLA', 
+	     :authentication       => :plain
+	}
 end
 
 DataMapper::Property::String.length(255)
@@ -381,6 +393,7 @@ delete '/special/:id' do
 	end	
 end
 
+
 post '/request-membership' do
 	require 'pony'
 	#Pony.options = { :from => params[:member][:name] }
@@ -390,13 +403,7 @@ post '/request-membership' do
 		:subject => "Membership Request",
 		:html_body => params[:member][:name] + " from " + params[:member][:city] + " wishes to be a member <br /> Contact by phone: " + params[:member][:phone] + "<br /> by email: " + params[:member][:eadd],
 		:via => :smtp,
-		:via_options => {
-			:address              => 'smtp.sendgrid.net', 
-	        :port                 => '587', 
-	        :user_name            => 'hashcookies', 
-	        :password             => 'Nor1nderchqMudi', 
-	        :authentication       => :plain
-		}
+		:via_options => @@pony_options
 	)
 	redirect '/membership'
 end
@@ -414,13 +421,7 @@ post '/book' do
 		:subject => "Vacation Booking",
 		:html_body => body,
 		:via => :smtp,
-		:via_options => {
-			  :address              => 'smtp.mandrillapp.com', 
-	        :port                 => '587', 
-	        :user_name            => 'milind@hashcooki.es', 
-	        :password             => 'N_y81H9kFFX5E9DObShfLA', 
-	        :authentication       => :plain
-		}
+		:via_options => @@pony_options
 	)
 	redirect '/member-area'
 end
@@ -437,13 +438,7 @@ post '/support-request' do
 		:subject => "Support Request",
 		:html_body => body,
 		:via => :smtp,
-		:via_options => {
-			  :address              => 'smtp.mandrillapp.com', 
-		     :port                 => '587', 
-		     :user_name            => 'milind@hashcooki.es', 
-		     :password             => 'N_y81H9kFFX5E9DObShfLA', 
-		     :authentication       => :plain
-		}
+		:via_options => @@pony_options
 	)
 	redirect '/member-area'
 end
