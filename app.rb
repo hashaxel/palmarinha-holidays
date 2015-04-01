@@ -415,10 +415,10 @@ post '/book' do
 		:html_body => body,
 		:via => :smtp,
 		:via_options => {
-			  :address              => 'smtp.sendgrid.net', 
+			  :address              => 'smtp.mandrillapp.com', 
 	        :port                 => '587', 
-	        :user_name            => 'hashcookies', 
-	        :password             => 'Nor1nderchqMudi', 
+	        :user_name            => 'milind@hashcooki.es', 
+	        :password             => 'N_y81H9kFFX5E9DObShfLA', 
 	        :authentication       => :plain
 		}
 	)
