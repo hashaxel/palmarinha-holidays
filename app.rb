@@ -409,7 +409,7 @@ post '/book' do
 	message = "<br />Message: " + params[:book][:mailbody] unless params[:book][:mailbody].nil?
 	body = name + " wishes to book: " + hotel.name + " <br />Check-In: " + params[:book][:check_in] + "<br />Check-Out: " + params[:book][:check_out] + "<br />Contact by email: " + params[:book][:eadd] + message
 	Pony.mail(
-		:from => 'milind@hashcooki.es',
+		:from => 'noreply@hashcooki.es',
 		:to => 'customerservices@palmarinha-holidays.com',
 		:subject => "Vacation Booking",
 		:html_body => body,
@@ -438,11 +438,11 @@ post '/support-request' do
 		:html_body => body,
 		:via => :smtp,
 		:via_options => {
-			  :address              => 'smtp.sendgrid.net', 
-	        :port                 => '587', 
-	        :user_name            => 'hashcookies', 
-	        :password             => 'Nor1nderchqMudi', 
-	        :authentication       => :plain
+			  :address              => 'smtp.mandrillapp.com', 
+		     :port                 => '587', 
+		     :user_name            => 'milind@hashcooki.es', 
+		     :password             => 'N_y81H9kFFX5E9DObShfLA', 
+		     :authentication       => :plain
 		}
 	)
 	redirect '/member-area'
